@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PrakritiMe - Discover Your Ayurvedic Nature</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;600&amp;family=Noto+Serif+Devanagari:wght@400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#ffb960",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#2b1700",
+                    "background": "#fff8f6",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#ffdbce",
+                    "on-primary-fixed-variant": "#653e00",
+                    "surface-bright": "#fff8f6",
+                    "surface-container-low": "#fff1ec",
+                    "tertiary-fixed-dim": "#ffb77d",
+                    "secondary-container": "#aeeecb",
+                    "secondary": "#2c694e",
+                    "on-tertiary-container": "#6a3700",
+                    "on-tertiary-fixed-variant": "#6e3900",
+                    "primary-fixed": "#ffddb8",
+                    "on-surface": "#2a170f",
+                    "on-secondary-container": "#316e52",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#623c00",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#002114",
+                    "secondary-fixed": "#b1f0ce",
+                    "outline": "#857462",
+                    "inverse-primary": "#ffb960",
+                    "tertiary-fixed": "#ffdcc3",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#ffdbce",
+                    "surface-container-high": "#ffe2d8",
+                    "tertiary": "#904d00",
+                    "on-secondary-fixed-variant": "#0e5138",
+                    "surface-tint": "#865300",
+                    "surface": "#fff8f6",
+                    "on-error": "#ffffff",
+                    "surface-container": "#ffe9e2",
+                    "on-background": "#2a170f",
+                    "inverse-on-surface": "#ffede7",
+                    "secondary-fixed-dim": "#95d4b3",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#ff993a",
+                    "primary-container": "#f4a023",
+                    "on-tertiary-fixed": "#2f1500",
+                    "on-surface-variant": "#534434",
+                    "inverse-surface": "#422b22",
+                    "surface-dim": "#f8d2c4",
+                    "primary": "#865300",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#d8c3ae"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "max-width-content": "1200px",
+                    "xs": "4px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "xl": "64px",
+                    "margin-mobile": "20px",
+                    "md": "24px",
+                    "gutter": "16px",
+                    "lg": "40px",
+                    "margin-desktop": "auto"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-md": ["Inter"],
+                    "sanskrit-quote": ["Noto Serif Devanagari"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "sanskrit-quote": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sun-tinted-shadow {
+            box-shadow: 0px 10px 30px rgba(244, 160, 35, 0.12);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f4a023 0%, #2c694e 100%);
+        }
+        .glass-nav {
+            background: rgba(255, 250, 243, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass-nav sun-tinted-shadow">
+<div class="max-w-max-width-content mx-auto px-margin-mobile md:px-lg flex justify-between items-center h-20">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">spa</span>
+</div>
+<h1 class="font-display-lg text-headline-md text-primary">PrakritiMe</h1>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">Daily Routine</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">Diet Plan</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">Dosha Guide</a>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md hover:scale-95 transition-transform">Start Quiz</button>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-xl pb-20 md:pt-24 md:pb-32">
+<div class="max-w-max-width-content mx-auto px-margin-mobile md:px-lg grid md:grid-cols-2 gap-12 items-center">
+<div class="z-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-surface-container-highest text-primary font-label-md mb-6">Explore Ancient Wisdom</span>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-6 leading-tight">Discover Your True Nature</h2>
+<p class="font-body-lg text-on-surface-variant mb-10 max-w-lg">Unlock thousands of years of Vedic wisdom with a 5-minute quiz tailored to your unique bio-energy profile.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-full font-label-md flex items-center justify-center gap-2 sun-tinted-shadow hover:brightness-105 transition-all">
+                            Take the Quiz <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="border-2 border-outline-variant text-on-surface px-8 py-4 rounded-full font-label-md hover:bg-surface-container-low transition-colors">
+                            What is Prakriti?
+                        </button>
+</div>
+<div class="mt-12 flex flex-wrap gap-6 items-center">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span> Based on classical texts
+                        </div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">groups</span> Trusted by practitioners
+                        </div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">timer</span> 5 min · Free
+                        </div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-[3rem] overflow-hidden sun-tinted-shadow relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A beautiful flat art illustration of three silhouettes representing Vata, Pitta, and Kapha. Vata has a light blue aura with ethereal swirling wind patterns. Pitta has a warm coral glow with vibrant flame motifs. Kapha is surrounded by a deep forest green aura with grounded botanical textures. Floating herbal leaves like Ashwagandha and Tulsi drift through the scene in a sunlit botanical garden setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPHhWO1dFKi-UKQguEEXIXiRIbXVBf7hJgJTvRa8rWTJ0NNZoxV9S8n1ItPg8B3m-Nqs2iFaE4V5Odu56l2q_n6s38zVAoZy8ARa27WIcORpRlgTH1ObEov7IhuekJ9iRtZ8zR-wDENRWaBNcbm3q6p5t05JJI6Y7mVPrswwbEB7mgoyGR8TO4nLaVR6J-wrAaq7aFawhE-x_4p75ta1gXuWiXw4XhedzhAmoU1iNvTv2N5YcZIHSDlwRJ63NeZr1l-kd31flwQPWS"/>
+<!-- Decorative Blobs -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary-fixed-dim blur-[60px] opacity-40"></div>
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary-fixed-dim blur-[60px] opacity-40"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- How it Works (Bento Lite) -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-max-width-content mx-auto px-margin-mobile md:px-lg">
+<div class="text-center mb-16">
+<h3 class="font-display-lg text-headline-lg text-on-surface">Your Path to Balance</h3>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="bg-surface p-8 rounded-3xl border border-outline-variant sun-tinted-shadow hover:-translate-y-2 transition-transform duration-300">
+<div class="w-16 h-16 rounded-2xl bg-primary-fixed mb-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">quiz</span>
+</div>
+<h4 class="font-headline-md text-on-surface mb-4">1. Answer</h4>
+<p class="text-on-surface-variant">Simple questions about your physical traits, digestion, and emotional temperament.</p>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface p-8 rounded-3xl border border-outline-variant sun-tinted-shadow hover:-translate-y-2 transition-transform duration-300">
+<div class="w-16 h-16 rounded-2xl bg-secondary-fixed mb-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl">psychology_alt</span>
+</div>
+<h4 class="font-headline-md text-on-surface mb-4">2. Get Prakriti</h4>
+<p class="text-on-surface-variant">Receive an in-depth breakdown of your Vata, Pitta, and Kapha percentages immediately.</p>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface p-8 rounded-3xl border border-outline-variant sun-tinted-shadow hover:-translate-y-2 transition-transform duration-300">
+<div class="w-16 h-16 rounded-2xl bg-tertiary-fixed mb-6 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-3xl">bedtime_off</span>
+</div>
+<h4 class="font-headline-md text-on-surface mb-4">3. Live in Harmony</h4>
+<p class="text-on-surface-variant">Apply personalized diet, yoga, and lifestyle tips to find your natural equilibrium.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Dosha Preview (Cards) -->
+<section class="py-xl">
+<div class="max-w-max-width-content mx-auto px-margin-mobile md:px-lg">
+<div class="flex justify-between items-end mb-12">
+<div class="max-w-xl">
+<h3 class="font-display-lg text-headline-lg text-on-surface mb-4">The Three Doshas</h3>
+<p class="text-on-surface-variant">Everything in the universe is a unique combination of five elements, manifesting in us as three life forces.</p>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Vata -->
+<div class="group relative bg-[#e0f2fe] rounded-[2.5rem] p-8 overflow-hidden transition-all duration-500 hover:ring-2 ring-[#0ea5e9]">
+<div class="flex justify-between items-start mb-8">
+<span class="text-4xl">🌬️</span>
+<span class="font-sanskrit-quote text-[#0369a1]">वात (Vāta)</span>
+</div>
+<h4 class="font-display-lg text-headline-md text-[#0c4a6e] mb-2">Vata</h4>
+<p class="font-label-md text-[#0369a1] mb-6 tracking-widest uppercase">Air &amp; Space</p>
+<p class="text-[#0c4a6e] mb-8">Creative, light-hearted, and energetic when in balance. Like the wind, Vata is always moving.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-[#0c4a6e] font-label-md"><span class="material-symbols-outlined text-sm">circle</span> Dry, Cold, Light</li>
+<li class="flex items-center gap-2 text-[#0c4a6e] font-label-md"><span class="material-symbols-outlined text-sm">circle</span> Enthusiasm</li>
+<li class="flex items-center gap-2 text-[#0c4a6e] font-label-md"><span class="material-symbols-outlined text-sm">circle</span> Irregularity</li>
+</ul>
+</div>
+<!-- Pitta -->
+<div class="group relative bg-[#ffedd5] rounded-[2.5rem] p-8 overflow-hidden transition-all duration-500 hover:ring-2 ring-[#f97316]">
+<div class="flex justify-between items-start mb-8">
+<span class="text-4xl">🔥</span>
+<span class="font-sanskrit-quote text-[#9a3412]">पित्त (Pitta)</span>
+</div>
+<h4 class="font-display-lg text-headline-md text-[#7c2d12] mb-2">Pitta</h4>
+<p class="font-label-md text-[#9a3412] mb-6 tracking-widest uppercase">Fire &amp; Water</p>
+<p class="text-[#7c2d12] mb-8">Intelligent, determined, and focused. Pitta governs metabolism and transformation in the body.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-[#7c2d12] font-label-md"><span class="material-symbols-outlined text-sm">circle</span> Hot, Sharp, Oily</li>
+<li class="flex items-center gap-2 text-[#7c2d12] font-label-md"><span class="material-symbols-outlined text-sm">circle</span> Understanding</li>
+<li class="flex items-center gap-2 text-[#7c2d12] font-label-md"><span class="material-symbols-outlined text-sm">circle</span> Intensity</li>
+</ul>
+</div>
+<!-- Kapha -->
+<div class="group relative bg-[#dcfce7] rounded-[2.5rem] p-8 overflow-hidden transition-all duration-500 hover:ring-2 ring-[#22c55e]">
+<div class="flex justify-between items-start mb-8">
+<span class="text-4xl">🌱</span>
+<span class="font-sanskrit-quote text-[#166534]">कफ (Kapha)</span>
+</div>
+<h4 class="font-display-lg text-headline-md text-[#064e3b] mb-2">Kapha</h4>
+<p class="font-label-md text-[#166534] mb-6 tracking-widest uppercase">Earth &amp; Water</p>
+<p class="text-[#064e3b] mb-8">Calm, compassionate, and strong. Kapha provides the physical structure and lubrication for the body.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-[#064e3b] font-label-md"><span class="material-symbols-outlined text-sm">circle</span> Heavy, Slow, Smooth</li>
+<li class="flex items-center gap-2 text-[#064e3b] font-label-md"><span class="material-symbols-outlined text-sm">circle</span> Compassion</li>
+<li class="flex items-center gap-2 text-[#064e3b] font-label-md"><span class="material-symbols-outlined text-sm">circle</span> Stability</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-xl bg-surface-container">
+<div class="max-w-max-width-content mx-auto px-margin-mobile md:px-lg">
+<div class="text-center mb-16">
+<h3 class="font-display-lg text-headline-lg text-on-surface">Radiating Harmony</h3>
+<p class="text-on-surface-variant mt-2">Hear from those who've rediscovered their balance.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-surface p-10 rounded-3xl sun-tinted-shadow">
+<div class="w-12 h-12 rounded-full bg-[#0ea5e9]/20 text-[#0369a1] flex items-center justify-center font-bold mb-6">AR</div>
+<p class="font-body-md text-on-surface italic mb-6">"Finding out I was 80% Vata explained so much about my sleep patterns. The routine suggested here changed my life in two weeks."</p>
+<p class="font-label-md text-on-surface-variant">— Ananya R., Artist</p>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface p-10 rounded-3xl sun-tinted-shadow">
+<div class="w-12 h-12 rounded-full bg-[#f97316]/20 text-[#9a3412] flex items-center justify-center font-bold mb-6">MS</div>
+<p class="font-body-md text-on-surface italic mb-6">"I always felt 'too intense' until I understood my Pitta nature. Now I know how to cool my fire through diet instead of fighting it."</p>
+<p class="font-label-md text-on-surface-variant">— Michael S., Entrepreneur</p>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface p-10 rounded-3xl sun-tinted-shadow">
+<div class="w-12 h-12 rounded-full bg-[#22c55e]/20 text-[#166534] flex items-center justify-center font-bold mb-6">KV</div>
+<p class="font-body-md text-on-surface italic mb-6">"The Kapha morning routine is tough at first but the energy I have now is incredible. Classical Ayurveda simplified for today."</p>
+<p class="font-label-md text-on-surface-variant">— Kavita V., Yoga Teacher</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-margin-mobile md:px-lg mt-lg flex flex-col items-center text-center max-w-max-width-content mx-auto bg-surface-container dark:bg-surface-container-lowest">
+<div class="mb-10">
+<h1 class="font-display-lg text-headline-md text-primary mb-2">PrakritiMe</h1>
+<p class="font-body-md text-on-surface-variant max-w-sm">Aligning your modern lifestyle with ancient rhythmic wisdom.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-x-12 gap-y-6 mb-12">
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">About Ayurveda</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">Dosha Guide</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-label-md hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="w-full pt-8 border-t border-outline-variant/30 text-on-surface-variant font-label-md">
+            © 2024 PrakritiMe. Built with heart for Ayurveda lovers.
+        </div>
+</footer>
+<!-- Micro-interactions Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Simple reveal animation for cards
+            const cards = document.querySelectorAll('.sun-tinted-shadow');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100');
+                        entry.target.classList.remove('opacity-0', 'translate-y-4');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => {
+                card.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+                observer.observe(card);
+            });
+        });
+    </script>
+</body></html>

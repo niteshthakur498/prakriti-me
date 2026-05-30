@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PrakritiMe | Your Dosha Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=Noto+Serif+Devanagari:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#ff993a",
+                    "on-tertiary-fixed-variant": "#6e3900",
+                    "on-secondary-container": "#316e52",
+                    "secondary-container": "#aeeecb",
+                    "on-secondary-fixed": "#002114",
+                    "on-tertiary-container": "#6a3700",
+                    "tertiary-fixed-dim": "#ffb77d",
+                    "tertiary": "#904d00",
+                    "on-primary-fixed-variant": "#653e00",
+                    "inverse-on-surface": "#ffede7",
+                    "surface-container-high": "#ffe2d8",
+                    "on-primary-container": "#623c00",
+                    "surface-variant": "#ffdbce",
+                    "background": "#fff8f6",
+                    "inverse-primary": "#ffb960",
+                    "surface": "#fff8f6",
+                    "primary-fixed-dim": "#ffb960",
+                    "inverse-surface": "#422b22",
+                    "on-secondary-fixed-variant": "#0e5138",
+                    "tertiary-fixed": "#ffdcc3",
+                    "surface-container-highest": "#ffdbce",
+                    "surface-container": "#ffe9e2",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#d8c3ae",
+                    "primary-fixed": "#ffddb8",
+                    "on-primary-fixed": "#2b1700",
+                    "surface-dim": "#f8d2c4",
+                    "secondary-fixed": "#b1f0ce",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#95d4b3",
+                    "on-surface-variant": "#534434",
+                    "surface-bright": "#fff8f6",
+                    "primary": "#865300",
+                    "on-surface": "#2a170f",
+                    "primary-container": "#f4a023",
+                    "surface-tint": "#865300",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#fff1ec",
+                    "on-tertiary-fixed": "#2f1500",
+                    "secondary": "#2c694e",
+                    "on-error": "#ffffff",
+                    "outline": "#857462",
+                    "on-background": "#2a170f",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "lg": "40px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "margin-mobile": "20px",
+                    "sm": "12px",
+                    "xl": "64px",
+                    "md": "24px",
+                    "max-width-content": "1200px",
+                    "margin-desktop": "auto"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"],
+                    "sanskrit-quote": ["Noto Serif Devanagari"],
+                    "headline-md": ["Playfair Display"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "sanskrit-quote": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .vata-pitta-gradient {
+            background: linear-gradient(135deg, #f4a023 0%, #ba1a1a 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sun-shadow {
+            box-shadow: 0px 10px 30px rgba(244, 160, 35, 0.12);
+        }
+        .glass-card {
+            background: rgba(255, 250, 243, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fff8f6; }
+        ::-webkit-scrollbar-thumb { background: #d8c3ae; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #857462; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-lg max-w-max-width-content mx-auto bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-[0px_10px_30px_rgba(244,160,35,0.12)] h-16">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">eco</span>
+</div>
+<span class="font-display-lg text-headline-md text-primary dark:text-primary-fixed-dim">PrakritiMe</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary py-1" href="#">Daily Routine</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary-container transition-all duration-300 py-1" href="#">Diet Plan</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary-container transition-all duration-300 py-1" href="#">Yoga Flows</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary-container transition-all duration-300 py-1" href="#">Seasonal Living</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container font-label-md text-label-md px-6 py-2 rounded-full active:scale-95 transition-transform hover:opacity-90">
+            Start Quiz
+        </button>
+</header>
+<main class="pt-16 pb-xl max-w-max-width-content mx-auto px-margin-mobile md:px-lg">
+<!-- Hero Section -->
+<section class="mt-lg rounded-xl overflow-hidden relative vata-pitta-gradient p-xl flex flex-col md:flex-row items-center justify-between text-white shadow-2xl">
+<div class="z-10 max-w-2xl">
+<span class="bg-white/20 backdrop-blur-md px-4 py-1 rounded-full text-sm font-bold tracking-widest uppercase mb-4 inline-block">Your Primary Constitution</span>
+<h1 class="font-display-lg text-display-lg mb-4">Vata-Pitta</h1>
+<p class="font-body-lg text-body-lg opacity-90">You possess a vibrant blend of the airy creativity of Vata and the fiery precision of Pitta. Your energy is a dance of light and warmth, requiring grounding rituals to maintain your brilliant flow.</p>
+</div>
+<div class="hidden md:block absolute right-0 top-0 h-full w-1/3 opacity-30 pointer-events-none">
+<img alt="Meditation Art" class="w-full h-full object-cover mix-blend-overlay" data-alt="An ethereal digital artwork representing energy flow, with swirling patterns of vibrant saffron orange and deep sunset red. The composition feels light and airy yet grounded by warm, earthy undertones. Intricate botanical silhouettes of lotus leaves and sacred geometry patterns are layered within the glowing colors, creating a premium wellness aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVLpEfE2i_8WiFj0ps4ZKsP7nTMowkItupVWuvZwOcnFo3gee_mnV2R-dRJmltUZUOr3Oi4sJnqX2vrv_Baw6di_jmK3WALCLGVF3kR6fyHENgx1x6aTpHiCYNXLhp5yEWv1LUjCAh-pO0O3ts41n-YXFzWwo1Mp1-CSSBuCCp7a2EENuhdBtMbwl3GwsBZUYS9pHVIcufEPQ4v0Cx6kAwV1pA1HwIhAEdQCmkzaly0BFM9fxoURNQB8e1O1MyzL4BYSQ2oBIXM7NM"/>
+</div>
+</section>
+<!-- Main Layout Grid -->
+<div class="mt-lg grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Content Area (8 Columns) -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Dosha Breakdown Card -->
+<article class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md sun-shadow">
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Dosha Breakdown</h2>
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<!-- Horizontal Stacked Bar Chart -->
+<div class="relative w-full h-12 bg-surface-container rounded-full flex overflow-hidden mb-4 border border-outline-variant/30">
+<div class="h-full bg-primary-container flex items-center justify-center text-[10px] font-bold text-white relative group" style="width: 55%">
+                            Vata 55%
+                            <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="h-full bg-tertiary flex items-center justify-center text-[10px] font-bold text-white relative group" style="width: 35%">
+                            Pitta 35%
+                            <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="h-full bg-secondary flex items-center justify-center text-[10px] font-bold text-white relative group" style="width: 10%">
+                            Kapha 10%
+                            <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 mt-6">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="font-label-md text-label-md">Vata (Space &amp; Air)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span class="font-label-md text-label-md">Pitta (Fire &amp; Water)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md">Kapha (Earth &amp; Water)</span>
+</div>
+</div>
+</article>
+<!-- Recommendation Tabs Section -->
+<div class="space-y-6">
+<div class="flex overflow-x-auto gap-4 pb-2 no-scrollbar">
+<button class="px-8 py-3 rounded-full bg-primary text-on-primary font-label-md text-label-md sun-shadow whitespace-nowrap active:scale-95 transition-transform">Diet</button>
+<button class="px-8 py-3 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-colors">Routine</button>
+<button class="px-8 py-3 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-colors">Yoga</button>
+<button class="px-8 py-3 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-colors">Seasonal</button>
+</div>
+<!-- Diet Content (Two-Column Layout) -->
+<div class="grid md:grid-cols-2 gap-6">
+<!-- Favor Section -->
+<div class="bg-secondary-container/10 border border-secondary/20 rounded-xl p-md sun-shadow">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<h3 class="font-headline-md text-headline-md text-secondary">Favor These Foods</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 bg-white p-3 rounded-lg border border-secondary-fixed">
+<div class="w-8 h-8 rounded bg-secondary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-sm">restaurant</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Warm &amp; Nourishing</p>
+<p class="text-xs text-on-surface-variant">Cooked grains like basmati rice, quinoa, and oats.</p>
+</div>
+</li>
+<li class="flex items-start gap-3 bg-white p-3 rounded-lg border border-secondary-fixed">
+<div class="w-8 h-8 rounded bg-secondary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-sm">water_drop</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Sweet &amp; Grounding</p>
+<p class="text-xs text-on-surface-variant">Sweet potatoes, avocados, and coconut oil.</p>
+</div>
+</li>
+<li class="flex items-start gap-3 bg-white p-3 rounded-lg border border-secondary-fixed">
+<div class="w-8 h-8 rounded bg-secondary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-sm">local_florist</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Mild Spices</p>
+<p class="text-xs text-on-surface-variant">Cumin, coriander, ginger, and cardamom.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Minimize Section -->
+<div class="bg-error-container/10 border border-error/20 rounded-xl p-md sun-shadow">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<h3 class="font-headline-md text-headline-md text-error">Minimize These</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 bg-white p-3 rounded-lg border border-error-container">
+<div class="w-8 h-8 rounded bg-error-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-error text-sm">ac_unit</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Cold &amp; Raw</p>
+<p class="text-xs text-on-surface-variant">Iced drinks and excessive raw salads.</p>
+</div>
+</li>
+<li class="flex items-start gap-3 bg-white p-3 rounded-lg border border-error-container">
+<div class="w-8 h-8 rounded bg-error-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-error text-sm">local_fire_department</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Over-Spicy</p>
+<p class="text-xs text-on-surface-variant">Hot chilies, raw onions, and garlic.</p>
+</div>
+</li>
+<li class="flex items-start gap-3 bg-white p-3 rounded-lg border border-error-container">
+<div class="w-8 h-8 rounded bg-error-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-error text-sm">timer</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Processed &amp; Dry</p>
+<p class="text-xs text-on-surface-variant">Crackers, popcorn, and refined sugars.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Daily Tip Bento Card -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="md:col-span-2 bg-primary-container text-on-primary-container p-md rounded-xl flex items-center gap-6 shadow-lg">
+<span class="material-symbols-outlined text-5xl opacity-40">self_improvement</span>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">Morning Ritual</h4>
+<p class="text-sm opacity-90">Start your day with 5 minutes of Alternate Nostril Breathing (Nadi Shodhana) to balance your Vata flow and calm Pitta's intensity.</p>
+</div>
+</div>
+<div class="bg-tertiary-fixed text-on-tertiary-fixed p-md rounded-xl flex flex-col justify-between shadow-lg">
+<span class="material-symbols-outlined text-3xl">wb_sunny</span>
+<div>
+<h4 class="font-label-md text-label-md font-bold">Mid-Day Peak</h4>
+<p class="text-xs opacity-80 leading-relaxed">Pitta is highest. Eat your largest meal now.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar (4 Columns) -->
+<aside class="lg:col-span-4 space-y-8">
+<!-- AI Chat (Coming Soon) -->
+<section class="bg-surface-container rounded-xl p-md border border-outline-variant relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-tertiary/10 opacity-50"></div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Vedic AI Assistant</h3>
+<span class="bg-primary text-on-primary text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider">Coming Soon</span>
+</div>
+<div class="bg-white/40 backdrop-blur-sm rounded-lg p-4 border border-white/60 mb-4 h-48 flex items-center justify-center text-center">
+<div class="space-y-3">
+<span class="material-symbols-outlined text-primary text-4xl animate-pulse">psychology</span>
+<p class="text-sm text-on-surface-variant italic">"Ask me about your evening meals or yoga sequence..."</p>
+</div>
+</div>
+<div class="relative">
+<input class="w-full bg-white/50 border-outline-variant rounded-full px-4 py-2 text-sm opacity-60 cursor-not-allowed" disabled="" placeholder="Type a question..." type="text"/>
+<button class="absolute right-2 top-1.5 text-primary opacity-40 cursor-not-allowed">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Actions Card -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-md sun-shadow">
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">share</span>
+                        SHARE &amp; SAVE
+                    </h3>
+<div class="space-y-4">
+<button class="w-full flex items-center justify-between p-4 bg-surface rounded-lg hover:bg-primary-container/10 transition-colors border border-outline-variant group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">picture_as_pdf</span>
+<span class="font-label-md text-label-md">Download Report</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 bg-surface rounded-lg hover:bg-primary-container/10 transition-colors border border-outline-variant group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">bookmark</span>
+<span class="font-label-md text-label-md">Save to Profile</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 bg-surface rounded-lg hover:bg-primary-container/10 transition-colors border border-outline-variant group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">ios_share</span>
+<span class="font-label-md text-label-md">Send to Practitioner</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Sanskrit Quote Component -->
+<div class="text-center p-md bg-transparent">
+<p class="font-sanskrit-quote text-sanskrit-quote text-primary opacity-60 mb-2">स्वस्थस्य स्वास्थ्य रक्षणं</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">"To maintain the health of the healthy"</p>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-margin-mobile md:px-lg mt-lg flex flex-col items-center text-center max-w-max-width-content mx-auto bg-surface-container dark:bg-surface-container-lowest">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary">eco</span>
+<span class="font-display-lg text-headline-md text-primary">PrakritiMe</span>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mb-10">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">About Ayurveda</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Dosha Guide</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Terms of Service</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface dark:text-on-surface-variant opacity-70">
+            © 2024 PrakritiMe. Built with heart for Ayurveda lovers.
+        </p>
+</footer>
+<script>
+        // Micro-interactions for tabs
+        const tabs = document.querySelectorAll('button.whitespace-nowrap');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.classList.remove('bg-primary', 'text-on-primary', 'sun-shadow');
+                    t.classList.add('bg-surface-container-lowest', 'border', 'border-outline-variant', 'text-on-surface-variant');
+                });
+                tab.classList.add('bg-primary', 'text-on-primary', 'sun-shadow');
+                tab.classList.remove('bg-surface-container-lowest', 'border', 'border-outline-variant', 'text-on-surface-variant');
+            });
+        });
+    </script>
+</body></html>

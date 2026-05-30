@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PrakritiMe - Discover Your True Nature</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@600;700&amp;family=Noto+Serif+Devanagari&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#ff993a",
+                        "on-tertiary-fixed-variant": "#6e3900",
+                        "on-secondary-container": "#316e52",
+                        "secondary-container": "#aeeecb",
+                        "on-secondary-fixed": "#002114",
+                        "on-tertiary-container": "#6a3700",
+                        "tertiary-fixed-dim": "#ffb77d",
+                        "tertiary": "#904d00",
+                        "on-primary-fixed-variant": "#653e00",
+                        "inverse-on-surface": "#ffede7",
+                        "surface-container-high": "#ffe2d8",
+                        "on-primary-container": "#623c00",
+                        "surface-variant": "#ffdbce",
+                        "background": "#fff8f6",
+                        "inverse-primary": "#ffb960",
+                        "surface": "#fff8f6",
+                        "primary-fixed-dim": "#ffb960",
+                        "inverse-surface": "#422b22",
+                        "on-secondary-fixed-variant": "#0e5138",
+                        "tertiary-fixed": "#ffdcc3",
+                        "surface-container-highest": "#ffdbce",
+                        "surface-container": "#ffe9e2",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline-variant": "#d8c3ae",
+                        "primary-fixed": "#ffddb8",
+                        "on-primary-fixed": "#2b1700",
+                        "surface-dim": "#f8d2c4",
+                        "secondary-fixed": "#b1f0ce",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#95d4b3",
+                        "on-surface-variant": "#534434",
+                        "surface-bright": "#fff8f6",
+                        "primary": "#865300",
+                        "on-surface": "#2a170f",
+                        "primary-container": "#f4a023",
+                        "surface-tint": "#865300",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#fff1ec",
+                        "on-tertiary-fixed": "#2f1500",
+                        "secondary": "#2c694e",
+                        "on-error": "#ffffff",
+                        "outline": "#857462",
+                        "on-background": "#2a170f",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "lg": "40px",
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "margin-mobile": "20px",
+                        "sm": "12px",
+                        "xl": "64px",
+                        "md": "24px",
+                        "max-width-content": "1200px",
+                        "margin-desktop": "auto"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "sanskrit-quote": ["Noto Serif Devanagari"],
+                        "headline-md": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "sanskrit-quote": ["20px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .sun-tint-shadow {
+            box-shadow: 0px 10px 30px rgba(244, 160, 35, 0.12);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #f4a023 0%, #fff8f6 50%, #2c694e 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 250, 243, 0.8);
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 15px 35px rgba(244, 160, 35, 0.18);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass-nav shadow-[0px_10px_30px_rgba(244,160,35,0.12)]">
+<nav class="max-w-max-width-content mx-auto flex justify-between items-center h-20 px-margin-mobile md:px-lg">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span class="font-display-lg text-headline-md text-primary">PrakritiMe</span>
+</div>
+<div class="hidden md:flex items-center gap-xl">
+<a class="text-primary font-bold border-b-2 border-primary font-label-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-label-md" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-label-md" href="#">For Practitioners</a>
+<button class="bg-primary-container text-on-primary-container px-6 py-2.5 rounded-full font-label-md hover:scale-105 active:scale-95 transition-all shadow-md">
+                    Start Quiz
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="hero-gradient min-h-[921px] flex items-center relative overflow-hidden">
+<div class="max-w-max-width-content mx-auto px-margin-mobile md:px-lg grid md:grid-cols-2 gap-lg items-center relative z-10 py-xl">
+<div class="space-y-md">
+<h1 class="font-display-lg text-display-lg text-on-surface leading-[1.1]">
+                        Discover Your <br/><span class="text-primary italic">True Nature</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                        Unlock ancient Ayurvedic wisdom tailored for your modern life. Take our Prakriti quiz to reveal your unique Dosha balance and start your journey to vitality.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-gutter pt-base">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md sun-tint-shadow hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2">
+                            Take the Free Quiz
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-warm-white border border-outline-variant text-on-surface-variant px-8 py-4 rounded-full font-label-md hover:bg-surface-container transition-all text-center">
+                            How it Works
+                        </button>
+</div>
+</div>
+<div class="relative flex justify-center items-center">
+<div class="absolute inset-0 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+<img alt="Woman practicing yoga in a peaceful nature setting" class="relative z-10 w-full max-w-md rounded-[40px] shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700" data-alt="A serene woman in a flowing linen outfit practicing a meditative yoga pose in a sun-drenched Indian botanical garden at dawn. The atmosphere is ethereal with soft golden light filtering through vibrant tropical greenery. The visual style is high-end wellness editorial, utilizing warm cream tones and earthy saffron accents to match a luxurious Ayurvedic brand identity. Soft bokeh and a shallow depth of field create a peaceful, premium aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0bWw_vbkK9xmGesyih_dn612WJPRnoR9KJtLYvtmnSPRU3kUencaA4oHeZ4CRLzrn39L3-n_wAvBMSk3h9AkkKgwkQcFo-1tOY2m3VmvinJzzjeGMW4q8mQiED6L0gTj7g2jGunkk4_khN30rRHzE2u29g0NkLjivRH73gMf6zjS1Q8blTivF3EX7LlKpT1elYJgidMmhIjyN9NB6ORkeYO7IM88DLIHtwmxHqY8YRsDgqziLgjD1QlViroXew-smsj1RF-a_zNM-"/>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="absolute bottom-0 w-full py-md bg-surface-container/30 backdrop-blur-sm border-t border-outline-variant/20">
+<div class="max-w-max-width-content mx-auto px-margin-mobile md:px-lg flex flex-wrap justify-center md:justify-between items-center gap-lg">
+<div class="flex items-center gap-base opacity-80">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<span class="font-label-md">Certified Ayurvedic Guidance</span>
+</div>
+<div class="flex items-center gap-base opacity-80">
+<span class="material-symbols-outlined text-primary">diversity_1</span>
+<span class="font-label-md">100k+ Balanced Lives</span>
+</div>
+<div class="flex items-center gap-base opacity-80">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<span class="font-label-md">Science-Backed Wisdom</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Your Path to Balance Section -->
+<section class="py-xl bg-surface">
+<div class="max-w-max-width-content mx-auto px-margin-mobile md:px-lg text-center">
+<h2 class="font-headline-lg text-headline-lg mb-gutter">Your Path to Balance</h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto mb-xl">We simplify the complex science of Ayurveda into three actionable steps for your daily lifestyle.</p>
+<div class="grid md:grid-cols-3 gap-lg">
+<!-- Card 1 -->
+<div class="bg-white p-md rounded-xl border border-outline-variant hover-lift transition-all text-left">
+<div class="w-12 h-12 bg-primary-container/20 rounded-full flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary">psychology_alt</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Self-Discovery</h3>
+<p class="font-body-md text-on-surface-variant">Our deep-dive assessment analyzes your physical traits and behavioral patterns to identify your core constitution.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-white p-md rounded-xl border border-outline-variant hover-lift transition-all text-left">
+<div class="w-12 h-12 bg-secondary-container/20 rounded-full flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-secondary">restaurant</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Personalized Plan</h3>
+<p class="font-body-md text-on-surface-variant">Receive a tailored roadmap including diet, herbs, and daily rituals that sync with your specific body clock.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-white p-md rounded-xl border border-outline-variant hover-lift transition-all text-left">
+<div class="w-12 h-12 bg-tertiary-container/20 rounded-full flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-tertiary">spa</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Lifelong Vitality</h3>
+<p class="font-body-md text-on-surface-variant">Track your progress and adapt your routine as the seasons change to maintain a state of effortless wellness.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- The Three Doshas Section -->
+<section class="py-xl bg-surface-container-low overflow-hidden">
+<div class="max-w-max-width-content mx-auto px-margin-mobile md:px-lg">
+<div class="flex flex-col md:flex-row justify-between items-end mb-xl gap-gutter">
+<div class="max-w-xl">
+<span class="text-primary font-label-md uppercase tracking-widest">Ancient Wisdom</span>
+<h2 class="font-display-lg text-headline-lg mt-2">The Three Doshas</h2>
+<p class="font-body-md text-on-surface-variant mt-sm">In Ayurveda, health is the dynamic balance of three fundamental energies. Which one governs you?</p>
+</div>
+<button class="text-primary font-label-md flex items-center gap-xs hover:underline">
+                        Explore All Doshas
+                        <span class="material-symbols-outlined text-sm">open_in_new</span>
+</button>
+</div>
+<div class="grid md:grid-cols-3 gap-lg h-full">
+<!-- Vata -->
+<div class="group relative h-[500px] overflow-hidden rounded-[32px] cursor-pointer">
+<img alt="Wind blowing through tall grass" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic, wide-angle landscape shot of tall golden prairie grass swaying vigorously in the wind against a pale, breezy blue sky. The lighting is soft and diffused, conveying a sense of movement and airiness characteristic of the Vata dosha. The color palette features light blues, straw yellows, and warm whites, maintaining a clean, professional wellness aesthetic with high-key lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGfQkSn8YphcfrDmCFsi_T1FuprB_zSoHbPkd9QtOjGApy7wjqo46fhJ05VV8mJ9ou8F0XExJ-8cLgjAY_2BGyn-LZWXlCPGKkVuQzCun-Two3hpbg_i6YCe3cP4yB7lMhT-eoQ2SQtlh0J1lCKd-9ooSjr_L4AdfucninnHzeP2ctGYFF7_MdwbiuPEzU8FmwleKnqonkw96ToFUKt6yguR8_ioT9yQpXI6qlA-WsxoyNbmB8sHYPD_kEJgvYz3yDECHZB20F-S1g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#2a170f]/80 via-[#2a170f]/20 to-transparent"></div>
+<div class="absolute bottom-0 p-md w-full text-white">
+<span class="inline-block px-3 py-1 bg-sky-500/20 backdrop-blur-md rounded-full text-xs font-label-md mb-sm">Air &amp; Ether</span>
+<h3 class="font-display-lg text-headline-md mb-xs">Vata</h3>
+<p class="text-sm opacity-90 mb-md line-clamp-2">Creative, energetic, and light-hearted. Often restless but brings movement to life.</p>
+<div class="flex gap-gutter items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="font-label-md">Learn Characteristics</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Pitta -->
+<div class="group relative h-[500px] overflow-hidden rounded-[32px] cursor-pointer">
+<img alt="Bright sun over a desert" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A powerful and vibrant scene of a brilliant sun hanging high over a minimalist sandstone architecture, casting sharp, high-contrast shadows. The color story is dominated by intense saffron, burnt orange, and warm gold, representing the fire and water elements of the Pitta dosha. The style is modern, architectural, and bold, reflecting precision and intensity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHd-vTOcFunxW_tqGWY-w5PC4iizv7lqXWdeliJw1zmQd6ELr8s5EznwFgs-mvoeFbMUluSII3E7zwFiy-XPO7YQH8Y27NzHO12QKGsJOIg05s-0uTIBeDJjQhYru_BIST5Zx7pci3bhs5LFdfxR68LgbquPiLLGZ1Pro-3fqaUM7N6Pa3RBoB24qpZnqGlVVf0-UttQ6KCDSQUY-5AArmbjQSW6PpWv-G0iSh-r6LnP_AdBd1LnMCtSupRifKS_29fu7eCQXo0F7N"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#2a170f]/80 via-[#2a170f]/20 to-transparent"></div>
+<div class="absolute bottom-0 p-md w-full text-white">
+<span class="inline-block px-3 py-1 bg-primary/40 backdrop-blur-md rounded-full text-xs font-label-md mb-sm">Fire &amp; Water</span>
+<h3 class="font-display-lg text-headline-md mb-xs">Pitta</h3>
+<p class="text-sm opacity-90 mb-md line-clamp-2">Ambitious, focused, and passionate. Governs digestion and transformation.</p>
+<div class="flex gap-gutter items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="font-label-md">Learn Characteristics</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Kapha -->
+<div class="group relative h-[500px] overflow-hidden rounded-[32px] cursor-pointer">
+<img alt="Lush forest after rain" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A lush, dense forest floor covered in vibrant moss and ancient roots, captured after a refreshing rain. The lighting is low and rich, creating deep shadows and luminous emerald highlights. The scene embodies the earth and water elements of Kapha, feeling grounded, nurturing, and stable. The visual style is deep-tone photography with focus on organic textures and serene stillness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd-7vGJukdBI57q4XxOO_xM_RkbFe_CB6Wlej5yuInO0B_SQZ_Zth6ah-dijgJH_ApO_V-D24txpft7W1m6RRmAd9Q9BhDN9eTzJiDjDLBIxw93YfNwSkcKTaJI8WruQvaqMoRUb-ShDqIZrAtP6_H5VWzryCZxxOIEiKtIN5MekyIR55uBahgKYXsH8cdm4MJZzOzeg_KBoJjN4MmTiXJhuz2nqauoVjcumpTx7Ik_bWco7ccwcrEdiHXhF1k-y5YyReQUwvqPIyd"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#2a170f]/80 via-[#2a170f]/20 to-transparent"></div>
+<div class="absolute bottom-0 p-md w-full text-white">
+<span class="inline-block px-3 py-1 bg-secondary/40 backdrop-blur-md rounded-full text-xs font-label-md mb-sm">Earth &amp; Water</span>
+<h3 class="font-display-lg text-headline-md mb-xs">Kapha</h3>
+<p class="text-sm opacity-90 mb-md line-clamp-2">Calm, nurturing, and resilient. Provides the structure and stability of the body.</p>
+<div class="flex gap-gutter items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="font-label-md">Learn Characteristics</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-xl bg-surface">
+<div class="max-w-max-width-content mx-auto px-margin-mobile md:px-lg">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg">Shared Journeys</h2>
+<p class="font-body-md text-on-surface-variant">Real transformations from our community of Ayurveda seekers.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-lg">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-low p-md rounded-2xl flex flex-col items-center text-center">
+<div class="mb-md">
+<span class="material-symbols-outlined text-primary-container text-4xl">format_quote</span>
+</div>
+<p class="font-body-md text-on-surface italic mb-md">"Finally, a system that understands why I felt burned out even when eating 'healthy'. Discovering my Pitta dominance changed everything about how I approach work and life."</p>
+<div class="mt-auto">
+<img alt="User portrait" class="w-12 h-12 rounded-full mx-auto mb-xs object-cover border-2 border-primary-container" data-alt="A warm, professional headshot of a smiling woman with a creative professional aesthetic. She is wearing earth-toned clothing and standing in a modern, naturally lit office space with plants in the background. The lighting is soft and flattering, emphasizing a healthy glow and vibrant energy that aligns with a premium wellness brand's success stories." src="https://lh3.googleusercontent.com/aida-public/AB6AXuARClLlTOSXDQ3D5OuSiRer82zXaYKEGjWQapecDTI16-FEjCr-P1QKjCRJnP68oxdujpGLG2bQMIDSIEWll7NLgqWLgjWLEWEH3Y416JTi7g-qi3gHUTO429LZqDnzsj6AcmvDcCOrs0CbHM1XyliePJr8D4vRhp3YGbgOqPesbMsBLoshZ9-hdDxGCyNfs2NNg0ZazQPV4Fchoq2ZZsPalZMgRwvkx8UGDjQqViW6ljkuC0OgZQJ7F-No9lfXY7T-ggsS8iqIRJ-D"/>
+<p class="font-label-md text-on-surface">Maya R.</p>
+<p class="text-[12px] text-on-surface-variant">Creative Director</p>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-low p-md rounded-2xl flex flex-col items-center text-center">
+<div class="mb-md">
+<span class="material-symbols-outlined text-primary-container text-4xl">format_quote</span>
+</div>
+<p class="font-body-md text-on-surface italic mb-md">"The seasonal living guide is a game-changer. I used to dread winter, but now I know exactly how to adjust my diet and routine to stay energized and grounded."</p>
+<div class="mt-auto">
+<img alt="User portrait" class="w-12 h-12 rounded-full mx-auto mb-xs object-cover border-2 border-primary-container" data-alt="A thoughtful and calm portrait of a man in his late 30s with a mindful, healthy appearance. He is outdoors in a serene, natural environment with soft, warm golden hour lighting. The visual style is aspirational and clean, emphasizing a connection with nature and a state of balance and wellbeing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsANqGE5uwfcMCnm-6cMiWelZPsr0dSgLD56KOb8-vTdeAXASquSwrJ3oAwBrdewWchioeXMDlb3wCwERUh1ElXmMPrHPjGdsjS2iNV9IqjW64D-SeGRIi_UY_nuDxqBxbbKd7hyVDfYffcYTx9_s3HZrcNsUHBLb360wB9gFxUUFCRdD0LNVevCCPWHoSXB5FLEukYbdFRJiiD2OhVhiOaDDo3nq5wq214PkygbQ9kOuUqzUCoNoA18tZ8fSXJcnSVLsYEHQu_On0"/>
+<p class="font-label-md text-on-surface">David K.</p>
+<p class="text-[12px] text-on-surface-variant">Wellness Coach</p>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-low p-md rounded-2xl flex flex-col items-center text-center">
+<div class="mb-md">
+<span class="material-symbols-outlined text-primary-container text-4xl">format_quote</span>
+</div>
+<p class="font-body-md text-on-surface italic mb-md">"As a practitioner, I recommend PrakritiMe to all my clients. It's the most intuitive and modern gateway to the depths of Ayurveda I've ever seen."</p>
+<div class="mt-auto">
+<img alt="User portrait" class="w-12 h-12 rounded-full mx-auto mb-xs object-cover border-2 border-primary-container" data-alt="A sophisticated and serene portrait of a yoga instructor in a peaceful studio setting. She is wearing professional athletic wear in soft neutral tones. The lighting is high-key and airy, creating a professional yet warm atmosphere. The focus is sharp on her expression of contentment and health." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtQ3t105dHzUe3C32aAJzP0eG6LyRGqG9oKuuYf07zNICcvJG90IlXu-MzgJ0Ujncnw1nybXO5j5ZmZisrbp5hJWly6T1-Gup7TCdQhE6G0ry3AHnQC90f5gDUBkaQCu5khqUYbSe6nYxmqZi2m_wltKBfc3X6RgFEWDLLL8Y_IIkn6t4F7ZXk3d9-jSTlB_LTMY8psT2QogotXbdUUG3-oyhfecbKKSUv-Jj7kg_5EgsHcgYIGKJunibnrG2uoYqv86AB1cFkOWYS"/>
+<p class="font-label-md text-on-surface">Elena S.</p>
+<p class="text-[12px] text-on-surface-variant">Yoga Studio Owner</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-margin-mobile md:px-lg mt-lg bg-surface-container-lowest flex flex-col items-center max-w-max-width-content mx-auto border-t border-outline-variant/30">
+<div class="w-full grid grid-cols-1 md:grid-cols-4 gap-xl text-left mb-xl">
+<div class="md:col-span-1">
+<div class="flex items-center gap-3 mb-md">
+<span class="material-symbols-outlined text-primary text-3xl">eco</span>
+<span class="font-display-lg text-headline-md text-primary">PrakritiMe</span>
+</div>
+<p class="text-on-surface-variant font-body-md">Empowering modern lives through ancient Ayurvedic wisdom and personalized wellness journeys.</p>
+<div class="flex gap-gutter mt-md">
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-primary">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center hover:bg-primary/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-primary">mail</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface mb-md">Explore</h4>
+<ul class="space-y-sm text-on-surface-variant font-label-md">
+<li><a class="hover:text-primary transition-colors" href="#">About Ayurveda</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Dosha Guide</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Daily Routines</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Quiz</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface mb-md">Resources</h4>
+<ul class="space-y-sm text-on-surface-variant font-label-md">
+<li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Recipe Book</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Practitioner Portal</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface mb-md">Legal</h4>
+<ul class="space-y-sm text-on-surface-variant font-label-md">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+</div>
+<div class="w-full pt-md border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-gutter text-on-surface-variant font-label-md">
+<p>© 2024 PrakritiMe. Built with heart for Ayurveda lovers.</p>
+<div class="flex gap-lg">
+<a class="hover:text-primary" href="#">Twitter</a>
+<a class="hover:text-primary" href="#">Instagram</a>
+<a class="hover:text-primary" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll behavior for the glass nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('header');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // Hover effect interactions for Dosha cards
+        const doshaCards = document.querySelectorAll('.group.relative.h-\\[500px\\]');
+        doshaCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px)';
+                card.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body></html>

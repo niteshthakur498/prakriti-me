@@ -1,0 +1,24 @@
+:root {
+  --color-saffron:       #F4A023;
+  --color-turmeric:      #E8831A;
+  --color-forest:        #2D6A4F;
+  --color-sage:          #74B49B;
+  --color-cream:         #FDF6EC;
+  --color-warm-white:    #FFFAF3;
+  --color-vata:          #7EC8E3;
+  --color-vata-dark:     #4A90D9;
+  --color-pitta:         #FF6B6B;
+  --color-pitta-dark:    #E8831A;
+  --color-kapha:         #52796F;
+  --color-kapha-dark:    #2D6A4F;
+  --color-text-primary:  #2C1810;
+  --color-text-secondary:#6B4C3B;
+
+  --radius-card:   16px;
+  --radius-button: 24px;
+  --radius-tag:    8px;
+
+  --font-display:  'Playfair Display', serif;
+  --font-body:     'Inter', sans-serif;
+  --font-sanskrit: 'Noto Serif Devanagari', serif;
+}

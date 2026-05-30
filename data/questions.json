@@ -1,0 +1,753 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "totalQuestions": 25,
+    "sections": 5,
+    "questionsPerSection": 5,
+    "scoring": {
+      "vata": "V",
+      "pitta": "P",
+      "kapha": "K"
+    },
+    "notes": "Each option maps to a dosha (V/P/K). Tally scores at end to determine dominant dosha(s). Dual dosha if two are within 10% of each other. Tridoshic if all three within 15% of each other."
+  },
+
+  "sections": [
+    {
+      "id": "physical_body",
+      "sectionNumber": 1,
+      "title": "Physical Body",
+      "sanskritTitle": "Sharira Prakriti",
+      "sanskrit": "शरीर प्रकृति",
+      "description": "Your natural physical traits — the body you were born with, not current condition",
+      "emoji": "🌿",
+      "color": "#F4A023",
+      "questions": [
+        {
+          "id": "Q01",
+          "sectionId": "physical_body",
+          "questionNumber": 1,
+          "text": "How would you describe your natural body frame?",
+          "hint": "Think about how you've been built since childhood, not recent changes",
+          "options": [
+            {
+              "id": "Q01A",
+              "dosha": "V",
+              "text": "Thin and light — I find it hard to gain weight even when I eat well",
+              "shortLabel": "Thin & light"
+            },
+            {
+              "id": "Q01B",
+              "dosha": "P",
+              "text": "Medium and athletic — I gain and lose weight with moderate effort",
+              "shortLabel": "Medium & athletic"
+            },
+            {
+              "id": "Q01C",
+              "dosha": "K",
+              "text": "Broad and sturdy — I gain weight easily and lose it slowly",
+              "shortLabel": "Broad & sturdy"
+            }
+          ]
+        },
+        {
+          "id": "Q02",
+          "sectionId": "physical_body",
+          "questionNumber": 2,
+          "text": "What does your skin naturally tend to be like?",
+          "hint": "Without skincare products — your natural default",
+          "options": [
+            {
+              "id": "Q02A",
+              "dosha": "V",
+              "text": "Dry, rough, or flaky — especially in cold or windy weather",
+              "shortLabel": "Dry & rough"
+            },
+            {
+              "id": "Q02B",
+              "dosha": "P",
+              "text": "Oily, warm, or prone to redness, acne, and sensitivity",
+              "shortLabel": "Oily & warm"
+            },
+            {
+              "id": "Q02C",
+              "dosha": "K",
+              "text": "Smooth, thick, and naturally moist — rarely dry or irritated",
+              "shortLabel": "Smooth & moist"
+            }
+          ]
+        },
+        {
+          "id": "Q03",
+          "sectionId": "physical_body",
+          "questionNumber": 3,
+          "text": "How would you describe your hair naturally?",
+          "hint": "Your hair's natural texture before any treatments",
+          "options": [
+            {
+              "id": "Q03A",
+              "dosha": "V",
+              "text": "Dry, thin, frizzy, or prone to breakage and split ends",
+              "shortLabel": "Dry & frizzy"
+            },
+            {
+              "id": "Q03B",
+              "dosha": "P",
+              "text": "Fine, straight, tends to go gray or thin early, oily scalp",
+              "shortLabel": "Fine & straight"
+            },
+            {
+              "id": "Q03C",
+              "dosha": "K",
+              "text": "Thick, wavy, lustrous, and naturally well-nourished",
+              "shortLabel": "Thick & lustrous"
+            }
+          ]
+        },
+        {
+          "id": "Q04",
+          "sectionId": "physical_body",
+          "questionNumber": 4,
+          "text": "What do your joints and bones feel like?",
+          "options": [
+            {
+              "id": "Q04A",
+              "dosha": "V",
+              "text": "Prominent, sometimes crack or pop — joints feel delicate",
+              "shortLabel": "Prominent & cracking"
+            },
+            {
+              "id": "Q04B",
+              "dosha": "P",
+              "text": "Moderate and flexible — rarely an issue unless inflamed",
+              "shortLabel": "Moderate & flexible"
+            },
+            {
+              "id": "Q04C",
+              "dosha": "K",
+              "text": "Large, well-padded, and sturdy — rarely bothered by joint issues",
+              "shortLabel": "Large & sturdy"
+            }
+          ]
+        },
+        {
+          "id": "Q05",
+          "sectionId": "physical_body",
+          "questionNumber": 5,
+          "text": "How do your eyes generally appear?",
+          "options": [
+            {
+              "id": "Q05A",
+              "dosha": "V",
+              "text": "Small, nervous or darting, dry — blink frequently",
+              "shortLabel": "Small & darting"
+            },
+            {
+              "id": "Q05B",
+              "dosha": "P",
+              "text": "Medium, sharp, penetrating, light-sensitive, reddish sometimes",
+              "shortLabel": "Sharp & penetrating"
+            },
+            {
+              "id": "Q05C",
+              "dosha": "K",
+              "text": "Large, calm, deep, moist with long lashes — naturally attractive",
+              "shortLabel": "Large & calm"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "digestion",
+      "sectionNumber": 2,
+      "title": "Digestion & Appetite",
+      "sanskritTitle": "Agni & Ahara",
+      "sanskrit": "अग्नि और आहार",
+      "description": "How your digestive system naturally behaves",
+      "emoji": "🔥",
+      "color": "#E8831A",
+      "questions": [
+        {
+          "id": "Q06",
+          "sectionId": "digestion",
+          "questionNumber": 6,
+          "text": "How would you describe your appetite and hunger patterns?",
+          "options": [
+            {
+              "id": "Q06A",
+              "dosha": "V",
+              "text": "Irregular — I sometimes forget to eat, hunger comes and goes unpredictably",
+              "shortLabel": "Irregular & variable"
+            },
+            {
+              "id": "Q06B",
+              "dosha": "P",
+              "text": "Strong and intense — I get irritable or get headaches if I skip meals",
+              "shortLabel": "Strong & intense"
+            },
+            {
+              "id": "Q06C",
+              "dosha": "K",
+              "text": "Steady but low — I can easily skip meals without much discomfort",
+              "shortLabel": "Steady but low"
+            }
+          ]
+        },
+        {
+          "id": "Q07",
+          "sectionId": "digestion",
+          "questionNumber": 7,
+          "text": "How is your digestion and bowel movement naturally?",
+          "options": [
+            {
+              "id": "Q07A",
+              "dosha": "V",
+              "text": "Irregular, tendency toward constipation, dry or hard stools, gas/bloating",
+              "shortLabel": "Irregular & constipated"
+            },
+            {
+              "id": "Q07B",
+              "dosha": "P",
+              "text": "Fast and efficient — sometimes loose, diarrhea when stressed, heartburn",
+              "shortLabel": "Fast & loose"
+            },
+            {
+              "id": "Q07C",
+              "dosha": "K",
+              "text": "Slow and steady — bowel movements are regular but unhurried",
+              "shortLabel": "Slow & steady"
+            }
+          ]
+        },
+        {
+          "id": "Q08",
+          "sectionId": "digestion",
+          "questionNumber": 8,
+          "text": "What food tastes and temperatures do you naturally crave?",
+          "options": [
+            {
+              "id": "Q08A",
+              "dosha": "V",
+              "text": "Sweet, salty, sour foods — warm, cooked, and oily comfort foods",
+              "shortLabel": "Warm & comforting"
+            },
+            {
+              "id": "Q08B",
+              "dosha": "P",
+              "text": "Sweet, bitter, astringent — cool or raw foods, love spicy but it doesn't love me",
+              "shortLabel": "Cool & cooling"
+            },
+            {
+              "id": "Q08C",
+              "dosha": "K",
+              "text": "Pungent, bitter, astringent — light, dry, and stimulating foods",
+              "shortLabel": "Light & stimulating"
+            }
+          ]
+        },
+        {
+          "id": "Q09",
+          "sectionId": "digestion",
+          "questionNumber": 9,
+          "text": "How do you feel after a heavy meal?",
+          "options": [
+            {
+              "id": "Q09A",
+              "dosha": "V",
+              "text": "Bloated or gassy — heavy meals make me uncomfortable and anxious",
+              "shortLabel": "Bloated & gassy"
+            },
+            {
+              "id": "Q09B",
+              "dosha": "P",
+              "text": "Fine usually — maybe some heartburn but energy remains decent",
+              "shortLabel": "Fine with minor acidity"
+            },
+            {
+              "id": "Q09C",
+              "dosha": "K",
+              "text": "Heavy and sluggish — I feel like sleeping after a big meal",
+              "shortLabel": "Heavy & sleepy"
+            }
+          ]
+        },
+        {
+          "id": "Q10",
+          "sectionId": "digestion",
+          "questionNumber": 10,
+          "text": "How do you respond to cold weather or cold food and drinks?",
+          "options": [
+            {
+              "id": "Q10A",
+              "dosha": "V",
+              "text": "I dislike cold intensely — it makes me stiff, anxious and uncomfortable",
+              "shortLabel": "Dislike cold strongly"
+            },
+            {
+              "id": "Q10B",
+              "dosha": "P",
+              "text": "I prefer cold — it cools me down and I feel better in cooler temperatures",
+              "shortLabel": "Prefer cool"
+            },
+            {
+              "id": "Q10C",
+              "dosha": "K",
+              "text": "I tolerate cold reasonably but prefer warm — cold can make me congested",
+              "shortLabel": "Tolerate but prefer warm"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "sleep_energy",
+      "sectionNumber": 3,
+      "title": "Sleep & Energy",
+      "sanskritTitle": "Nidra & Shakti",
+      "sanskrit": "निद्रा और शक्ति",
+      "description": "Your natural energy rhythms, stamina, and sleep patterns",
+      "emoji": "🌙",
+      "color": "#7EC8E3",
+      "questions": [
+        {
+          "id": "Q11",
+          "sectionId": "sleep_energy",
+          "questionNumber": 11,
+          "text": "How is your sleep quality and pattern naturally?",
+          "options": [
+            {
+              "id": "Q11A",
+              "dosha": "V",
+              "text": "Light and interrupted — I wake easily, have vivid dreams, or struggle to fall asleep",
+              "shortLabel": "Light & interrupted"
+            },
+            {
+              "id": "Q11B",
+              "dosha": "P",
+              "text": "Moderate — I fall asleep easily but sleep fewer hours and wake feeling alert",
+              "shortLabel": "Moderate & alert"
+            },
+            {
+              "id": "Q11C",
+              "dosha": "K",
+              "text": "Deep and long — I love sleep, can sleep anywhere, hard to wake up in the morning",
+              "shortLabel": "Deep & long"
+            }
+          ]
+        },
+        {
+          "id": "Q12",
+          "sectionId": "sleep_energy",
+          "questionNumber": 12,
+          "text": "How do you feel when you wake up in the morning?",
+          "options": [
+            {
+              "id": "Q12A",
+              "dosha": "V",
+              "text": "Tired and anxious — takes time to feel grounded and ready to face the day",
+              "shortLabel": "Tired & anxious"
+            },
+            {
+              "id": "Q12B",
+              "dosha": "P",
+              "text": "Alert and ready — I'm up quickly and my mind is already planning the day",
+              "shortLabel": "Alert & ready"
+            },
+            {
+              "id": "Q12C",
+              "dosha": "K",
+              "text": "Groggy and slow — I need time (and possibly coffee) before I feel functional",
+              "shortLabel": "Groggy & slow"
+            }
+          ]
+        },
+        {
+          "id": "Q13",
+          "sectionId": "sleep_energy",
+          "questionNumber": 13,
+          "text": "How is your physical stamina and endurance?",
+          "options": [
+            {
+              "id": "Q13A",
+              "dosha": "V",
+              "text": "I start strong with bursts of energy but tire quickly — I need frequent rest",
+              "shortLabel": "Burst & tire quickly"
+            },
+            {
+              "id": "Q13B",
+              "dosha": "P",
+              "text": "Good moderate stamina — I can push hard but overheat or burn out under pressure",
+              "shortLabel": "Moderate, can overheat"
+            },
+            {
+              "id": "Q13C",
+              "dosha": "K",
+              "text": "Excellent sustained endurance — I'm slow to start but can go for a long time",
+              "shortLabel": "Slow start, high endurance"
+            }
+          ]
+        },
+        {
+          "id": "Q14",
+          "sectionId": "sleep_energy",
+          "questionNumber": 14,
+          "text": "What time of day do you naturally feel most alive and energetic?",
+          "options": [
+            {
+              "id": "Q14A",
+              "dosha": "V",
+              "text": "Early evening — I get a second wind after 5pm and my creativity peaks at night",
+              "shortLabel": "Evening creative"
+            },
+            {
+              "id": "Q14B",
+              "dosha": "P",
+              "text": "Midday — I'm most productive, sharp, and driven from morning to early afternoon",
+              "shortLabel": "Morning to midday"
+            },
+            {
+              "id": "Q14C",
+              "dosha": "K",
+              "text": "Morning after warming up — once I get going mid-morning I have steady energy",
+              "shortLabel": "Mid-morning steady"
+            }
+          ]
+        },
+        {
+          "id": "Q15",
+          "sectionId": "sleep_energy",
+          "questionNumber": 15,
+          "text": "How do you recover after illness or physical exertion?",
+          "options": [
+            {
+              "id": "Q15A",
+              "dosha": "V",
+              "text": "Slowly and inconsistently — I recover in fits and starts, need lots of rest and warmth",
+              "shortLabel": "Slow & inconsistent"
+            },
+            {
+              "id": "Q15B",
+              "dosha": "P",
+              "text": "Fairly quickly — I push through recovery and get impatient if healing takes too long",
+              "shortLabel": "Quick but impatient"
+            },
+            {
+              "id": "Q15C",
+              "dosha": "K",
+              "text": "Gradually but steadily — I take time but once recovered, I'm fully well again",
+              "shortLabel": "Slow but steady"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "mind_emotions",
+      "sectionNumber": 4,
+      "title": "Mind & Emotions",
+      "sanskritTitle": "Manas Prakriti",
+      "sanskrit": "मानस प्रकृति",
+      "description": "Your natural mental tendencies, emotional patterns, and temperament",
+      "emoji": "🧠",
+      "color": "#9B8EC4",
+      "questions": [
+        {
+          "id": "Q16",
+          "sectionId": "mind_emotions",
+          "questionNumber": 16,
+          "text": "How do you naturally learn and process new information?",
+          "options": [
+            {
+              "id": "Q16A",
+              "dosha": "V",
+              "text": "I grasp things very quickly but forget them just as fast — short attention span",
+              "shortLabel": "Quick grasp, quick forget"
+            },
+            {
+              "id": "Q16B",
+              "dosha": "P",
+              "text": "Sharp and focused — I learn with precision and retain what I learn with good memory",
+              "shortLabel": "Sharp & precise"
+            },
+            {
+              "id": "Q16C",
+              "dosha": "K",
+              "text": "Slow to learn but deeply retentive — once I know it, I never forget it",
+              "shortLabel": "Slow but never forget"
+            }
+          ]
+        },
+        {
+          "id": "Q17",
+          "sectionId": "mind_emotions",
+          "questionNumber": 17,
+          "text": "How do you typically respond to stress?",
+          "options": [
+            {
+              "id": "Q17A",
+              "dosha": "V",
+              "text": "I get anxious, scattered, and fearful — I overthink and worry excessively",
+              "shortLabel": "Anxious & scattered"
+            },
+            {
+              "id": "Q17B",
+              "dosha": "P",
+              "text": "I get irritable, critical, and controlling — I want to fix the problem immediately",
+              "shortLabel": "Irritable & controlling"
+            },
+            {
+              "id": "Q17C",
+              "dosha": "K",
+              "text": "I become withdrawn and avoidant — I internalize stress and can get depressed",
+              "shortLabel": "Withdrawn & avoidant"
+            }
+          ]
+        },
+        {
+          "id": "Q18",
+          "sectionId": "mind_emotions",
+          "questionNumber": 18,
+          "text": "Which emotion do you struggle with most naturally?",
+          "options": [
+            {
+              "id": "Q18A",
+              "dosha": "V",
+              "text": "Fear and anxiety — worry about the future, change, and uncertainty",
+              "shortLabel": "Fear & anxiety"
+            },
+            {
+              "id": "Q18B",
+              "dosha": "P",
+              "text": "Anger and frustration — when things don't go my way or meet my standards",
+              "shortLabel": "Anger & frustration"
+            },
+            {
+              "id": "Q18C",
+              "dosha": "K",
+              "text": "Attachment and grief — I hold onto people and things, find it hard to let go",
+              "shortLabel": "Attachment & grief"
+            }
+          ]
+        },
+        {
+          "id": "Q19",
+          "sectionId": "mind_emotions",
+          "questionNumber": 19,
+          "text": "How would close friends describe your personality?",
+          "options": [
+            {
+              "id": "Q19A",
+              "dosha": "V",
+              "text": "Enthusiastic, creative, spontaneous, full of ideas — but sometimes flaky or unpredictable",
+              "shortLabel": "Creative & spontaneous"
+            },
+            {
+              "id": "Q19B",
+              "dosha": "P",
+              "text": "Driven, intelligent, decisive, natural leader — but sometimes intense or perfectionist",
+              "shortLabel": "Driven & decisive"
+            },
+            {
+              "id": "Q19C",
+              "dosha": "K",
+              "text": "Warm, loyal, patient, nurturing — but sometimes stubborn or resistant to change",
+              "shortLabel": "Warm & loyal"
+            }
+          ]
+        },
+        {
+          "id": "Q20",
+          "sectionId": "mind_emotions",
+          "questionNumber": 20,
+          "text": "How do you handle change and new situations?",
+          "options": [
+            {
+              "id": "Q20A",
+              "dosha": "V",
+              "text": "I love variety and get bored with routine — but too much change overwhelms me",
+              "shortLabel": "Love variety, fear overwhelm"
+            },
+            {
+              "id": "Q20B",
+              "dosha": "P",
+              "text": "I adapt quickly as long as I feel in control — I dislike being micromanaged",
+              "shortLabel": "Adapt if in control"
+            },
+            {
+              "id": "Q20C",
+              "dosha": "K",
+              "text": "I prefer stability and routine — change is stressful and I need time to adjust",
+              "shortLabel": "Prefer stability"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "lifestyle",
+      "sectionNumber": 5,
+      "title": "Lifestyle & Behaviour",
+      "sanskritTitle": "Achara Prakriti",
+      "sanskrit": "आचार प्रकृति",
+      "description": "Your natural behavioral tendencies, social patterns, and lifestyle habits",
+      "emoji": "🌅",
+      "color": "#52796F",
+      "questions": [
+        {
+          "id": "Q21",
+          "sectionId": "lifestyle",
+          "questionNumber": 21,
+          "text": "How do you naturally speak and communicate?",
+          "options": [
+            {
+              "id": "Q21A",
+              "dosha": "V",
+              "text": "Fast, talkative, enthusiastic — I jump between topics and speak with my hands",
+              "shortLabel": "Fast & talkative"
+            },
+            {
+              "id": "Q21B",
+              "dosha": "P",
+              "text": "Sharp, precise, and to the point — I make my arguments clearly and persuasively",
+              "shortLabel": "Sharp & precise"
+            },
+            {
+              "id": "Q21C",
+              "dosha": "K",
+              "text": "Slow, measured, and thoughtful — I choose my words carefully and speak calmly",
+              "shortLabel": "Slow & thoughtful"
+            }
+          ]
+        },
+        {
+          "id": "Q22",
+          "sectionId": "lifestyle",
+          "questionNumber": 22,
+          "text": "How do you approach money and finances?",
+          "options": [
+            {
+              "id": "Q22A",
+              "dosha": "V",
+              "text": "I spend impulsively on things that excite me — saving is a real challenge",
+              "shortLabel": "Impulsive spender"
+            },
+            {
+              "id": "Q22B",
+              "dosha": "P",
+              "text": "Strategic and goal-oriented — I spend on quality and invest deliberately",
+              "shortLabel": "Strategic investor"
+            },
+            {
+              "id": "Q22C",
+              "dosha": "K",
+              "text": "Conservative and careful — I save consistently and dislike financial risk",
+              "shortLabel": "Conservative saver"
+            }
+          ]
+        },
+        {
+          "id": "Q23",
+          "sectionId": "lifestyle",
+          "questionNumber": 23,
+          "text": "How would you describe your walk and physical movement?",
+          "options": [
+            {
+              "id": "Q23A",
+              "dosha": "V",
+              "text": "Quick and light — I move fast, fidget, can seem restless or hurried",
+              "shortLabel": "Quick & restless"
+            },
+            {
+              "id": "Q23B",
+              "dosha": "P",
+              "text": "Purposeful and brisk — I walk with direction and don't like to waste time",
+              "shortLabel": "Purposeful & brisk"
+            },
+            {
+              "id": "Q23C",
+              "dosha": "K",
+              "text": "Slow and graceful — I move deliberately and unhurriedly",
+              "shortLabel": "Slow & graceful"
+            }
+          ]
+        },
+        {
+          "id": "Q24",
+          "sectionId": "lifestyle",
+          "questionNumber": 24,
+          "text": "How do you approach work and tasks?",
+          "options": [
+            {
+              "id": "Q24A",
+              "dosha": "V",
+              "text": "I love starting things but struggle to finish — I work in bursts of inspiration",
+              "shortLabel": "Start strong, hard to finish"
+            },
+            {
+              "id": "Q24B",
+              "dosha": "P",
+              "text": "I'm driven and efficient — I set high standards and am competitive with myself",
+              "shortLabel": "Driven & competitive"
+            },
+            {
+              "id": "Q24C",
+              "dosha": "K",
+              "text": "Methodical and reliable — I'm slow to start but I always complete what I begin",
+              "shortLabel": "Methodical & reliable"
+            }
+          ]
+        },
+        {
+          "id": "Q25",
+          "sectionId": "lifestyle",
+          "questionNumber": 25,
+          "text": "How are you in social situations naturally?",
+          "options": [
+            {
+              "id": "Q25A",
+              "dosha": "V",
+              "text": "I love meeting people and get excited in groups — but I can feel drained after",
+              "shortLabel": "Social but drains easily"
+            },
+            {
+              "id": "Q25B",
+              "dosha": "P",
+              "text": "Confident and engaging — I naturally take charge and enjoy healthy debate",
+              "shortLabel": "Confident & takes charge"
+            },
+            {
+              "id": "Q25C",
+              "dosha": "K",
+              "text": "Warm and supportive — I prefer deep one-on-one connections over large groups",
+              "shortLabel": "Warm & deep connections"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "scoringGuide": {
+    "method": "tally",
+    "totalPoints": 25,
+    "resultThresholds": {
+      "pureDosha": "One dosha scores >= 60% (15+ points)",
+      "dualDosha": "Two doshas each score >= 30% and within 15 points of each other",
+      "tridoshic": "All three doshas score between 7-10 points (within 3 points of each other)"
+    },
+    "resultTypes": [
+      "Vata",
+      "Pitta",
+      "Kapha",
+      "Vata-Pitta",
+      "Pitta-Kapha",
+      "Vata-Kapha",
+      "Tridoshic"
+    ]
+  }
+}

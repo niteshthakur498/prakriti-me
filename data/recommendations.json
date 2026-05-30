@@ -1,0 +1,558 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "description": "Personalized recommendations for each Prakriti type. Based on classical Ayurvedic texts: Charaka Samhita, Ashtanga Hridayam, and Sushruta Samhita.",
+    "categories": ["diet", "routine", "yoga", "seasonal"],
+    "doshaTypes": ["Vata", "Pitta", "Kapha", "Vata-Pitta", "Pitta-Kapha", "Vata-Kapha", "Tridoshic"]
+  },
+
+  "doshas": {
+
+    "Vata": {
+      "id": "vata",
+      "name": "Vata",
+      "sanskrit": "वात",
+      "elements": ["Air", "Space"],
+      "elementsEmoji": ["🌬️", "🌌"],
+      "primaryColor": "#7EC8E3",
+      "secondaryColor": "#B0C4DE",
+      "gradientFrom": "#7EC8E3",
+      "gradientTo": "#4A90D9",
+      "icon": "🌬️",
+      "tagline": "The force of movement and creativity",
+      "heroDescription": "You are the wind — ever-moving, endlessly creative, and brilliantly alive. Your mind races ahead of the crowd, your imagination knows no limits, and your spirit craves adventure. When in balance, you are the spark that lights up any room. Your gift to the world is creativity, intuition, and enthusiasm.",
+      "keyTraits": ["Creative", "Enthusiastic", "Quick-minded", "Sensitive", "Adaptable"],
+      "balancedQualities": ["Vibrant creativity", "Quick intuition", "Joyful spontaneity", "Inspiring energy", "Artistic expression"],
+      "imbalancedQualities": ["Anxiety and worry", "Scattered focus", "Insomnia", "Digestive issues", "Physical depletion"],
+      "famousVataTypes": "Artists, writers, dancers, entrepreneurs, visionaries",
+
+      "diet": {
+        "principles": [
+          "Eat warm, cooked, oily, and nourishing foods",
+          "Favor regular meal times — consistency calms Vata",
+          "Eat slowly and mindfully in a calm environment",
+          "Avoid raw, cold, and dry foods especially in winter",
+          "Small, frequent meals work better than large ones"
+        ],
+        "tastes": {
+          "favor": ["Sweet", "Sour", "Salty"],
+          "reduce": ["Bitter", "Astringent", "Pungent"]
+        },
+        "favorFoods": [
+          { "name": "Warm milk with ghee", "emoji": "🥛", "reason": "Deeply nourishing and calming for Vata" },
+          { "name": "Sweet potatoes", "emoji": "🍠", "reason": "Grounding, sweet, and easy to digest" },
+          { "name": "Sesame oil", "emoji": "🫙", "reason": "Warming and lubricating for dry Vata tissues" },
+          { "name": "Basmati rice", "emoji": "🍚", "reason": "Light yet nourishing, easy on digestion" },
+          { "name": "Cooked vegetables", "emoji": "🥕", "reason": "Easy to digest when cooked with warming spices" },
+          { "name": "Dates and figs", "emoji": "🫐", "reason": "Sweet, moist, and deeply nourishing" },
+          { "name": "Mung dal", "emoji": "🫘", "reason": "Easy to digest, warming, grounding protein" },
+          { "name": "Warm herbal teas", "emoji": "🍵", "reason": "Ginger, cardamom, cinnamon teas calm and warm" },
+          { "name": "Avocado", "emoji": "🥑", "reason": "Rich, oily, and grounding for Vata's dryness" },
+          { "name": "Warm soups and stews", "emoji": "🍲", "reason": "The ideal Vata meal — warm, moist, nourishing" }
+        ],
+        "minimizeFoods": [
+          { "name": "Cold drinks and ice", "emoji": "🧊", "reason": "Aggravates Vata's cold and dry quality" },
+          { "name": "Raw salads", "emoji": "🥗", "reason": "Hard to digest, increases dryness and gas" },
+          { "name": "Caffeine", "emoji": "☕", "reason": "Over-stimulates already restless Vata mind" },
+          { "name": "Dried fruits", "emoji": "🍇", "reason": "Too dry — soak them first if you eat them" },
+          { "name": "Crackers and dry snacks", "emoji": "🍘", "reason": "Increase dryness and are hard to digest" },
+          { "name": "Carbonated drinks", "emoji": "🥤", "reason": "Gas and bloating are Vata's biggest weakness" }
+        ]
+      },
+
+      "routine": {
+        "principle": "Regularity is medicine for Vata. Fixed times for waking, eating, and sleeping are your greatest tools for balance.",
+        "daily": [
+          { "time": "6:00 AM", "activity": "Wake up — ideally before sunrise", "detail": "Vata time is 2–6 AM. Rising just before sunrise harnesses creative energy.", "emoji": "🌄" },
+          { "time": "6:15 AM", "activity": "Abhyanga — warm sesame oil self-massage", "detail": "10–15 min full body massage with warm sesame oil. Deeply grounding for Vata.", "emoji": "🫙" },
+          { "time": "6:30 AM", "activity": "Warm shower", "detail": "Wash off oil. Keep it warm — never cold showers for Vata.", "emoji": "🚿" },
+          { "time": "7:00 AM", "activity": "Gentle yoga or walking", "detail": "30 min of grounding yoga or a slow walk in nature. Avoid intense cardio in the morning.", "emoji": "🧘" },
+          { "time": "7:30 AM", "activity": "Meditation — 10–15 min", "detail": "Calms the restless Vata mind. Focus on breath or body scan.", "emoji": "🧘‍♀️" },
+          { "time": "8:00 AM", "activity": "Warm nourishing breakfast", "detail": "Oatmeal, warm porridge, or eggs. Never skip breakfast — Vata needs fuel to start.", "emoji": "🥣" },
+          { "time": "12:30 PM", "activity": "Largest meal of the day", "detail": "Eat your biggest meal at noon when digestion is strongest. Warm, cooked food.", "emoji": "🍲" },
+          { "time": "6:00 PM", "activity": "Light dinner", "detail": "Light, warm, and easy to digest. Finish by 7 PM ideally.", "emoji": "🥘" },
+          { "time": "8:30 PM", "activity": "Wind down — no screens", "detail": "Vata's biggest challenge is sleep. Dim lights, calming music, or reading.", "emoji": "📖" },
+          { "time": "9:30 PM", "activity": "Warm milk and sleep", "detail": "A cup of warm milk with nutmeg and cardamom deeply supports Vata sleep.", "emoji": "🌙" }
+        ],
+        "weeklyPractices": [
+          "Shirodhara or head oil massage once a week",
+          "Warm bath with essential oils (lavender, sandalwood)",
+          "Digital detox for half a day",
+          "Spend time in nature — forests and gardens"
+        ]
+      },
+
+      "yoga": {
+        "principle": "Slow, grounding, and warming poses. Hold poses longer. Focus on stability and connection to the earth.",
+        "style": "Slow Flow, Yin Yoga, or Hatha",
+        "intensity": "Low to moderate — avoid vigorous or fast-paced styles",
+        "poses": [
+          { "name": "Mountain Pose", "sanskrit": "Tadasana", "benefit": "Grounds Vata's airy nature, builds stability", "difficulty": "Beginner", "emoji": "⛰️" },
+          { "name": "Warrior I", "sanskrit": "Virabhadrasana I", "benefit": "Builds strength and focus, counters anxiety", "difficulty": "Beginner", "emoji": "⚔️" },
+          { "name": "Child's Pose", "sanskrit": "Balasana", "benefit": "Deeply calming and grounding — Vata's best friend", "difficulty": "Beginner", "emoji": "🤸" },
+          { "name": "Tree Pose", "sanskrit": "Vrikshasana", "benefit": "Improves balance and concentration", "difficulty": "Beginner", "emoji": "🌳" },
+          { "name": "Seated Forward Bend", "sanskrit": "Paschimottanasana", "benefit": "Calms the nervous system, releases tension", "difficulty": "Intermediate", "emoji": "🏃" },
+          { "name": "Legs Up the Wall", "sanskrit": "Viparita Karani", "benefit": "Deeply restorative, calms anxiety and insomnia", "difficulty": "Beginner", "emoji": "🧘" }
+        ],
+        "breathwork": "Nadi Shodhana (alternate nostril breathing) — best pranayama for Vata. Calms the nervous system deeply.",
+        "avoid": "Avoid Bikram/hot yoga, fast Vinyasa, and intense power yoga — too depleting for Vata"
+      },
+
+      "seasonal": {
+        "autumn": {
+          "season": "Autumn",
+          "emoji": "🍂",
+          "vataLevel": "High",
+          "focus": "This is peak Vata season — dry, windy, variable. Your highest-risk period.",
+          "tips": [
+            "Daily warm oil massage is non-negotiable in autumn",
+            "Eat soups, stews, and root vegetables heavily",
+            "Keep warm — never let yourself get cold",
+            "Maintain very regular sleep and meal times",
+            "Reduce travel and major life changes if possible"
+          ]
+        },
+        "winter": {
+          "season": "Winter",
+          "emoji": "❄️",
+          "vataLevel": "Moderate-High",
+          "focus": "Stay warm and nourished. Winter calls for rich, warming foods.",
+          "tips": [
+            "Favor warming spices: ginger, cinnamon, black pepper",
+            "Sesame and almond oil for daily massage",
+            "More sleep is natural and healthy in winter",
+            "Hot herbal teas throughout the day"
+          ]
+        },
+        "spring": {
+          "season": "Spring",
+          "emoji": "🌸",
+          "vataLevel": "Low",
+          "focus": "Enjoy this balancing season. Gradually introduce lighter foods.",
+          "tips": [
+            "A gentle spring cleanse is beneficial",
+            "Begin introducing more fresh foods slowly",
+            "Increase outdoor activity as weather warms",
+            "This is a great time to start new habits"
+          ]
+        },
+        "summer": {
+          "season": "Summer",
+          "emoji": "☀️",
+          "vataLevel": "Low-Moderate",
+          "focus": "Vata is most balanced in summer. Enjoy it but avoid overheating.",
+          "tips": [
+            "Coconut oil is ideal for summer massage",
+            "Stay hydrated with room-temperature water",
+            "Enjoy fresh, sweet fruits freely",
+            "Morning exercise before 10 AM"
+          ]
+        }
+      }
+    },
+
+    "Pitta": {
+      "id": "pitta",
+      "name": "Pitta",
+      "sanskrit": "पित्त",
+      "elements": ["Fire", "Water"],
+      "elementsEmoji": ["🔥", "💧"],
+      "primaryColor": "#FF6B6B",
+      "secondaryColor": "#FFA500",
+      "gradientFrom": "#FF6B6B",
+      "gradientTo": "#E8831A",
+      "icon": "🔥",
+      "tagline": "The force of transformation and intelligence",
+      "heroDescription": "You are fire — sharp, brilliant, and unstoppable when focused. Your mind cuts through complexity, your drive gets things done, and your passion is contagious. When in balance, you are the leader others follow, the problem-solver people call on, and the one who turns ideas into reality. Your gift is intelligence, courage, and transformation.",
+      "keyTraits": ["Sharp", "Driven", "Focused", "Passionate", "Decisive"],
+      "balancedQualities": ["Brilliant intellect", "Natural leadership", "Efficient action", "Courageous decisions", "Infectious passion"],
+      "imbalancedQualities": ["Anger and irritability", "Perfectionism", "Inflammation and acidity", "Burnout", "Criticism of others"],
+      "famousVataTypes": "Leaders, surgeons, lawyers, engineers, entrepreneurs",
+
+      "diet": {
+        "principles": [
+          "Favor cooling, sweet, and bitter foods to balance heat",
+          "Never skip meals — hungry Pitta becomes angry Pitta",
+          "Eat in a calm environment without rushing",
+          "Avoid very spicy, oily, sour, or fermented foods",
+          "Room temperature or cool (not ice cold) drinks are ideal"
+        ],
+        "tastes": {
+          "favor": ["Sweet", "Bitter", "Astringent"],
+          "reduce": ["Pungent", "Sour", "Salty"]
+        },
+        "favorFoods": [
+          { "name": "Coconut water", "emoji": "🥥", "reason": "Cooling and hydrating — Pitta's perfect drink" },
+          { "name": "Sweet fruits (mango, melon)", "emoji": "🍈", "reason": "Naturally cooling and satisfying for Pitta" },
+          { "name": "Cucumber", "emoji": "🥒", "reason": "Hydrating and cooling, reduces internal heat" },
+          { "name": "Coriander and fennel", "emoji": "🌿", "reason": "Cooling spices that balance Pitta's fire" },
+          { "name": "Ghee", "emoji": "🧈", "reason": "Cooling (unlike other fats), deeply nourishing" },
+          { "name": "Milk and dairy (in moderation)", "emoji": "🥛", "reason": "Sweet and cooling when used appropriately" },
+          { "name": "Leafy greens", "emoji": "🥬", "reason": "Bitter taste directly reduces Pitta" },
+          { "name": "Basmati rice", "emoji": "🍚", "reason": "Light, sweet, and cooling" },
+          { "name": "Pomegranate", "emoji": "💎", "reason": "Astringent and cooling, excellent for Pitta" },
+          { "name": "Mint tea", "emoji": "🫖", "reason": "Cooling and calming for Pitta's heat" }
+        ],
+        "minimizeFoods": [
+          { "name": "Chilli and hot spices", "emoji": "🌶️", "reason": "Directly increases Pitta heat and inflammation" },
+          { "name": "Alcohol", "emoji": "🍷", "reason": "Heating and aggravating — especially in excess" },
+          { "name": "Fried and oily food", "emoji": "🍟", "reason": "Increases heat and aggravates the liver" },
+          { "name": "Sour foods (excess vinegar, yogurt)", "emoji": "🍋", "reason": "Sour taste directly aggravates Pitta" },
+          { "name": "Red meat", "emoji": "🥩", "reason": "Heavy and heating — occasional is fine" },
+          { "name": "Caffeine in excess", "emoji": "☕", "reason": "Heating, acidic, and stimulating — hard on Pitta" }
+        ]
+      },
+
+      "routine": {
+        "principle": "Cooling down and letting go are the two most important practices for Pitta. Build spaciousness into your day.",
+        "daily": [
+          { "time": "6:00 AM", "activity": "Wake up — before the sun gets hot", "detail": "Pitta time is 10 AM–2 PM. Morning is your window for cool, focused work.", "emoji": "🌄" },
+          { "time": "6:15 AM", "activity": "Coconut or sunflower oil massage", "detail": "Cooling oils calm Pitta's heat. Avoid heavy sesame oil.", "emoji": "🥥" },
+          { "time": "6:45 AM", "activity": "Moderate exercise", "detail": "Avoid overheating — exercise in the cool of the morning. Swimming is ideal.", "emoji": "🏊" },
+          { "time": "7:30 AM", "activity": "Meditation — focusing on compassion", "detail": "Cooling meditations (moon visualization, loving-kindness) balance Pitta's fire.", "emoji": "🧘‍♀️" },
+          { "time": "8:00 AM", "activity": "Cool, light breakfast", "detail": "Sweet fruits, cool milk, or light grains. Not too heavy.", "emoji": "🍎" },
+          { "time": "12:00 PM", "activity": "Main meal — your biggest", "detail": "Pitta digestion is strongest at noon. Eat well but not to excess.", "emoji": "🍽️" },
+          { "time": "3:00 PM", "activity": "Brief rest or nature walk", "detail": "Avoid intense work from 2–4 PM when Pitta heat peaks.", "emoji": "🌳" },
+          { "time": "6:30 PM", "activity": "Light dinner", "detail": "Sweet, easy to digest. Done by 7:30 PM.", "emoji": "🥗" },
+          { "time": "9:00 PM", "activity": "Wind down — creative or reflective time", "detail": "Pitta often pushes too late. Protect your evenings from work.", "emoji": "📖" },
+          { "time": "10:00 PM", "activity": "Sleep — strictly before 10:30 PM", "detail": "The Pitta night window (10 PM–2 AM) can trap you in alertness if you're still awake.", "emoji": "🌙" }
+        ],
+        "weeklyPractices": [
+          "One full nature day — forest, beach, or mountains",
+          "Cold water swimming or moonlit walks",
+          "Creative expression — art, music, cooking",
+          "Deliberately leave one task unfinished (practice letting go)"
+        ]
+      },
+
+      "yoga": {
+        "principle": "Cooling, surrendering, and non-competitive. Focus on releasing control and finding joy in the practice.",
+        "style": "Gentle Hatha, Yin Yoga, Moon Salutations",
+        "intensity": "Moderate — avoid competitive or hot yoga",
+        "poses": [
+          { "name": "Moon Salutation", "sanskrit": "Chandra Namaskar", "benefit": "Cooling counterpart to the Sun Salutation", "difficulty": "Intermediate", "emoji": "🌙" },
+          { "name": "Boat Pose", "sanskrit": "Navasana", "benefit": "Strengthens core without overheating", "difficulty": "Intermediate", "emoji": "⛵" },
+          { "name": "Fish Pose", "sanskrit": "Matsyasana", "benefit": "Opens chest, releases tension from the solar plexus", "difficulty": "Intermediate", "emoji": "🐟" },
+          { "name": "Seated Spinal Twist", "sanskrit": "Ardha Matsyendrasana", "benefit": "Detoxifies liver and spleen, key Pitta organs", "difficulty": "Intermediate", "emoji": "🔄" },
+          { "name": "Corpse Pose (extended)", "sanskrit": "Savasana", "benefit": "Full surrender — hardest pose for Pitta, most needed", "difficulty": "Beginner", "emoji": "😴" },
+          { "name": "Forward Fold", "sanskrit": "Uttanasana", "benefit": "Cooling, calms the nervous system and eyes", "difficulty": "Beginner", "emoji": "🙇" }
+        ],
+        "breathwork": "Sheetali (cooling breath) — breathing through a curled tongue or Chandra Bhedana (left nostril breathing). Both directly cool Pitta.",
+        "avoid": "Avoid Bikram/hot yoga, intense power yoga, breath of fire (Kapalabhati) — all increase Pitta heat"
+      },
+
+      "seasonal": {
+        "summer": {
+          "season": "Summer",
+          "emoji": "☀️",
+          "pittaLevel": "High",
+          "focus": "Peak Pitta season — your highest-risk time. Prioritize cooling above all.",
+          "tips": [
+            "Eat cooling foods: coconut, cucumber, sweet fruits",
+            "Avoid the midday sun between 11 AM–3 PM",
+            "Swimming and moonlit walks are your best exercise",
+            "Rose water, sandalwood, and coconut oil for skin",
+            "Reduce alcohol, coffee, and spicy food completely"
+          ]
+        },
+        "spring": {
+          "season": "Spring",
+          "emoji": "🌸",
+          "pittaLevel": "Moderate",
+          "focus": "A good season for Pitta — use it for gentle cleansing.",
+          "tips": [
+            "Spring Panchakarma cleanse is ideal for Pitta",
+            "Introduce bitter greens and cleansing foods",
+            "Great time for new projects — harness Pitta's drive",
+            "Keep exercising but choose cool morning hours"
+          ]
+        },
+        "autumn": {
+          "season": "Autumn",
+          "emoji": "🍂",
+          "pittaLevel": "Low",
+          "focus": "Pitta naturally reduces — enjoy the natural balance.",
+          "tips": [
+            "Enjoy warming, nourishing foods as weather cools",
+            "This is Pitta's most productive and balanced season",
+            "Great time for ambitious projects and goals",
+            "Harvest and celebration foods are well-tolerated"
+          ]
+        },
+        "winter": {
+          "season": "Winter",
+          "emoji": "❄️",
+          "pittaLevel": "Low",
+          "focus": "Pitta's rest season — allow the fire to bank and restore.",
+          "tips": [
+            "Enjoy rich, warming foods — you can handle more",
+            "Rest more and reduce pressure on yourself",
+            "Warm sesame oil massage is fine in winter",
+            "Reflect, plan, and restore for the year ahead"
+          ]
+        }
+      }
+    },
+
+    "Kapha": {
+      "id": "kapha",
+      "name": "Kapha",
+      "sanskrit": "कफ",
+      "elements": ["Earth", "Water"],
+      "elementsEmoji": ["🌍", "💧"],
+      "primaryColor": "#52796F",
+      "secondaryColor": "#A0785A",
+      "gradientFrom": "#52796F",
+      "gradientTo": "#2D6A4F",
+      "icon": "🌍",
+      "tagline": "The force of stability, love, and endurance",
+      "heroDescription": "You are the earth — stable, nurturing, and endlessly patient. When others panic, you are calm. When others give up, you endure. Your love is deep, your loyalty is unshakeable, and your presence is a gift to everyone around you. You are the foundation that holds communities together. Your gift is love, steadiness, and the strength to endure.",
+      "keyTraits": ["Calm", "Nurturing", "Steady", "Loyal", "Patient"],
+      "balancedQualities": ["Unconditional love", "Rock-steady calm", "Incredible endurance", "Deep compassion", "Reliable stability"],
+      "imbalancedQualities": ["Lethargy and oversleeping", "Emotional eating", "Congestion", "Stubbornness", "Resistance to change"],
+      "famousVataTypes": "Teachers, nurses, counselors, athletes (endurance), community leaders",
+
+      "diet": {
+        "principles": [
+          "Light, dry, warm, and stimulating foods are your ideal",
+          "Avoid heavy, oily, cold, and sweet foods in excess",
+          "Eat your smallest meal at dinner — Kapha digestion slows at night",
+          "Favor spicy, bitter, astringent tastes that stimulate metabolism",
+          "Intermittent fasting works well for Kapha types"
+        ],
+        "tastes": {
+          "favor": ["Pungent", "Bitter", "Astringent"],
+          "reduce": ["Sweet", "Sour", "Salty"]
+        },
+        "favorFoods": [
+          { "name": "Ginger and black pepper", "emoji": "🫚", "reason": "Stimulating spices that fire up Kapha's slow digestion" },
+          { "name": "Honey (raw, not heated)", "emoji": "🍯", "reason": "The only sweet that reduces Kapha — scraping and light" },
+          { "name": "Light grains (millet, barley)", "emoji": "🌾", "reason": "Lighter and drier than rice or wheat — ideal for Kapha" },
+          { "name": "Legumes", "emoji": "🫘", "reason": "High protein, astringent, and relatively dry" },
+          { "name": "Leafy greens", "emoji": "🥬", "reason": "Bitter and light — exactly what Kapha needs" },
+          { "name": "Warm water with lemon", "emoji": "🍋", "reason": "Morning ritual that stimulates sluggish Kapha digestion" },
+          { "name": "Pomegranate and berries", "emoji": "🫐", "reason": "Astringent fruits that are well-tolerated by Kapha" },
+          { "name": "Turmeric", "emoji": "🟡", "reason": "Anti-inflammatory, stimulating, a Kapha superstar spice" },
+          { "name": "Cruciferous vegetables", "emoji": "🥦", "reason": "Light, bitter, and metabolism-boosting" },
+          { "name": "Herbal teas (ginger, tulsi)", "emoji": "🍵", "reason": "Warm, stimulating, and decongesting" }
+        ],
+        "minimizeFoods": [
+          { "name": "Dairy (especially cold)", "emoji": "🥛", "reason": "Heavy and mucus-forming — major Kapha aggravator" },
+          { "name": "Wheat and bread", "emoji": "🍞", "reason": "Heavy and building — switch to lighter grains" },
+          { "name": "Sugar and sweets", "emoji": "🍬", "reason": "Directly increases Kapha heaviness and weight" },
+          { "name": "Cold, iced drinks", "emoji": "🧊", "reason": "Slows already slow Kapha metabolism further" },
+          { "name": "Deep fried food", "emoji": "🍟", "reason": "Heavy, oily — the worst combination for Kapha" },
+          { "name": "Excessive salt", "emoji": "🧂", "reason": "Water retention and heaviness increase with salt" }
+        ]
+      },
+
+      "routine": {
+        "principle": "Movement, stimulation, and variety are medicine for Kapha. Fight the urge to be comfortable — push yourself gently every single day.",
+        "daily": [
+          { "time": "5:30 AM", "activity": "Wake up early — before Kapha time begins", "detail": "Kapha time is 6–10 AM. Waking before this window avoids the heavy, slow energy.", "emoji": "🌅" },
+          { "time": "5:45 AM", "activity": "Dry brush massage (Garshana)", "detail": "Dry silk or raw cotton glove massage stimulates lymph and circulation — ideal for Kapha.", "emoji": "✨" },
+          { "time": "6:00 AM", "activity": "Vigorous exercise — non-negotiable", "detail": "Kapha needs to sweat. Running, cycling, or vigorous yoga for 45–60 min.", "emoji": "🏃" },
+          { "time": "7:00 AM", "activity": "Warm shower — optionally contrast (warm/cool)", "detail": "Ending with a brief cool rinse stimulates Kapha's circulation.", "emoji": "🚿" },
+          { "time": "7:30 AM", "activity": "Meditation — energizing practice", "detail": "Kapha benefits from activating meditation — visualizations, affirmations, or chanting.", "emoji": "🧘" },
+          { "time": "8:30 AM", "activity": "Light breakfast — or skip if not hungry", "detail": "Fruit, a light smoothie, or ginger tea. Kapha can easily skip breakfast.", "emoji": "🍎" },
+          { "time": "12:30 PM", "activity": "Main meal — moderate and light", "detail": "Spiced, warm, but not heavy. Avoid afternoon drowsiness by not overeating.", "emoji": "🥗" },
+          { "time": "3:00 PM", "activity": "Short walk if possible", "detail": "Avoid the Kapha afternoon slump (2–4 PM) with gentle movement.", "emoji": "🚶" },
+          { "time": "6:00 PM", "activity": "Smallest meal of the day", "detail": "Light soup or salad. No heavy dinners for Kapha — digestion slows at night.", "emoji": "🍵" },
+          { "time": "10:00 PM", "activity": "Sleep — but not too much", "detail": "7–8 hours is ideal. Oversleeping increases Kapha heaviness.", "emoji": "🌙" }
+        ],
+        "weeklyPractices": [
+          "Try one completely new activity or route each week",
+          "Social engagement — Kapha thrives in community",
+          "Sauna or steam room to clear congestion",
+          "Declutter one area of your home or workspace"
+        ]
+      },
+
+      "yoga": {
+        "principle": "Vigorous, energizing, and warming. Push past the resistance to start — once moving, Kapha thrives.",
+        "style": "Power Yoga, Vinyasa Flow, or Sun Salutations",
+        "intensity": "High — Kapha needs to sweat and work hard",
+        "poses": [
+          { "name": "Sun Salutation (fast-paced)", "sanskrit": "Surya Namaskar", "benefit": "Full-body energizer — the single best practice for Kapha", "difficulty": "Intermediate", "emoji": "☀️" },
+          { "name": "Warrior II", "sanskrit": "Virabhadrasana II", "benefit": "Builds heat, strength, and determination", "difficulty": "Beginner", "emoji": "⚔️" },
+          { "name": "Camel Pose", "sanskrit": "Ustrasana", "benefit": "Opens chest, counters Kapha's tendency to collapse inward", "difficulty": "Intermediate", "emoji": "🐪" },
+          { "name": "Boat Pose", "sanskrit": "Navasana", "benefit": "Fires up digestion and core strength", "difficulty": "Intermediate", "emoji": "⛵" },
+          { "name": "Plank Pose", "sanskrit": "Kumbhakasana", "benefit": "Builds heat and core strength rapidly", "difficulty": "Beginner", "emoji": "💪" },
+          { "name": "Chair Pose", "sanskrit": "Utkatasana", "benefit": "Stimulates metabolism and thyroid, warming", "difficulty": "Beginner", "emoji": "🪑" }
+        ],
+        "breathwork": "Kapalabhati (breath of fire) — rapid diaphragmatic breathing. Directly stimulates and decongests Kapha. Do 3 rounds of 30–50 breaths each morning.",
+        "avoid": "Avoid Yin Yoga, long Savasana (extended), and any very slow or restorative practice — increases Kapha inertia"
+      },
+
+      "seasonal": {
+        "spring": {
+          "season": "Spring",
+          "emoji": "🌸",
+          "kaphaLevel": "High",
+          "focus": "Peak Kapha season — congestion, allergies, and heaviness peak. Most important season for Kapha.",
+          "tips": [
+            "Do a spring cleanse — this is your most beneficial time",
+            "Dramatically reduce dairy, wheat, and sweets",
+            "Increase exercise intensity in spring",
+            "Use neti pot daily for sinus congestion",
+            "Honey with ginger every morning is powerful medicine"
+          ]
+        },
+        "winter": {
+          "season": "Winter",
+          "emoji": "❄️",
+          "kaphaLevel": "Moderate-High",
+          "focus": "Cold and damp increases Kapha. Stay active and warm inside.",
+          "tips": [
+            "Never miss your morning exercise in winter",
+            "Warming spices: ginger, pepper, cinnamon in everything",
+            "Avoid cold food entirely in winter",
+            "Stay socially active — isolation worsens Kapha depression"
+          ]
+        },
+        "summer": {
+          "season": "Summer",
+          "emoji": "☀️",
+          "kaphaLevel": "Low",
+          "focus": "Summer naturally reduces Kapha — your most balanced season.",
+          "tips": [
+            "Enjoy lighter foods and outdoor activity freely",
+            "This is your most energetic and positive season",
+            "Summer is ideal for travel and new experiences",
+            "Take advantage of high energy for ambitious projects"
+          ]
+        },
+        "autumn": {
+          "season": "Autumn",
+          "emoji": "🍂",
+          "kaphaLevel": "Low-Moderate",
+          "focus": "Good season for Kapha — crisp and dry weather is balancing.",
+          "tips": [
+            "Enjoy the season but watch for Kapha foods (Halloween sweets!)",
+            "Root vegetables and warming soups are ideal",
+            "Maintain exercise routine as days get shorter",
+            "Use this time to establish healthy winter habits"
+          ]
+        }
+      }
+    }
+  },
+
+  "dualDoshas": {
+    "Vata-Pitta": {
+      "id": "vata-pitta",
+      "name": "Vata-Pitta",
+      "sanskrit": "वात-पित्त",
+      "icon": "🌬️🔥",
+      "gradientFrom": "#7EC8E3",
+      "gradientTo": "#FF6B6B",
+      "tagline": "The spark of creative fire",
+      "heroDescription": "You are the rarest of combinations — creative fire and sharp brilliance combined. You think fast, act fast, and feel everything intensely. Your mind is your superpower and your greatest challenge. When balanced, you are an unstoppable creative force. Your twin enemies are anxiety (from Vata) and frustration (from Pitta) — managing both is your lifelong practice.",
+      "keyTraits": ["Creative", "Sharp", "Enthusiastic", "Driven", "Intense"],
+      "primaryBalance": "Ground the Vata, cool the Pitta. Regularity (Vata) + cooling (Pitta) is your daily medicine.",
+      "keyPractices": [
+        "Regular meal times (Vata) with cooling foods (Pitta)",
+        "Consistent sleep schedule — both doshas suffer from poor sleep",
+        "Moderate exercise — vigorous enough for Pitta, not depleting for Vata",
+        "Daily meditation — calms Vata anxiety and Pitta intensity",
+        "Avoid skipping meals (Pitta) and irregular schedules (Vata)"
+      ],
+      "seasonalPriority": "Watch autumn (Vata rises) and summer (Pitta rises) most carefully",
+      "seeFullRecommendationsFor": ["Vata", "Pitta"]
+    },
+
+    "Pitta-Kapha": {
+      "id": "pitta-kapha",
+      "name": "Pitta-Kapha",
+      "sanskrit": "पित्त-कफ",
+      "icon": "🔥🌍",
+      "gradientFrom": "#FF6B6B",
+      "gradientTo": "#52796F",
+      "tagline": "The engine of steady power",
+      "heroDescription": "You are built like a champion — you have the fire to drive and the earth to endure. You get things done and you build things that last. Physically you tend to be strong and capable. Your challenges are that Pitta can make you intense and critical, while Kapha can make you resistant to change. Together, you are a force of nature when balanced.",
+      "keyTraits": ["Powerful", "Steady", "Driven", "Enduring", "Determined"],
+      "primaryBalance": "Cool the Pitta, lighten the Kapha. Cooling foods + vigorous exercise is your daily medicine.",
+      "keyPractices": [
+        "Vigorous daily exercise (Kapha) without overheating (Pitta)",
+        "Light, cooling foods that also stimulate metabolism",
+        "Avoid heavy, oily foods — doubles down on both doshas",
+        "Compassion practices to soften Pitta's edge",
+        "Regular change and new experiences to counter Kapha inertia"
+      ],
+      "seasonalPriority": "Watch summer (Pitta rises) and spring (Kapha rises) most carefully",
+      "seeFullRecommendationsFor": ["Pitta", "Kapha"]
+    },
+
+    "Vata-Kapha": {
+      "id": "vata-kapha",
+      "name": "Vata-Kapha",
+      "sanskrit": "वात-कफ",
+      "icon": "🌬️🌍",
+      "gradientFrom": "#7EC8E3",
+      "gradientTo": "#52796F",
+      "tagline": "The calm creative spirit",
+      "heroDescription": "You are a fascinating paradox — the restless wind living in a steady, grounded body. Your mind loves variety and change, but your body craves stability and comfort. You are deeply creative and deeply caring. Your challenge is that these two doshas often pull in opposite directions — learning to harmonize them is your unique journey.",
+      "keyTraits": ["Creative", "Caring", "Gentle", "Artistic", "Compassionate"],
+      "primaryBalance": "Warm and regulate. Regular, warm, light meals are the cornerstone of Vata-Kapha balance.",
+      "keyPractices": [
+        "Warm, light, and regular meals (balances both doshas)",
+        "Gentle but consistent exercise — not too intense, not too light",
+        "Regular schedule grounds Vata without burdening Kapha",
+        "Warming spices in food help both doshas",
+        "Social connection is important — Kapha needs community, Vata needs stimulation"
+      ],
+      "seasonalPriority": "Watch autumn/winter (both can rise together) most carefully",
+      "seeFullRecommendationsFor": ["Vata", "Kapha"]
+    },
+
+    "Tridoshic": {
+      "id": "tridoshic",
+      "name": "Tridoshic",
+      "sanskrit": "त्रिदोषिक",
+      "icon": "🌬️🔥🌍",
+      "gradientFrom": "#F4A023",
+      "gradientTo": "#2D6A4F",
+      "tagline": "The rare balanced constitution",
+      "heroDescription": "You are extraordinarily rare — a person born with all three doshas in near-perfect balance. This is considered the most robust and resilient constitution in Ayurveda. You have the adaptability of Vata, the drive of Pitta, and the endurance of Kapha. Your challenge is that you can be affected by any dosha imbalance — especially with seasonal changes.",
+      "keyTraits": ["Adaptable", "Resilient", "Balanced", "Versatile", "Robust"],
+      "primaryBalance": "Eat and live seasonally. Your greatest tool is adjusting your diet and routine with each season.",
+      "keyPractices": [
+        "Follow seasonal guidelines closely — your biggest lever",
+        "Eat a varied, balanced diet with all six tastes",
+        "Moderate, varied exercise — your body handles most types",
+        "Stay attuned to which dosha is rising and adjust accordingly",
+        "Annual Panchakarma cleanse is particularly beneficial"
+      ],
+      "seasonalPriority": "Follow dosha-specific seasonal guidance for whichever dosha is currently dominant",
+      "seeFullRecommendationsFor": ["Vata", "Pitta", "Kapha"]
+    }
+  },
+
+  "generalPrinciples": {
+    "sixTastes": {
+      "description": "Ayurveda identifies six tastes (Shad Rasa) that each affect the doshas differently",
+      "tastes": [
+        { "name": "Sweet", "sanskrit": "Madhura", "elements": "Earth + Water", "increases": ["Kapha"], "decreases": ["Vata", "Pitta"], "examples": "Rice, milk, ghee, sweet fruits" },
+        { "name": "Sour", "sanskrit": "Amla", "elements": "Earth + Fire", "increases": ["Pitta", "Kapha"], "decreases": ["Vata"], "examples": "Lemon, yogurt, fermented foods" },
+        { "name": "Salty", "sanskrit": "Lavana", "elements": "Water + Fire", "increases": ["Pitta", "Kapha"], "decreases": ["Vata"], "examples": "Sea salt, seaweed, pickles" },
+        { "name": "Pungent", "sanskrit": "Katu", "elements": "Fire + Air", "increases": ["Vata", "Pitta"], "decreases": ["Kapha"], "examples": "Ginger, pepper, chilli, garlic" },
+        { "name": "Bitter", "sanskrit": "Tikta", "elements": "Air + Space", "increases": ["Vata"], "decreases": ["Pitta", "Kapha"], "examples": "Turmeric, bitter greens, fenugreek" },
+        { "name": "Astringent", "sanskrit": "Kashaya", "elements": "Air + Earth", "increases": ["Vata"], "decreases": ["Pitta", "Kapha"], "examples": "Pomegranate, lentils, raw banana" }
+      ]
+    },
+    "dinacharya": {
+      "description": "Daily routine (Dinacharya) is one of the most powerful Ayurvedic tools for all types",
+      "universalPractices": [
+        { "practice": "Wake before sunrise", "benefit": "Aligns with nature's rhythms" },
+        { "practice": "Tongue scraping", "benefit": "Removes Ama (toxins) that accumulate overnight" },
+        { "practice": "Oil pulling (Gandusha)", "benefit": "Oral health and detoxification" },
+        { "practice": "Warm water first thing", "benefit": "Activates digestion (Agni)" },
+        { "practice": "Self-massage (Abhyanga)", "benefit": "Nourishes tissues, calms nervous system" },
+        { "practice": "Exercise before 10 AM", "benefit": "Uses Kapha time for productive movement" },
+        { "practice": "Meditation daily", "benefit": "Calms the mind, any type" },
+        { "practice": "Eat largest meal at noon", "benefit": "Digestion is strongest at midday" },
+        { "practice": "Sleep before 10:30 PM", "benefit": "Avoids Pitta night window disruption" }
+      ]
+    }
+  }
+}

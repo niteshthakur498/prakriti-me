@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About PrakritiMe | The Science of Your Nature</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=Noto+Serif+Devanagari:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#ffb960",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#2b1700",
+                    "background": "#fff8f6",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#ffdbce",
+                    "on-primary-fixed-variant": "#653e00",
+                    "surface-bright": "#fff8f6",
+                    "surface-container-low": "#fff1ec",
+                    "tertiary-fixed-dim": "#ffb77d",
+                    "secondary-container": "#aeeecb",
+                    "secondary": "#2c694e",
+                    "on-tertiary-container": "#6a3700",
+                    "on-tertiary-fixed-variant": "#6e3900",
+                    "primary-fixed": "#ffddb8",
+                    "on-surface": "#2a170f",
+                    "on-secondary-container": "#316e52",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#623c00",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#002114",
+                    "secondary-fixed": "#b1f0ce",
+                    "outline": "#857462",
+                    "inverse-primary": "#ffb960",
+                    "tertiary-fixed": "#ffdcc3",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#ffdbce",
+                    "surface-container-high": "#ffe2d8",
+                    "tertiary": "#904d00",
+                    "on-secondary-fixed-variant": "#0e5138",
+                    "surface-tint": "#865300",
+                    "surface": "#fff8f6",
+                    "on-error": "#ffffff",
+                    "surface-container": "#ffe9e2",
+                    "on-background": "#2a170f",
+                    "inverse-on-surface": "#ffede7",
+                    "secondary-fixed-dim": "#95d4b3",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#ff993a",
+                    "primary-container": "#f4a023",
+                    "on-tertiary-fixed": "#2f1500",
+                    "on-surface-variant": "#534434",
+                    "inverse-surface": "#422b22",
+                    "surface-dim": "#f8d2c4",
+                    "primary": "#865300",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#d8c3ae"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "max-width-content": "1200px",
+                    "xs": "4px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "xl": "64px",
+                    "margin-mobile": "20px",
+                    "md": "24px",
+                    "gutter": "16px",
+                    "lg": "40px",
+                    "margin-desktop": "auto"
+            },
+            "fontFamily": {
+                    "display-lg": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "label-md": ["Inter"],
+                    "sanskrit-quote": ["Noto Serif Devanagari"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "sanskrit-quote": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sun-shadow {
+            box-shadow: 0px 10px 30px rgba(244, 160, 35, 0.12);
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            background: rgba(255, 250, 243, 0.8);
+        }
+        .reading-width {
+            max-width: 720px;
+        }
+        .custom-gradient-btn {
+            background: linear-gradient(135deg, #f4a023 0%, #865300 100%);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+        .dosha-card-vata { background-color: rgba(181, 240, 206, 0.1); border: 1px solid #b1f0ce; }
+        .dosha-card-pitta { background-color: rgba(255, 185, 96, 0.1); border: 1px solid #ffb960; }
+        .dosha-card-kapha { background-color: rgba(255, 219, 206, 0.1); border: 1px solid #ffdbce; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-lg max-w-max-width-content mx-auto glass-nav h-20 shadow-[0px_10px_30px_rgba(244,160,35,0.12)]">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary text-headline-md" data-icon="spa" style="font-variation-settings: 'FILL' 1;">spa</span>
+<h1 class="font-display-lg text-headline-md text-primary tracking-tight">PrakritiMe</h1>
+</div>
+<nav class="hidden md:flex gap-lg items-center">
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Daily Routine</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-all duration-300" href="#">Diet Plan</a>
+<a class="font-label-md text-primary font-bold border-b-2 border-primary" href="#">About</a>
+<a class="font-label-md text-outline-variant cursor-not-allowed italic" href="#" title="Coming Soon">My Journey</a>
+</nav>
+<button class="custom-gradient-btn text-white px-md py-sm rounded-full font-label-md hover:scale-105 active:scale-95 transition-all">
+            Start Quiz
+        </button>
+</header>
+<!-- Hero Section -->
+<section class="pt-40 pb-lg px-margin-mobile">
+<div class="reading-width mx-auto text-center">
+<span class="font-label-md text-primary uppercase tracking-widest mb-base block">Ancient Wisdom, Modern Living</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-on-surface mb-md">What is Prakriti?</h2>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">
+                Prakriti is your unique energetic blueprint—the specific combination of physical, mental, and emotional characteristics determined at the moment of your conception. It is the "nature" in your human nature.
+            </p>
+</div>
+</section>
+<!-- Main Content Canvas -->
+<main class="reading-width mx-auto px-margin-mobile pb-xl">
+<!-- Sanskrit Pull Quote -->
+<div class="my-lg p-lg bg-surface-container-low rounded-xl border border-outline-variant relative overflow-hidden">
+<div class="absolute -top-4 -right-4 opacity-5">
+<span class="material-symbols-outlined text-[120px]" data-icon="menu_book">menu_book</span>
+</div>
+<p class="font-sanskrit-quote text-primary text-center mb-sm">"स्वस्थस्य स्वास्थ्यरक्षणं आतुरस्य विकारप्रशमनं च।"</p>
+<p class="font-body-md italic text-on-surface-variant text-center">"To protect the health of the healthy and to alleviate the disorders of the diseased."</p>
+<div class="mt-md flex justify-center items-center gap-xs">
+<span class="h-px w-8 bg-outline-variant"></span>
+<span class="font-label-md text-outline">Charaka Samhita, Sutra Sthana</span>
+<span class="h-px w-8 bg-outline-variant"></span>
+</div>
+</div>
+<!-- Section: The Three Doshas -->
+<section class="mt-xl">
+<h3 class="font-headline-md text-on-surface mb-md">The Three Pillars: Doshas</h3>
+<p class="font-body-md text-on-surface-variant mb-lg">
+                Ayurveda categorizes these energies into three functional principles, or <span class="font-bold text-primary">Doshas</span>: Vata, Pitta, and Kapha. While everyone has all three, their proportions create your distinct Prakriti.
+            </p>
+<!-- Dosha Bento Cards -->
+<div class="space-y-md">
+<!-- Vata -->
+<div class="dosha-card-vata p-md rounded-xl sun-shadow transition-transform hover:-translate-y-1">
+<div class="flex justify-between items-start mb-sm">
+<h4 class="font-headline-md text-secondary">Vata</h4>
+<span class="material-symbols-outlined text-secondary" data-icon="air">air</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-md">The energy of movement. Governed by Air and Ether. When in balance, it fosters creativity and flexibility.</p>
+<details class="group">
+<summary class="list-none flex items-center gap-xs font-label-md text-secondary cursor-pointer hover:underline">
+                            Clinical Depth (For Practitioners)
+                            <span class="material-symbols-outlined text-sm transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="pt-sm border-t border-secondary/20 mt-sm font-body-md text-on-surface text-sm space-y-2">
+<p><strong>Sub-doshas:</strong> Prana, Udana, Samana, Vyana, Apana.</p>
+<p><strong>Qualities:</strong> Laghu (Light), Sheeta (Cold), Rooksha (Dry), Khara (Rough).</p>
+<p><strong>Primary Site:</strong> Colon (Pakwashaya).</p>
+</div>
+</details>
+</div>
+<!-- Pitta -->
+<div class="dosha-card-pitta p-md rounded-xl sun-shadow transition-transform hover:-translate-y-1">
+<div class="flex justify-between items-start mb-sm">
+<h4 class="font-headline-md text-primary">Pitta</h4>
+<span class="material-symbols-outlined text-primary" data-icon="local_fire_department">local_fire_department</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-md">The energy of transformation. Governed by Fire and Water. Responsible for digestion, metabolism, and intelligence.</p>
+<details class="group">
+<summary class="list-none flex items-center gap-xs font-label-md text-primary cursor-pointer hover:underline">
+                            Clinical Depth (For Practitioners)
+                            <span class="material-symbols-outlined text-sm transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="pt-sm border-t border-primary/20 mt-sm font-body-md text-on-surface text-sm space-y-2">
+<p><strong>Sub-doshas:</strong> Pachaka, Ranjaka, Sadhaka, Alochaka, Bhrajaka.</p>
+<p><strong>Qualities:</strong> Sasneha (Slightly oily), Teekshna (Sharp), Ushna (Hot).</p>
+<p><strong>Primary Site:</strong> Small Intestine (Amashaya).</p>
+</div>
+</details>
+</div>
+<!-- Kapha -->
+<div class="dosha-card-kapha p-md rounded-xl sun-shadow transition-transform hover:-translate-y-1">
+<div class="flex justify-between items-start mb-sm">
+<h4 class="font-headline-md text-on-surface">Kapha</h4>
+<span class="material-symbols-outlined text-on-surface" data-icon="water_drop">water_drop</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-md">The energy of lubrication and structure. Governed by Earth and Water. Provides stamina, calmness, and immunity.</p>
+<details class="group">
+<summary class="list-none flex items-center gap-xs font-label-md text-on-surface cursor-pointer hover:underline">
+                            Clinical Depth (For Practitioners)
+                            <span class="material-symbols-outlined text-sm transition-transform group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="pt-sm border-t border-on-surface/20 mt-sm font-body-md text-on-surface text-sm space-y-2">
+<p><strong>Sub-doshas:</strong> Kledaka, Avalambaka, Bodhaka, Tarpaka, Shleshaka.</p>
+<p><strong>Qualities:</strong> Guru (Heavy), Manda (Slow), Sthira (Stable), Snigdha (Unctuous).</p>
+<p><strong>Primary Site:</strong> Chest (Uras).</p>
+</div>
+</details>
+</div>
+</div>
+</section>
+<!-- Visual Interstitial -->
+<figure class="my-xl">
+<img class="w-full h-80 object-cover rounded-2xl sun-shadow" data-alt="A serene yoga studio scene during golden hour, with soft sunlight filtering through sheer curtains. A set of traditional Ayurvedic copper vessels and fresh green herbs sit on a polished wooden surface. The atmosphere is peaceful, nurturing, and high-end, reflecting a warm modernism aesthetic with a palette of cream, saffron, and botanical green." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOMIX-cKyWG99O04e--bo49_nktfGhe59nat_Ri_sVgEu3o4JVZZEKgprpfma_L2cLOqKP5ZX7dcF9LQwMzFtwbIZwyUrY866kvv85Z_CrUt4LrKAiZUHK7GzfuKogyMkiQ4l24kODyubzTwWvm_O_92Kw_Eow6eh3R_zVu0Zi0DWuE7zj4FBLBpusgOVEWrj4mSpUKvU7vTQOz5e-D8FxPyFmNSTGCzUE7eKjUyu3EMRw9-_xcyD6dnCu9yKNG8fDxfUQnt2Z1k5r"/>
+<figcaption class="mt-base text-center font-label-md text-outline">Finding balance through traditional rituals in a modern space.</figcaption>
+</figure>
+<!-- Why it matters -->
+<section class="mt-xl">
+<h3 class="font-headline-md text-on-surface mb-md">Why Knowing Your Prakriti Matters</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="p-md bg-white border border-outline-variant rounded-xl">
+<span class="material-symbols-outlined text-primary mb-sm" data-icon="psychology">psychology</span>
+<h5 class="font-label-md text-on-surface mb-xs">Mental Clarity</h5>
+<p class="text-sm text-on-surface-variant">Understand your cognitive patterns and why you react to stress in specific ways.</p>
+</div>
+<div class="p-md bg-white border border-outline-variant rounded-xl">
+<span class="material-symbols-outlined text-secondary mb-sm" data-icon="restaurant">restaurant</span>
+<h5 class="font-label-md text-on-surface mb-xs">Personalized Nutrition</h5>
+<p class="text-sm text-on-surface-variant">Stop following generic diets and eat foods that truly nourish your unique system.</p>
+</div>
+<div class="p-md bg-white border border-outline-variant rounded-xl">
+<span class="material-symbols-outlined text-tertiary mb-sm" data-icon="nights_stay">nights_stay</span>
+<h5 class="font-label-md text-on-surface mb-xs">Optimal Rest</h5>
+<p class="text-sm text-on-surface-variant">Discover the sleep rhythms and evening rituals that best align with your doshic balance.</p>
+</div>
+<div class="p-md bg-white border border-outline-variant rounded-xl">
+<span class="material-symbols-outlined text-primary mb-sm" data-icon="trending_up">trending_up</span>
+<h5 class="font-label-md text-on-surface mb-xs">Preventive Health</h5>
+<p class="text-sm text-on-surface-variant">Identify potential imbalances (Vikriti) before they manifest as chronic issues.</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="mt-xl text-center py-lg bg-surface-container rounded-2xl sun-shadow">
+<h2 class="font-headline-md text-on-surface mb-sm">Your journey to balance begins here.</h2>
+<p class="font-body-md text-on-surface-variant mb-lg">Take our 5-minute comprehensive Prakriti assessment.</p>
+<a class="inline-flex items-center gap-sm custom-gradient-btn text-white px-xl py-md rounded-full font-label-md hover:scale-105 active:scale-95 transition-all" href="#">
+                Ready to discover yours?
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-margin-mobile md:px-lg mt-lg flex flex-col items-center text-center max-w-max-width-content mx-auto bg-surface-container border-t border-outline-variant/20">
+<div class="flex items-center gap-xs mb-md">
+<span class="material-symbols-outlined text-primary" data-icon="spa">spa</span>
+<span class="font-display-lg text-headline-md text-primary">PrakritiMe</span>
+</div>
+<div class="flex flex-wrap justify-center gap-md mb-lg">
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">About Ayurveda</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Dosha Guide</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+</div>
+<p class="font-body-md text-on-surface-variant">© 2024 PrakritiMe. Built with heart for Ayurveda lovers.</p>
+</footer>
+<!-- Atmosphere Micro-interaction: Gentle Floating Particles in background -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.body;
+            for (let i = 0; i < 15; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'fixed rounded-full pointer-events-none opacity-20 bg-primary-fixed-dim';
+                const size = Math.random() * 10 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}vw`;
+                particle.style.top = `${Math.random() * 100}vh`;
+                particle.style.filter = 'blur(4px)';
+                container.appendChild(particle);
+
+                const animate = () => {
+                    const duration = Math.random() * 20000 + 10000;
+                    const xKeyframes = [
+                        { transform: `translate(0, 0)` },
+                        { transform: `translate(${Math.random() * 100 - 50}px, ${Math.random() * 100 - 50}px)` }
+                    ];
+                    particle.animate(xKeyframes, {
+                        duration: duration,
+                        iterations: Infinity,
+                        direction: 'alternate',
+                        easing: 'ease-in-out'
+                    });
+                };
+                animate();
+            }
+        });
+    </script>
+</body></html>

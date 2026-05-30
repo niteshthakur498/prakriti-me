@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PrakritiMe | Discover Your Dosha</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;600;700&amp;family=Noto+Serif+Devanagari&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#ffb960",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#2b1700",
+                      "background": "#fff8f6",
+                      "on-tertiary": "#ffffff",
+                      "surface-container-highest": "#ffdbce",
+                      "on-primary-fixed-variant": "#653e00",
+                      "surface-bright": "#fff8f6",
+                      "surface-container-low": "#fff1ec",
+                      "tertiary-fixed-dim": "#ffb77d",
+                      "secondary-container": "#aeeecb",
+                      "secondary": "#2c694e",
+                      "on-tertiary-container": "#6a3700",
+                      "on-tertiary-fixed-variant": "#6e3900",
+                      "primary-fixed": "#ffddb8",
+                      "on-surface": "#2a170f",
+                      "on-secondary-container": "#316e52",
+                      "on-primary": "#ffffff",
+                      "on-primary-container": "#623c00",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#002114",
+                      "secondary-fixed": "#b1f0ce",
+                      "outline": "#857462",
+                      "inverse-primary": "#ffb960",
+                      "tertiary-fixed": "#ffdcc3",
+                      "on-error-container": "#93000a",
+                      "surface-variant": "#ffdbce",
+                      "surface-container-high": "#ffe2d8",
+                      "tertiary": "#904d00",
+                      "on-secondary-fixed-variant": "#0e5138",
+                      "surface-tint": "#865300",
+                      "surface": "#fff8f6",
+                      "on-error": "#ffffff",
+                      "surface-container": "#ffe9e2",
+                      "on-background": "#2a170f",
+                      "inverse-on-surface": "#ffede7",
+                      "secondary-fixed-dim": "#95d4b3",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#ff993a",
+                      "primary-container": "#f4a023",
+                      "on-tertiary-fixed": "#2f1500",
+                      "on-surface-variant": "#534434",
+                      "inverse-surface": "#422b22",
+                      "surface-dim": "#f8d2c4",
+                      "primary": "#865300",
+                      "surface-container-lowest": "#ffffff",
+                      "outline-variant": "#d8c3ae"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "max-width-content": "1200px",
+                      "xs": "4px",
+                      "base": "8px",
+                      "sm": "12px",
+                      "xl": "64px",
+                      "margin-mobile": "20px",
+                      "md": "24px",
+                      "gutter": "16px",
+                      "lg": "40px",
+                      "margin-desktop": "auto"
+              },
+              "fontFamily": {
+                      "display-lg": ["Playfair Display"],
+                      "headline-lg": ["Playfair Display"],
+                      "headline-md": ["Playfair Display"],
+                      "headline-lg-mobile": ["Playfair Display"],
+                      "label-md": ["Inter"],
+                      "sanskrit-quote": ["Noto Serif Devanagari"],
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "sanskrit-quote": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .sun-shadow {
+            box-shadow: 0px 10px 30px rgba(244, 160, 35, 0.12);
+        }
+        .mandala-bg {
+            background-image: radial-gradient(circle at center, rgba(134, 83, 0, 0.03) 0%, transparent 70%);
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .mandala-icon {
+            font-size: 800px !important;
+            opacity: 0.04;
+            user-select: none;
+            pointer-events: none;
+        }
+        .option-card:hover {
+            transform: translateY(-4px);
+            border-color: #f4a023;
+        }
+        .option-card.selected {
+            background-color: #fff1ec;
+            border-color: #865300;
+            box-shadow: 0px 4px 20px rgba(134, 83, 0, 0.1);
+        }
+        .saffron-gradient {
+            background: linear-gradient(135deg, #f4a023 0%, #865300 100%);
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- Mandala Watermark -->
+<div class="mandala-bg">
+<span class="material-symbols-outlined mandala-icon" data-icon="settings_accessibility">settings_accessibility</span>
+</div>
+<!-- Header / TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-lg max-w-max-width-content mx-auto h-20 bg-surface/80 backdrop-blur-md">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-icon="eco">eco</span>
+<h1 class="font-display-lg text-headline-md text-primary">PrakritiMe</h1>
+</div>
+<div class="flex items-center gap-6">
+<!-- Practitioner Mode Toggle (Disabled V2 Hook) -->
+<div class="hidden md:flex items-center gap-3 opacity-40 cursor-not-allowed grayscale">
+<span class="font-label-md text-on-surface-variant">Practitioner Mode</span>
+<div class="w-10 h-5 bg-outline-variant rounded-full relative">
+<div class="absolute left-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md hover:scale-95 transition-transform sun-shadow">
+                Start Quiz
+            </button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow pt-32 pb-xl px-margin-mobile flex justify-center items-start">
+<div class="w-full max-w-[680px] space-y-lg animate-in fade-in slide-in-from-bottom-4 duration-700">
+<!-- Progress Section -->
+<div class="space-y-sm">
+<div class="flex justify-between items-end">
+<div>
+<span class="font-label-md text-primary uppercase tracking-wider block mb-1">Section 1 of 4</span>
+<h2 class="font-headline-md text-on-surface">🧠 Mind &amp; Emotions</h2>
+</div>
+<span class="font-label-md text-on-surface-variant">Question 8 of 25</span>
+</div>
+<!-- Saffron Progress Bar -->
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full saffron-gradient rounded-full transition-all duration-500 ease-out" style="width: 32%;"></div>
+</div>
+</div>
+<!-- Question Card -->
+<div class="bg-surface-container-lowest p-lg md:p-xl rounded-xl sun-shadow border border-outline-variant/30 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl" data-icon="self_improvement">self_improvement</span>
+</div>
+<div class="space-y-sm mb-lg">
+<p class="font-sanskrit-quote text-primary italic opacity-80">Sharira Prakriti — शरीर प्रकृति</p>
+<h3 class="font-headline-lg md:font-headline-lg text-on-surface leading-tight">
+                        How would you describe your natural body frame?
+                    </h3>
+</div>
+<!-- Answer Options -->
+<div class="grid grid-cols-1 gap-4" id="options-container">
+<!-- Option A -->
+<button class="option-card w-full text-left p-md border-2 border-outline-variant rounded-xl transition-all duration-300 flex items-center justify-between group" onclick="selectOption(this)">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary group-hover:bg-primary group-hover:text-white transition-colors">A</span>
+<span class="font-body-lg text-on-surface-variant font-medium">Thin and light</span>
+</div>
+<span class="material-symbols-outlined text-primary opacity-0 transition-opacity" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<!-- Option B -->
+<button class="option-card w-full text-left p-md border-2 border-outline-variant rounded-xl transition-all duration-300 flex items-center justify-between group" onclick="selectOption(this)">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary group-hover:bg-primary group-hover:text-white transition-colors">B</span>
+<span class="font-body-lg text-on-surface-variant font-medium">Medium and athletic</span>
+</div>
+<span class="material-symbols-outlined text-primary opacity-0 transition-opacity" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+<!-- Option C -->
+<button class="option-card w-full text-left p-md border-2 border-outline-variant rounded-xl transition-all duration-300 flex items-center justify-between group" onclick="selectOption(this)">
+<div class="flex items-center gap-4">
+<span class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary group-hover:bg-primary group-hover:text-white transition-colors">C</span>
+<span class="font-body-lg text-on-surface-variant font-medium">Broad and sturdy</span>
+</div>
+<span class="material-symbols-outlined text-primary opacity-0 transition-opacity" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</button>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="flex justify-between items-center pt-md">
+<button class="flex items-center gap-2 text-on-surface-variant font-label-md hover:text-primary transition-colors py-2 px-4 rounded-full">
+<span class="material-symbols-outlined text-base" data-icon="arrow_back">arrow_back</span>
+                    ← Previous
+                </button>
+<button class="disabled:opacity-40 disabled:cursor-not-allowed saffron-gradient text-white px-xl py-3 rounded-full font-label-md sun-shadow flex items-center gap-2 hover:scale-105 active:scale-95 transition-all" disabled="" id="next-btn">
+                    Next →
+                    <span class="material-symbols-outlined text-base" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Illustration Support Content -->
+<section class="max-w-max-width-content mx-auto w-full px-margin-mobile mb-xl">
+<div class="bg-secondary-fixed/20 p-md rounded-xl border border-secondary/10 flex flex-col md:flex-row items-center gap-6">
+<img alt="Ayurvedic Ritual" class="w-32 h-32 rounded-lg object-cover sun-shadow" data-alt="A tranquil Ayurvedic wellness scene featuring an overhead view of organic wooden bowls filled with aromatic herbs, turmeric powder, and dried flower petals arranged on a natural linen cloth. The lighting is soft and golden, suggesting a peaceful morning in a luxury wellness retreat. The color palette is rich with earthy ochres, vibrant saffron, and calming cream tones, creating a holistic and nurturing atmosphere." src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="flex-grow text-center md:text-left">
+<h4 class="font-headline-md text-secondary">Why we ask this</h4>
+<p class="font-body-md text-on-surface-variant">Your physical structure is a core indicator of your primary Dosha. Sharira (body) attributes rarely change and provide the most accurate baseline for your Prakriti analysis.</p>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-xl px-margin-mobile md:px-lg mt-lg flex flex-col items-center text-center max-w-max-width-content mx-auto bg-surface-container border-t border-outline-variant/10">
+<h2 class="font-display-lg text-headline-md text-primary mb-base">PrakritiMe</h2>
+<p class="font-body-md text-on-surface-variant max-w-md mb-md">Guided by ancient wisdom, designed for modern lives. Discover your unique elemental balance.</p>
+<div class="flex flex-wrap justify-center gap-gutter mb-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">About Ayurveda</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Dosha Guide</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Terms of Service</a>
+</div>
+<p class="text-on-surface-variant/60 font-label-md">© 2024 PrakritiMe. Built with heart for Ayurveda lovers.</p>
+</footer>
+<script>
+        function selectOption(element) {
+            // Remove selection from all options
+            const options = document.querySelectorAll('.option-card');
+            options.forEach(opt => {
+                opt.classList.remove('selected');
+                opt.classList.add('border-outline-variant');
+                opt.classList.remove('border-primary');
+                opt.querySelector('.material-symbols-outlined[data-icon="check_circle"]').classList.add('opacity-0');
+            });
+
+            // Add selection to clicked option
+            element.classList.add('selected');
+            element.classList.remove('border-outline-variant');
+            element.classList.add('border-primary');
+            element.querySelector('.material-symbols-outlined[data-icon="check_circle"]').classList.remove('opacity-0');
+
+            // Enable Next button
+            const nextBtn = document.getElementById('next-btn');
+            nextBtn.disabled = false;
+        }
+
+        // Simple Fade-in animation for questions
+        document.addEventListener('DOMContentLoaded', () => {
+            const main = document.querySelector('main');
+            main.style.opacity = '0';
+            main.style.transition = 'opacity 0.8s ease-out';
+            requestAnimationFrame(() => {
+                main.style.opacity = '1';
+            });
+        });
+    </script>
+</body>
+</html><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<body></body>
