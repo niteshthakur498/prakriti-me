@@ -204,7 +204,8 @@ Set in `.env.local`, read in `src/lib/features.ts`:
 | `PDF_EXPORT` | `NEXT_PUBLIC_FEATURE_PDF` | Download Report button |
 | `MULTILINGUAL` | `NEXT_PUBLIC_FEATURE_I18N` | Language switcher in navbar |
 
-V2 UI is shown in locked/grayed state even when flags are false (not hidden).
+V2 UI elements are **fully hidden** in V1 — not shown in grayed/locked state.
+Full V2 feature specs live in `docs/functional/V2_FEATURES.md`.
 
 ---
 

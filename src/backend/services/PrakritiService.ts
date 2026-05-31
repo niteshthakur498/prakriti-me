@@ -35,7 +35,10 @@ export class PrakritiService implements IPrakritiService {
     const tally = this.scorer.score(answers)
     const resultType = this.resolver.resolve(tally)
     const percentages = this.resolver.getPercentages(tally)
-    const { dominant, secondary } = this.resolver.getDominantAndSecondary(tally)
+    const { dominant, secondary: rawSecondary } = this.resolver.getDominantAndSecondary(tally)
+    const secondaryScore = rawSecondary === 'Vata' ? tally.V : rawSecondary === 'Pitta' ? tally.P : tally.K
+    // Suppress secondary when it scored 0 — reporting "secondary: Vata" on a 25/0/0 result is misleading
+    const secondary: PureDoshaType | null = secondaryScore === 0 ? null : rawSecondary
 
     const rawProfile = await this.recommendationRepo.getByDoshaType(resultType)
 

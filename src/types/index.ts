@@ -87,7 +87,8 @@ export interface PrakritiScore {
   scores: DoshaScores
   percentages: DoshaPercentages
   dominant: PureDoshaType
-  secondary: PureDoshaType
+  /** null when the second-highest dosha scored 0 (e.g. pure 25/0/0 result) */
+  secondary: PureDoshaType | null
 }
 
 // ─── Recommendation Types ────────────────────────────────────────────────────
@@ -169,7 +170,7 @@ export interface DoshaProfile {
   keyTraits: string[]
   balancedQualities: string[]
   imbalancedQualities: string[]
-  famousVataTypes: string
+  famousTypes: string
   diet: DietRecommendation
   routine: RoutineRecommendation
   yoga: YogaRecommendation

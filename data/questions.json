@@ -278,6 +278,7 @@
           "sectionId": "digestion",
           "questionNumber": 10,
           "text": "How do you respond to cold weather or cold food and drinks?",
+          "hint": "Think about both: how your body feels in a cold climate AND how you feel after cold food or drinks",
           "options": [
             {
               "id": "Q10A",

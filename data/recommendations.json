@@ -24,7 +24,7 @@
       "keyTraits": ["Creative", "Enthusiastic", "Quick-minded", "Sensitive", "Adaptable"],
       "balancedQualities": ["Vibrant creativity", "Quick intuition", "Joyful spontaneity", "Inspiring energy", "Artistic expression"],
       "imbalancedQualities": ["Anxiety and worry", "Scattered focus", "Insomnia", "Digestive issues", "Physical depletion"],
-      "famousVataTypes": "Artists, writers, dancers, entrepreneurs, visionaries",
+      "famousTypes": "Artists, writers, dancers, entrepreneurs, visionaries",
 
       "diet": {
         "principles": [
@@ -167,7 +167,7 @@
       "keyTraits": ["Sharp", "Driven", "Focused", "Passionate", "Decisive"],
       "balancedQualities": ["Brilliant intellect", "Natural leadership", "Efficient action", "Courageous decisions", "Infectious passion"],
       "imbalancedQualities": ["Anger and irritability", "Perfectionism", "Inflammation and acidity", "Burnout", "Criticism of others"],
-      "famousVataTypes": "Leaders, surgeons, lawyers, engineers, entrepreneurs",
+      "famousTypes": "Leaders, surgeons, lawyers, engineers, entrepreneurs",
 
       "diet": {
         "principles": [
@@ -187,10 +187,10 @@
           { "name": "Cucumber", "emoji": "🥒", "reason": "Hydrating and cooling, reduces internal heat" },
           { "name": "Coriander and fennel", "emoji": "🌿", "reason": "Cooling spices that balance Pitta's fire" },
           { "name": "Ghee", "emoji": "🧈", "reason": "Cooling (unlike other fats), deeply nourishing" },
-          { "name": "Milk and dairy (in moderation)", "emoji": "🥛", "reason": "Sweet and cooling when used appropriately" },
+          { "name": "Warm milk with cardamom", "emoji": "🥛", "reason": "Sweet and cooling for Pitta — always warm, never cold from the fridge. Raw or organic preferred. Cold commercial milk can worsen acidity." },
           { "name": "Leafy greens", "emoji": "🥬", "reason": "Bitter taste directly reduces Pitta" },
           { "name": "Basmati rice", "emoji": "🍚", "reason": "Light, sweet, and cooling" },
-          { "name": "Pomegranate", "emoji": "💎", "reason": "Astringent and cooling, excellent for Pitta" },
+          { "name": "Pomegranate", "emoji": "🫐", "reason": "Astringent and cooling, excellent for Pitta" },
           { "name": "Mint tea", "emoji": "🫖", "reason": "Cooling and calming for Pitta's heat" }
         ],
         "minimizeFoods": [
@@ -212,7 +212,7 @@
           { "time": "7:30 AM", "activity": "Meditation — focusing on compassion", "detail": "Cooling meditations (moon visualization, loving-kindness) balance Pitta's fire.", "emoji": "🧘‍♀️" },
           { "time": "8:00 AM", "activity": "Cool, light breakfast", "detail": "Sweet fruits, cool milk, or light grains. Not too heavy.", "emoji": "🍎" },
           { "time": "12:00 PM", "activity": "Main meal — your biggest", "detail": "Pitta digestion is strongest at noon. Eat well but not to excess.", "emoji": "🍽️" },
-          { "time": "3:00 PM", "activity": "Brief rest or nature walk", "detail": "Avoid intense work from 2–4 PM when Pitta heat peaks.", "emoji": "🌳" },
+          { "time": "3:00 PM", "activity": "Brief rest or nature walk", "detail": "Pitta peaks 10 AM–2 PM. By 3 PM the fire is releasing — step away from intense work. A walk in shade or brief rest prevents burnout.", "emoji": "🌳" },
           { "time": "6:30 PM", "activity": "Light dinner", "detail": "Sweet, easy to digest. Done by 7:30 PM.", "emoji": "🥗" },
           { "time": "9:00 PM", "activity": "Wind down — creative or reflective time", "detail": "Pitta often pushes too late. Protect your evenings from work.", "emoji": "📖" },
           { "time": "10:00 PM", "activity": "Sleep — strictly before 10:30 PM", "detail": "The Pitta night window (10 PM–2 AM) can trap you in alertness if you're still awake.", "emoji": "🌙" }
@@ -310,7 +310,7 @@
       "keyTraits": ["Calm", "Nurturing", "Steady", "Loyal", "Patient"],
       "balancedQualities": ["Unconditional love", "Rock-steady calm", "Incredible endurance", "Deep compassion", "Reliable stability"],
       "imbalancedQualities": ["Lethargy and oversleeping", "Emotional eating", "Congestion", "Stubbornness", "Resistance to change"],
-      "famousVataTypes": "Teachers, nurses, counselors, athletes (endurance), community leaders",
+      "famousTypes": "Teachers, nurses, counselors, athletes (endurance), community leaders",
 
       "diet": {
         "principles": [

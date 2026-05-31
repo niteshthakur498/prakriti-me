@@ -47,12 +47,7 @@ const QuizPage: NextPage<QuizProps> = ({ sections }) => {
           <Image src="/logo.png" alt="PrakritiMe logo" width={36} height={36} className="rounded-full" />
           <span className="font-display text-headline-md text-primary font-bold">PrakritiMe</span>
         </Link>
-        <div className="hidden md:flex items-center gap-4 opacity-40 cursor-not-allowed">
-          <span className="text-label-md text-on-surface-variant font-semibold">Practitioner Mode</span>
-          <div className="w-10 h-5 bg-outline-variant rounded-full relative">
-            <div className="absolute left-1 top-1 w-3 h-3 bg-surface-container-lowest rounded-full" />
-          </div>
-        </div>
+        {/* Practitioner Mode toggle — V2 feature, hidden until ready */}
       </header>
 
       <main className="flex-grow pt-28 pb-16 px-5 flex justify-center items-start min-h-screen">
