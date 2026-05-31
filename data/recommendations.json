@@ -326,7 +326,7 @@
         },
         "favorFoods": [
           { "name": "Ginger and black pepper", "emoji": "🫚", "reason": "Stimulating spices that fire up Kapha's slow digestion" },
-          { "name": "Honey (raw, not heated)", "emoji": "🍯", "reason": "The only sweet that reduces Kapha — scraping and light" },
+          { "name": "Honey (raw, not heated)", "emoji": "🍯", "reason": "The only sweet that reduces Kapha — scraping, light, and drying. Never add to hot liquids or cook with it — in Ayurveda, heated honey forms ama (toxins)." },
           { "name": "Light grains (millet, barley)", "emoji": "🌾", "reason": "Lighter and drier than rice or wheat — ideal for Kapha" },
           { "name": "Legumes", "emoji": "🫘", "reason": "High protein, astringent, and relatively dry" },
           { "name": "Leafy greens", "emoji": "🥬", "reason": "Bitter and light — exactly what Kapha needs" },
@@ -354,7 +354,7 @@
           { "time": "6:00 AM", "activity": "Vigorous exercise — non-negotiable", "detail": "Kapha needs to sweat. Running, cycling, or vigorous yoga for 45–60 min.", "emoji": "🏃" },
           { "time": "7:00 AM", "activity": "Warm shower — optionally contrast (warm/cool)", "detail": "Ending with a brief cool rinse stimulates Kapha's circulation.", "emoji": "🚿" },
           { "time": "7:30 AM", "activity": "Meditation — energizing practice", "detail": "Kapha benefits from activating meditation — visualizations, affirmations, or chanting.", "emoji": "🧘" },
-          { "time": "8:30 AM", "activity": "Light breakfast — or skip if not hungry", "detail": "Fruit, a light smoothie, or ginger tea. Kapha can easily skip breakfast.", "emoji": "🍎" },
+          { "time": "8:30 AM", "activity": "Dry ginger tea, then light breakfast", "detail": "Begin with a cup of dry ginger (Shunti) tea — the single most powerful Kapha morning ritual. Then fruit or a light smoothie if hungry. Kapha can easily skip food, but never skip the ginger tea.", "emoji": "🍵" },
           { "time": "12:30 PM", "activity": "Main meal — moderate and light", "detail": "Spiced, warm, but not heavy. Avoid afternoon drowsiness by not overeating.", "emoji": "🥗" },
           { "time": "3:00 PM", "activity": "Short walk if possible", "detail": "Avoid the Kapha afternoon slump (2–4 PM) with gentle movement.", "emoji": "🚶" },
           { "time": "6:00 PM", "activity": "Smallest meal of the day", "detail": "Light soup or salad. No heavy dinners for Kapha — digestion slows at night.", "emoji": "🍵" },
@@ -392,9 +392,9 @@
           "focus": "Peak Kapha season — congestion, allergies, and heaviness peak. Most important season for Kapha.",
           "tips": [
             "Do a spring cleanse — this is your most beneficial time",
-            "Dramatically reduce dairy, wheat, and sweets",
+            "Dramatically reduce dairy (small amounts of ghee are still fine — it differs from all other dairy), wheat, and sweets",
             "Increase exercise intensity in spring",
-            "Use neti pot daily for sinus congestion",
+            "Use neti pot daily for sinus congestion; follow with steam inhalation (add eucalyptus oil) for deeper decongestion — more powerful than neti pot alone",
             "Honey with ginger every morning is powerful medicine"
           ]
         },
