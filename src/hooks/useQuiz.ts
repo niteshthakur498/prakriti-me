@@ -12,28 +12,36 @@ export function useQuiz(sections: QuizSection[]): UseQuizReturn {
   const [answers, setAnswers] = useState<AnswerMap>({})
   const [isTransitioning, setIsTransitioning] = useState(false)
 
-  const currentQuestion = useMemo<QuizQuestion>(() => {
-    const q = allQuestions[questionIndex]
-    if (!q) throw new Error(`No question at index ${questionIndex}`)
-    return q
-  }, [allQuestions, questionIndex])
+  const isComplete = questionIndex >= totalQuestions
 
-  const sectionIndex = useMemo(() => {
-    return sections.findIndex((s) => s.id === currentQuestion.sectionId)
-  }, [sections, currentQuestion])
+  // Clamp index so memos never go out of bounds — the quiz page
+  // checks isComplete and shows loading/redirect instead of the card.
+  const safeIndex = Math.min(questionIndex, totalQuestions - 1)
+
+  const currentQuestion = useMemo<QuizQuestion>(() => {
+    const q = allQuestions[safeIndex]
+    if (!q) throw new Error('useQuiz: no sections provided')
+    return q
+  }, [allQuestions, safeIndex])
+
+  const sectionIndex = useMemo(
+    () => sections.findIndex((s) => s.id === currentQuestion.sectionId),
+    [sections, currentQuestion],
+  )
 
   const currentSection = useMemo<QuizSection>(() => {
     const s = sections[sectionIndex]
-    if (!s) throw new Error(`No section at index ${sectionIndex}`)
+    if (!s) throw new Error('useQuiz: section not found')
     return s
   }, [sections, sectionIndex])
 
-  const selectedAnswer = answers[currentQuestion.id] ?? null
+  const progressPercent = isComplete
+    ? 100
+    : Math.round((questionIndex / totalQuestions) * 100)
 
-  const progressPercent = Math.round((questionIndex / totalQuestions) * 100)
   const isFirstQuestion = questionIndex === 0
   const isLastQuestion = questionIndex === totalQuestions - 1
-  const isComplete = questionIndex >= totalQuestions && Object.keys(answers).length === totalQuestions
+  const selectedAnswer = answers[currentQuestion.id] ?? null
   const canProceed = selectedAnswer !== null
 
   const selectAnswer = useCallback((questionId: string, dosha: DoshaSymbol) => {
@@ -42,17 +50,15 @@ export function useQuiz(sections: QuizSection[]): UseQuizReturn {
 
   const goNext = useCallback(() => {
     if (!canProceed) return
+
     if (isLastQuestion) {
-      // Mark complete by advancing past total
-      setQuestionIndex(totalQuestions)
+      setQuestionIndex(totalQuestions) // triggers isComplete
       return
     }
 
     const nextIndex = questionIndex + 1
-    // Check if crossing a section boundary
-    const currentSectionId = currentQuestion.sectionId
     const nextQuestion = allQuestions[nextIndex]
-    const isSectionChange = nextQuestion && nextQuestion.sectionId !== currentSectionId
+    const isSectionChange = nextQuestion && nextQuestion.sectionId !== currentQuestion.sectionId
 
     if (isSectionChange) {
       setIsTransitioning(true)
@@ -71,30 +77,20 @@ export function useQuiz(sections: QuizSection[]): UseQuizReturn {
     setQuestionIndex((i) => i - 1)
   }, [isFirstQuestion])
 
-  // If questionIndex >= totalQuestions, quiz is complete — return last question for render safety
-  const safeCurrentQuestion = questionIndex >= totalQuestions
-    ? (allQuestions[totalQuestions - 1] ?? currentQuestion)
-    : currentQuestion
-
-  const safeSectionIndex = sections.findIndex((s) => s.id === safeCurrentQuestion.sectionId)
-  const safeCurrentSection = sections[safeSectionIndex] ?? sections[0]
-
-  if (!safeCurrentSection) throw new Error('No sections provided to useQuiz')
-
   return {
-    currentQuestion: safeCurrentQuestion,
-    currentSection: safeCurrentSection,
+    currentQuestion,
+    currentSection,
     questionIndex,
-    sectionIndex: safeSectionIndex,
+    sectionIndex,
     progressPercent,
     answers,
-    selectedAnswer: answers[safeCurrentQuestion.id] ?? null,
+    selectedAnswer,
     selectAnswer,
     goNext,
     goPrev,
     isFirstQuestion,
     isLastQuestion,
-    isComplete: questionIndex >= totalQuestions,
+    isComplete,
     canProceed,
     isTransitioning,
   }
