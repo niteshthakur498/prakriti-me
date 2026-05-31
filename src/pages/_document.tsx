@@ -11,6 +11,7 @@ export default function Document(): JSX.Element {
           rel="stylesheet"
         />
         <meta name="theme-color" content="#f4a023" />
+        <link rel="icon" type="image/png" href="/logo.png" />
       </Head>
       <body className="bg-background text-on-background overflow-x-hidden">
         <Main />

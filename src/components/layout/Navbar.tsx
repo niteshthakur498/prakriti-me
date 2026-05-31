@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -8,9 +9,14 @@ export function Navbar(): JSX.Element {
     <header className="fixed top-0 w-full z-50 glass-nav sun-shadow">
       <div className="max-w-[1200px] mx-auto px-5 md:px-10 flex justify-between items-center h-20">
         <Link href="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-bold text-lg">
-            🪷
-          </div>
+          <Image
+            src="/logo.png"
+            alt="PrakritiMe logo"
+            width={40}
+            height={40}
+            className="rounded-full"
+            priority
+          />
           <span className="font-display text-headline-md text-primary font-bold">PrakritiMe</span>
         </Link>
 

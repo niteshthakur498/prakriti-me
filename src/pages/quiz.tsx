@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
 import Link from 'next/link'
 import type { QuizSection } from '@/types'
 import { useQuiz } from '@/hooks/useQuiz'
@@ -43,7 +44,7 @@ const QuizPage: NextPage<QuizProps> = ({ sections }) => {
       {/* Header */}
       <header className="fixed top-0 w-full z-50 flex justify-between items-center px-5 md:px-10 h-20 bg-surface/80 backdrop-blur-md">
         <Link href="/" className="flex items-center gap-3">
-          <span className="text-2xl">🪷</span>
+          <Image src="/logo.png" alt="PrakritiMe logo" width={36} height={36} className="rounded-full" />
           <span className="font-display text-headline-md text-primary font-bold">PrakritiMe</span>
         </Link>
         <div className="hidden md:flex items-center gap-4 opacity-40 cursor-not-allowed">

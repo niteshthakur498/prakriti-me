@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export function Footer(): JSX.Element {
@@ -5,7 +6,7 @@ export function Footer(): JSX.Element {
     <footer className="w-full py-16 px-5 md:px-10 mt-10 flex flex-col items-center text-center bg-surface-container">
       <div className="max-w-[1200px] w-full mx-auto">
         <Link href="/" className="flex items-center justify-center gap-2 mb-3">
-          <span className="text-2xl">🪷</span>
+          <Image src="/logo.png" alt="PrakritiMe logo" width={36} height={36} className="rounded-full" />
           <span className="font-display text-headline-md text-primary font-bold">PrakritiMe</span>
         </Link>
         <p className="text-on-surface-variant text-body-md max-w-sm mx-auto mb-8">
