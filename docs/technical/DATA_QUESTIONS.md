@@ -23,10 +23,14 @@ Only `sections` is used at runtime. `_meta` and `scoringGuide` exist for documen
 
 | Field | Type | Purpose |
 |---|---|---|
-| `version` | string | Schema version (`"1.0.0"`) |
-| `totalQuestions` | number | Must equal sum of all questions across all sections (25) |
+| `version` | string | Schema version (current: `"1.1.0"`) |
+| `totalQuestions` | number | Total question count across all sections (currently 27) |
 | `sections` | number | Number of section objects (5) |
-| `questionsPerSection` | number | Expected questions per section (5) |
+| `questionsPerSection` | number or string | When all sections are equal this is a number; when variable, a descriptive string |
+| `weightedTotal` | number | Sum of all question weights — the denominator for percentage calculations (currently 41) |
+| `weights.highSignal` | number | Weight value for high-clinical-signal questions (2) |
+| `weights.standard` | number | Weight value for standard questions (1) |
+| `weights.highSignalQuestions` | string[] | List of question IDs that carry `highSignal` weight |
 | `scoring.vata/pitta/kapha` | string | The letter codes used in each option's `dosha` field (`"V"`, `"P"`, `"K"`) |
 | `notes` | string | Free-text description of how scoring works |
 
@@ -78,7 +82,7 @@ There are exactly **5 sections**. Order matters — questions are displayed in t
 
 ## `questions` — array of Question objects
 
-Each section has exactly **5 questions**, giving 25 questions total.
+Sections 2–5 have **5 questions** each. Section 1 (Physical Body) has **7 questions** (Q01–Q05 + Q26–Q27). Total: **27 questions**, weighted total: **41 points**.
 
 ### Question object
 
@@ -87,6 +91,7 @@ Each section has exactly **5 questions**, giving 25 questions total.
   "id":             "Q01",
   "sectionId":      "physical_body",
   "questionNumber": 1,
+  "weight":         2,
   "text":           "How would you describe your natural body frame?",
   "hint":           "Think about how you've been built since childhood...",
   "options":        [ ... ]
@@ -95,12 +100,24 @@ Each section has exactly **5 questions**, giving 25 questions total.
 
 | Field | Type | Notes |
 |---|---|---|
-| `id` | string | Globally unique. Format: `Q` + zero-padded 2-digit number (`Q01`–`Q25`). |
+| `id` | string | Globally unique. Format: `Q` + zero-padded 2-digit number (`Q01`–`Q27`). |
 | `sectionId` | string | Must match the parent section's `id`. |
-| `questionNumber` | number | Global 1-based number (1–25). |
+| `questionNumber` | number | Display number within the section. |
+| `weight` | number | **Clinical scoring weight.** `2` = high-signal constitutional marker. `1` = standard behavioural indicator. See weight table below. |
 | `text` | string | The actual question displayed to the user. |
 | `hint` | string | Optional clarifying prompt shown in smaller text. Not all questions have this. |
 | `options` | array | Exactly 3 Option objects — one per dosha. |
+
+### Weight assignment rationale
+
+| Weight | Question IDs | Domain | Clinical reason |
+|---|---|---|---|
+| **2** | Q01–Q05 | Physical Body | Sharira Prakriti — the most reliable constitutional markers |
+| **2** | Q26–Q27 | Physical Body (new) | Body temperature + sweating — highly diagnostic in classical exam |
+| **2** | Q06–Q07 | Digestion | Core Agni markers (appetite + bowel) |
+| **2** | Q11–Q12 | Sleep | Constitutional sleep pattern |
+| **2** | Q16–Q18 | Mind | Core Manas Prakriti (learning, stress, dominant emotion) |
+| **1** | Q08–Q10, Q13–Q15, Q19–Q25 | Misc | Behavioural/lifestyle — valid but lower clinical signal |
 
 ---
 

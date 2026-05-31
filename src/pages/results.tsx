@@ -4,16 +4,19 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import type { ScoreResponseData } from '@/types'
+import type { ScoreResponseData, VikritiResponseData } from '@/types'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { DoshaHero } from '@/components/results/DoshaHero'
 import { DoshaChart } from '@/components/results/DoshaChart'
 import { RecommendationTabs } from '@/components/results/RecommendationTabs'
 
+const VIKRITI_EMOJI: Record<string, string> = { Vata: '🌬️', Pitta: '🔥', Kapha: '🌍' }
+
 const ResultsPage: NextPage = () => {
   const router = useRouter()
   const [result, setResult] = useState<ScoreResponseData | null>(null)
+  const [vikritiResult, setVikritiResult] = useState<VikritiResponseData | null>(null)
 
   useEffect(() => {
     const stored = sessionStorage.getItem('prakriti_result')
@@ -22,6 +25,11 @@ const ResultsPage: NextPage = () => {
       return
     }
     setResult(JSON.parse(stored) as ScoreResponseData)
+
+    const vikrtiStored = sessionStorage.getItem('prakriti_vikriti')
+    if (vikrtiStored) {
+      setVikritiResult(JSON.parse(vikrtiStored) as VikritiResponseData)
+    }
   }, [router])
 
   if (!result) {
@@ -141,6 +149,80 @@ const ResultsPage: NextPage = () => {
             </div>
           </aside>
         </div>
+        {/* Vikriti section — CTA if not assessed, comparison if assessed */}
+        <section className="mt-16 border-t border-outline-variant pt-12">
+          {vikritiResult ? (
+            /* Comparison card — Vikriti already assessed */
+            <div className="max-w-2xl mx-auto">
+              <h2 className="font-display text-headline-lg font-bold text-on-surface mb-2 text-center">
+                Prakriti vs. Vikriti
+              </h2>
+              <p className="text-sm text-on-surface-variant text-center mb-8">
+                Your constitution vs. your current state of imbalance
+              </p>
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="bg-surface-container border border-outline-variant rounded-xl p-5 text-center">
+                  <p className="text-xs text-on-surface-variant uppercase tracking-widest mb-2">Prakriti (Constitutional)</p>
+                  <p className="font-display text-3xl font-bold text-on-surface">{result.resultType}</p>
+                  <p className="text-xs text-on-surface-variant mt-2">Your innate nature — lifelong</p>
+                </div>
+                <div className="bg-surface-container border border-outline-variant rounded-xl p-5 text-center">
+                  <p className="text-xs text-on-surface-variant uppercase tracking-widest mb-2">Vikriti (Current State)</p>
+                  <p className="font-display text-3xl font-bold text-on-surface">
+                    {VIKRITI_EMOJI[vikritiResult.vikritiType] ?? ''} {vikritiResult.vikritiType}
+                  </p>
+                  <p className="text-xs text-on-surface-variant mt-2">What is elevated right now</p>
+                </div>
+              </div>
+              {result.resultType.includes(vikritiResult.vikritiType) ? (
+                <div className="flex items-start gap-3 bg-primary-container/40 border border-primary/20 rounded-xl px-5 py-4 text-sm">
+                  <span aria-hidden>✅</span>
+                  <p className="text-on-surface">
+                    <strong>In balance.</strong> Your current state aligns with your constitution. Continue following your {result.resultType} recommendations.
+                  </p>
+                </div>
+              ) : (
+                <div className="flex items-start gap-3 bg-surface-container-high border border-outline-variant rounded-xl px-5 py-4 text-sm">
+                  <span aria-hidden>⚠️</span>
+                  <p className="text-on-surface-variant">
+                    <strong className="text-on-surface">{vikritiResult.vikritiType} is currently aggravated</strong> alongside your {result.resultType} constitution.
+                    Temporarily add {vikritiResult.vikritiType}-balancing practices to your routine.
+                    Consider consulting a Vaidya for a personalised dual-dosha protocol.
+                  </p>
+                </div>
+              )}
+              <div className="text-center mt-6">
+                <Link
+                  href="/vikriti"
+                  className="text-sm text-primary hover:underline"
+                >
+                  Reassess current state →
+                </Link>
+              </div>
+            </div>
+          ) : (
+            /* CTA — Vikriti not yet assessed */
+            <div className="max-w-2xl mx-auto text-center">
+              <span className="text-5xl mb-4 block" aria-hidden>🌊</span>
+              <h2 className="font-display text-headline-lg font-bold text-on-surface mb-3">
+                How are you feeling <em>right now</em>?
+              </h2>
+              <p className="text-body-lg text-on-surface-variant mb-3 max-w-lg mx-auto">
+                Your Prakriti is your lifelong constitution. But your <strong>Vikriti</strong> — your current state of imbalance — can shift with seasons, stress, and lifestyle.
+              </p>
+              <p className="text-sm text-on-surface-variant mb-8 max-w-lg mx-auto">
+                Take the 5-question Vikriti assessment to discover which dosha is elevated right now and what to focus on immediately.
+              </p>
+              <Link
+                href="/vikriti"
+                className="inline-block saffron-gradient text-on-primary px-10 py-4 rounded-full text-label-md font-semibold sun-shadow hover:scale-105 active:scale-95 transition-all"
+              >
+                Assess My Current State → (5 questions)
+              </Link>
+              <p className="text-xs text-on-surface-variant mt-4">Takes under 2 minutes</p>
+            </div>
+          )}
+        </section>
       </main>
 
       <Footer />

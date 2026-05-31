@@ -21,6 +21,8 @@ export interface QuizQuestion {
   id: string
   sectionId: string
   questionNumber: number
+  /** Clinical weight — 2 for high-signal constitutional markers, 1 for standard. Default: 1 */
+  weight?: number
   text: string
   hint?: string
   options: QuizOption[]
@@ -42,7 +44,8 @@ export interface QuizMeta {
   version: string
   totalQuestions: number
   sections: number
-  questionsPerSection: number
+  /** Number or descriptive string when sections have variable counts */
+  questionsPerSection: number | string
   scoring: Record<string, string>
   notes: string
 }
@@ -258,6 +261,13 @@ export interface QuestionsResponseData {
   sections: QuizSection[]
   totalQuestions: number
   meta: QuizMeta
+}
+
+export interface VikritiResponseData {
+  /** Dominant currently-aggravated dosha */
+  vikritiType: PureDoshaType
+  scores: DoshaScores
+  percentages: DoshaPercentages
 }
 
 // ─── Hook Return Types ───────────────────────────────────────────────────────

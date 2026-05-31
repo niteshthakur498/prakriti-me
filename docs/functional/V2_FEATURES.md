@@ -1,8 +1,13 @@
 # V2 Features — Product Backlog & Specifications
 
-All features in this document are **not built in V1**. They are fully hidden from the UI. This document captures their intended behaviour, UX flow, and technical requirements so they can be built in sequence.
+Features in this document are **not yet built**. They are hidden from the UI. This document captures intended behaviour, UX flow, and technical requirements so they can be built in sequence.
 
 Feature flags for the toggleable V2 features live in `.env.local` and `src/lib/features.ts`.
+
+> **Already shipped from this backlog:**
+> - ✅ Vikriti Micro-Assessment — `/vikriti` page + `POST /api/vikriti/score` + results comparison card (see `data/vikriti-questions.json`)
+> - ✅ Weighted Scoring Algorithm — `PrakritiScorer` now applies per-question weights; thresholds recalibrated for 41-point total
+> - ✅ Body temperature + sweating questions — Q26 and Q27 added to Section 1 (Physical Body)
 
 ---
 
@@ -124,7 +129,13 @@ Full translation of the quiz questions, results, and recommendation content into
 
 ---
 
-## 5. Vikriti Assessment (Current Imbalance)
+## ~~5. Vikriti Assessment~~ ✅ **Shipped in V1**
+
+> Implemented. See `src/pages/vikriti.tsx`, `src/pages/api/vikriti/score.ts`, `data/vikriti-questions.json`, and the Vikriti section on the results page.
+
+---
+
+## ~~[archived] 5. Vikriti Assessment (Current Imbalance)~~
 
 **No feature flag yet — new build**  
 **Location:** New page `/vikriti` or as a follow-up step after `/results`
@@ -155,7 +166,13 @@ This is the most clinically significant V2 feature. Without Vikriti, the app can
 
 ---
 
-## 6. Weighted Scoring Algorithm
+## ~~6. Weighted Scoring Algorithm~~ ✅ **Shipped in V1**
+
+> Implemented. `PrakritiScorer` uses `QUESTION_WEIGHTS` from `prakritiConstants.ts`. Thresholds recalibrated: `TRIDOSHIC_MAX_SPREAD = 5`, `DUAL_MAX_SPREAD = 7` (weighted total = 41). See `docs/technical/DATA_QUESTIONS.md` for the weight table.
+
+---
+
+## ~~[archived] 6. Weighted Scoring Algorithm~~
 
 **No feature flag — backend change**  
 **Location:** `src/backend/domain/prakriti/PrakritiScorer.ts`
@@ -237,16 +254,16 @@ Dynamic Open Graph image for social sharing of results. When a user shares their
 
 ---
 
-## Priority Order (Recommended)
+## Priority Order (Remaining)
 
 | Priority | Feature | Rationale |
 |---|---|---|
-| 🔴 P0 | Vikriti Assessment (#5) | Highest clinical impact; completes the product |
-| 🔴 P0 | Weighted Scoring (#6) | Improves accuracy of existing quiz |
-| 🟠 P1 | Seasonal Auto-Detection (#8) | Small lift, high daily relevance |
-| 🟠 P1 | OG Image & Social Sharing (#9) | Growth / virality lever |
-| 🟡 P2 | Vedic AI Assistant (#1) | Differentiation; requires Claude API integration |
-| 🟡 P2 | PDF Report (#3) | High user request likelihood |
-| 🟢 P3 | User Profiles (#2) | Retention; prerequisite for Practitioner Mode |
-| 🟢 P3 | Practitioner Mode (#7) | B2B / clinical audience |
-| 🔵 P4 | Multilingual Support (#4) | Market expansion; depends on translation resources |
+| ✅ Done | Vikriti Assessment (#5) | Shipped in V1 |
+| ✅ Done | Weighted Scoring (#6) | Shipped in V1 |
+| 🔴 P0 | Seasonal Auto-Detection (#8) | Small lift, high daily relevance |
+| 🔴 P0 | OG Image & Social Sharing (#9) | Growth / virality lever |
+| 🟠 P1 | Vedic AI Assistant (#1) | Differentiation; requires Claude API integration |
+| 🟠 P1 | PDF Report (#3) | High user request likelihood |
+| 🟡 P2 | User Profiles (#2) | Retention; prerequisite for Practitioner Mode |
+| 🟡 P2 | Practitioner Mode (#7) | B2B / clinical audience |
+| 🟢 P3 | Multilingual Support (#4) | Market expansion; depends on translation resources |

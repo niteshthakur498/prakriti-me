@@ -1,15 +1,22 @@
 {
   "_meta": {
-    "version": "1.0.0",
-    "totalQuestions": 25,
+    "version": "1.1.0",
+    "totalQuestions": 27,
     "sections": 5,
-    "questionsPerSection": 5,
+    "questionsPerSection": "variable — Section 1 has 7 questions (Q01–Q05, Q26, Q27); Sections 2–5 have 5 questions each",
+    "weightedTotal": 41,
+    "weights": {
+      "highSignal": 2,
+      "standard": 1,
+      "highSignalQuestions": ["Q01","Q02","Q03","Q04","Q05","Q06","Q07","Q11","Q12","Q16","Q17","Q18","Q26","Q27"],
+      "note": "Physical body and core digestion/emotion/sleep questions carry weight 2. Lifestyle and behavioural questions carry weight 1."
+    },
     "scoring": {
       "vata": "V",
       "pitta": "P",
       "kapha": "K"
     },
-    "notes": "Each option maps to a dosha (V/P/K). Tally scores at end to determine dominant dosha(s). Dual dosha if two are within 10% of each other. Tridoshic if all three within 15% of each other."
+    "notes": "Each option maps to a dosha (V/P/K). Weighted tally at end determines dominant dosha(s). Thresholds are based on weighted total of 41 — see prakritiConstants.ts for TRIDOSHIC_MAX_SPREAD and DUAL_MAX_SPREAD."
   },
 
   "sections": [
@@ -27,6 +34,7 @@
           "id": "Q01",
           "sectionId": "physical_body",
           "questionNumber": 1,
+          "weight": 2,
           "text": "How would you describe your natural body frame?",
           "hint": "Think about how you've been built since childhood, not recent changes",
           "options": [
@@ -54,6 +62,7 @@
           "id": "Q02",
           "sectionId": "physical_body",
           "questionNumber": 2,
+          "weight": 2,
           "text": "What does your skin naturally tend to be like?",
           "hint": "Without skincare products — your natural default",
           "options": [
@@ -81,6 +90,7 @@
           "id": "Q03",
           "sectionId": "physical_body",
           "questionNumber": 3,
+          "weight": 2,
           "text": "How would you describe your hair naturally?",
           "hint": "Your hair's natural texture before any treatments",
           "options": [
@@ -108,6 +118,7 @@
           "id": "Q04",
           "sectionId": "physical_body",
           "questionNumber": 4,
+          "weight": 2,
           "text": "What do your joints and bones feel like?",
           "options": [
             {
@@ -134,6 +145,7 @@
           "id": "Q05",
           "sectionId": "physical_body",
           "questionNumber": 5,
+          "weight": 2,
           "text": "How do your eyes generally appear?",
           "options": [
             {
@@ -155,6 +167,62 @@
               "shortLabel": "Large & calm"
             }
           ]
+        },
+        {
+          "id": "Q26",
+          "sectionId": "physical_body",
+          "questionNumber": 6,
+          "weight": 2,
+          "text": "How does your body temperature naturally tend to run?",
+          "hint": "Think about your baseline — not when sick or in extreme weather",
+          "options": [
+            {
+              "id": "Q26A",
+              "dosha": "V",
+              "text": "Cold — my hands and feet are often cool, I need more layers than others in the same room",
+              "shortLabel": "Cold extremities"
+            },
+            {
+              "id": "Q26B",
+              "dosha": "P",
+              "text": "Warm or hot — I run warmer than most and feel uncomfortable in heat",
+              "shortLabel": "Naturally warm or hot"
+            },
+            {
+              "id": "Q26C",
+              "dosha": "K",
+              "text": "Moderate — I rarely feel extreme cold or heat and adapt to temperature reasonably well",
+              "shortLabel": "Moderate, adapts well"
+            }
+          ]
+        },
+        {
+          "id": "Q27",
+          "sectionId": "physical_body",
+          "questionNumber": 7,
+          "weight": 2,
+          "text": "What is your natural sweating pattern?",
+          "hint": "Consider moderate activity — a walk, light work — not extreme exercise",
+          "options": [
+            {
+              "id": "Q27A",
+              "dosha": "V",
+              "text": "Minimal — I barely sweat even during exercise, with little or no body odour",
+              "shortLabel": "Minimal, little odour"
+            },
+            {
+              "id": "Q27B",
+              "dosha": "P",
+              "text": "Profuse — I sweat easily and heavily, with a strong or pungent odour",
+              "shortLabel": "Profuse, strong odour"
+            },
+            {
+              "id": "Q27C",
+              "dosha": "K",
+              "text": "Moderate — I sweat a reasonable amount with a mild or pleasant odour",
+              "shortLabel": "Moderate, mild odour"
+            }
+          ]
         }
       ]
     },
@@ -173,6 +241,7 @@
           "id": "Q06",
           "sectionId": "digestion",
           "questionNumber": 6,
+          "weight": 2,
           "text": "How would you describe your appetite and hunger patterns?",
           "options": [
             {
@@ -199,6 +268,7 @@
           "id": "Q07",
           "sectionId": "digestion",
           "questionNumber": 7,
+          "weight": 2,
           "text": "How is your digestion and bowel movement naturally?",
           "options": [
             {
@@ -225,6 +295,7 @@
           "id": "Q08",
           "sectionId": "digestion",
           "questionNumber": 8,
+          "weight": 1,
           "text": "What food tastes and temperatures do you naturally crave?",
           "options": [
             {
@@ -251,6 +322,7 @@
           "id": "Q09",
           "sectionId": "digestion",
           "questionNumber": 9,
+          "weight": 1,
           "text": "How do you feel after a heavy meal?",
           "options": [
             {
@@ -277,6 +349,7 @@
           "id": "Q10",
           "sectionId": "digestion",
           "questionNumber": 10,
+          "weight": 1,
           "text": "How do you respond to cold weather or cold food and drinks?",
           "hint": "Think about both: how your body feels in a cold climate AND how you feel after cold food or drinks",
           "options": [
@@ -317,6 +390,7 @@
           "id": "Q11",
           "sectionId": "sleep_energy",
           "questionNumber": 11,
+          "weight": 2,
           "text": "How is your sleep quality and pattern naturally?",
           "options": [
             {
@@ -343,6 +417,7 @@
           "id": "Q12",
           "sectionId": "sleep_energy",
           "questionNumber": 12,
+          "weight": 2,
           "text": "How do you feel when you wake up in the morning?",
           "options": [
             {
@@ -369,6 +444,7 @@
           "id": "Q13",
           "sectionId": "sleep_energy",
           "questionNumber": 13,
+          "weight": 1,
           "text": "How is your physical stamina and endurance?",
           "options": [
             {
@@ -395,6 +471,7 @@
           "id": "Q14",
           "sectionId": "sleep_energy",
           "questionNumber": 14,
+          "weight": 1,
           "text": "What time of day do you naturally feel most alive and energetic?",
           "options": [
             {
@@ -421,6 +498,7 @@
           "id": "Q15",
           "sectionId": "sleep_energy",
           "questionNumber": 15,
+          "weight": 1,
           "text": "How do you recover after illness or physical exertion?",
           "options": [
             {
@@ -460,6 +538,7 @@
           "id": "Q16",
           "sectionId": "mind_emotions",
           "questionNumber": 16,
+          "weight": 2,
           "text": "How do you naturally learn and process new information?",
           "options": [
             {
@@ -486,6 +565,7 @@
           "id": "Q17",
           "sectionId": "mind_emotions",
           "questionNumber": 17,
+          "weight": 2,
           "text": "How do you typically respond to stress?",
           "options": [
             {
@@ -512,6 +592,7 @@
           "id": "Q18",
           "sectionId": "mind_emotions",
           "questionNumber": 18,
+          "weight": 2,
           "text": "Which emotion do you struggle with most naturally?",
           "options": [
             {
@@ -538,6 +619,7 @@
           "id": "Q19",
           "sectionId": "mind_emotions",
           "questionNumber": 19,
+          "weight": 1,
           "text": "How would close friends describe your personality?",
           "options": [
             {
@@ -564,6 +646,7 @@
           "id": "Q20",
           "sectionId": "mind_emotions",
           "questionNumber": 20,
+          "weight": 1,
           "text": "How do you handle change and new situations?",
           "options": [
             {
@@ -603,6 +686,7 @@
           "id": "Q21",
           "sectionId": "lifestyle",
           "questionNumber": 21,
+          "weight": 1,
           "text": "How do you naturally speak and communicate?",
           "options": [
             {
@@ -629,6 +713,7 @@
           "id": "Q22",
           "sectionId": "lifestyle",
           "questionNumber": 22,
+          "weight": 1,
           "text": "How do you approach money and finances?",
           "options": [
             {
@@ -655,6 +740,7 @@
           "id": "Q23",
           "sectionId": "lifestyle",
           "questionNumber": 23,
+          "weight": 1,
           "text": "How would you describe your walk and physical movement?",
           "options": [
             {
@@ -681,6 +767,7 @@
           "id": "Q24",
           "sectionId": "lifestyle",
           "questionNumber": 24,
+          "weight": 1,
           "text": "How do you approach work and tasks?",
           "options": [
             {
@@ -707,6 +794,7 @@
           "id": "Q25",
           "sectionId": "lifestyle",
           "questionNumber": 25,
+          "weight": 1,
           "text": "How are you in social situations naturally?",
           "options": [
             {
@@ -734,12 +822,12 @@
   ],
 
   "scoringGuide": {
-    "method": "tally",
-    "totalPoints": 25,
+    "method": "weighted tally",
+    "totalPoints": 41,
     "resultThresholds": {
-      "pureDosha": "One dosha scores >= 60% (15+ points)",
-      "dualDosha": "Two doshas each score >= 30% and within 15 points of each other",
-      "tridoshic": "All three doshas score between 7-10 points (within 3 points of each other)"
+      "pureDosha": "One dosha scores >= 60% of weighted total (~25+ points)",
+      "dualDosha": "Two doshas within 7 weighted points of each other",
+      "tridoshic": "All three doshas within 5 weighted points of each other"
     },
     "resultTypes": [
       "Vata",

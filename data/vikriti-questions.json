@@ -1,0 +1,163 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "totalQuestions": 5,
+    "sections": 1,
+    "purpose": "Vikriti (current imbalance) assessment — asks about the last 2-4 weeks only, not constitutional nature. Results indicate which dosha is currently elevated and needs balancing attention.",
+    "scoring": {
+      "vata": "V",
+      "pitta": "P",
+      "kapha": "K"
+    }
+  },
+
+  "sections": [
+    {
+      "id": "current_state",
+      "sectionNumber": 1,
+      "title": "Your Current State",
+      "sanskritTitle": "Vikriti Pariksha",
+      "sanskrit": "विकृति परीक्षा",
+      "description": "Answer based on how you have felt in the last 2–4 weeks — not your lifelong tendencies",
+      "emoji": "🌊",
+      "color": "#7EC8E3",
+      "questions": [
+        {
+          "id": "QV01",
+          "sectionId": "current_state",
+          "questionNumber": 1,
+          "text": "How has your digestion been in the last 2–4 weeks?",
+          "hint": "Focus on recent changes — not how your digestion usually is",
+          "options": [
+            {
+              "id": "QV01A",
+              "dosha": "V",
+              "text": "Irregular or erratic — constipation, bloating, dryness, or gas has crept in more than usual",
+              "shortLabel": "Irregular & gassy"
+            },
+            {
+              "id": "QV01B",
+              "dosha": "P",
+              "text": "Acidic or inflamed — heartburn, loose stools, or a burning feeling in the gut",
+              "shortLabel": "Acidic & burning"
+            },
+            {
+              "id": "QV01C",
+              "dosha": "K",
+              "text": "Sluggish and heavy — food feels like it is sitting, slow movement, congestion or mucus",
+              "shortLabel": "Sluggish & heavy"
+            }
+          ]
+        },
+        {
+          "id": "QV02",
+          "sectionId": "current_state",
+          "questionNumber": 2,
+          "text": "How has your sleep been lately?",
+          "hint": "Think about the last few weeks specifically",
+          "options": [
+            {
+              "id": "QV02A",
+              "dosha": "V",
+              "text": "Disrupted or anxious — light sleep, racing thoughts, waking at odd hours, vivid or disturbing dreams",
+              "shortLabel": "Disrupted, anxious"
+            },
+            {
+              "id": "QV02B",
+              "dosha": "P",
+              "text": "Short and driven — I push late into the night, overactive mind even when tired, waking feeling alert but depleted",
+              "shortLabel": "Short, overactive mind"
+            },
+            {
+              "id": "QV02C",
+              "dosha": "K",
+              "text": "Excessive but unrefreshing — sleeping more than usual, heavy upon waking, hard to drag myself out of bed",
+              "shortLabel": "Excessive, unrefreshing"
+            }
+          ]
+        },
+        {
+          "id": "QV03",
+          "sectionId": "current_state",
+          "questionNumber": 3,
+          "text": "What best describes your emotional state right now?",
+          "hint": "Be honest about how you have actually been feeling this past month",
+          "options": [
+            {
+              "id": "QV03A",
+              "dosha": "V",
+              "text": "Anxious and scattered — worry, overthinking, or feeling ungrounded and overwhelmed",
+              "shortLabel": "Anxious & scattered"
+            },
+            {
+              "id": "QV03B",
+              "dosha": "P",
+              "text": "Irritable and pressured — frustration, impatience, or a sense of burnout building beneath the surface",
+              "shortLabel": "Irritable & pressured"
+            },
+            {
+              "id": "QV03C",
+              "dosha": "K",
+              "text": "Low and withdrawn — low motivation, emotional flatness, heaviness, or retreating from people and responsibilities",
+              "shortLabel": "Low & withdrawn"
+            }
+          ]
+        },
+        {
+          "id": "QV04",
+          "sectionId": "current_state",
+          "questionNumber": 4,
+          "text": "How has your energy been lately?",
+          "hint": "Day-to-day energy levels over the past few weeks",
+          "options": [
+            {
+              "id": "QV04A",
+              "dosha": "V",
+              "text": "Erratic — bursts of energy followed by sudden crashes, difficult to sustain effort through the day",
+              "shortLabel": "Erratic, crashing"
+            },
+            {
+              "id": "QV04B",
+              "dosha": "P",
+              "text": "Intense but inflammatory — pushing hard but feeling overheated, tense, or like I am running on fumes",
+              "shortLabel": "Intense, overheated"
+            },
+            {
+              "id": "QV04C",
+              "dosha": "K",
+              "text": "Flat and heavy — hard to get motivated or started, persistent fatigue, or a general feeling of inertia",
+              "shortLabel": "Flat & heavy"
+            }
+          ]
+        },
+        {
+          "id": "QV05",
+          "sectionId": "current_state",
+          "questionNumber": 5,
+          "text": "Which physical symptoms have you noticed most in the last few weeks?",
+          "hint": "Select the group that resonates most — you may notice some from each",
+          "options": [
+            {
+              "id": "QV05A",
+              "dosha": "V",
+              "text": "Dry skin or lips, cracking joints, bloating or gas, cold hands and feet, or difficulty staying warm",
+              "shortLabel": "Dryness, cold, bloating"
+            },
+            {
+              "id": "QV05B",
+              "dosha": "P",
+              "text": "Skin rashes or acne flares, acidity or reflux, inflammation or soreness, feeling overheated or irritated skin",
+              "shortLabel": "Rashes, acidity, heat"
+            },
+            {
+              "id": "QV05C",
+              "dosha": "K",
+              "text": "Nasal congestion or mucus, puffiness or water retention, unexplained weight gain, or a foggy heavy-headed feeling",
+              "shortLabel": "Congestion, puffiness, fog"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
