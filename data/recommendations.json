@@ -187,7 +187,7 @@
           { "name": "Cucumber", "emoji": "🥒", "reason": "Hydrating and cooling, reduces internal heat" },
           { "name": "Coriander and fennel", "emoji": "🌿", "reason": "Cooling spices that balance Pitta's fire" },
           { "name": "Ghee", "emoji": "🧈", "reason": "Cooling (unlike other fats), deeply nourishing" },
-          { "name": "Warm milk with cardamom", "emoji": "🥛", "reason": "Sweet and cooling for Pitta — always warm, never cold from the fridge. Raw or organic preferred. Cold commercial milk can worsen acidity." },
+          { "name": "Milk with cardamom or saffron", "emoji": "🥛", "reason": "Sweet and cooling for Pitta — room temperature or slightly cool (not refrigerator cold, not boiling hot). A pinch of cardamom or saffron makes it more cooling. Raw or organic preferred." },
           { "name": "Leafy greens", "emoji": "🥬", "reason": "Bitter taste directly reduces Pitta" },
           { "name": "Basmati rice", "emoji": "🍚", "reason": "Light, sweet, and cooling" },
           { "name": "Pomegranate", "emoji": "🫐", "reason": "Astringent and cooling, excellent for Pitta" },
@@ -198,7 +198,7 @@
           { "name": "Alcohol", "emoji": "🍷", "reason": "Heating and aggravating — especially in excess" },
           { "name": "Fried and oily food", "emoji": "🍟", "reason": "Increases heat and aggravates the liver" },
           { "name": "Sour foods (excess vinegar, yogurt)", "emoji": "🍋", "reason": "Sour taste directly aggravates Pitta" },
-          { "name": "Red meat", "emoji": "🥩", "reason": "Heavy and heating — occasional is fine" },
+          { "name": "Red meat", "emoji": "🥩", "reason": "Heavy, heating, and Rajasik — reduce significantly. If consuming meat, choose lean white meat or fish over red meat" },
           { "name": "Caffeine in excess", "emoji": "☕", "reason": "Heating, acidic, and stimulating — hard on Pitta" }
         ]
       },
@@ -207,10 +207,10 @@
         "principle": "Cooling down and letting go are the two most important practices for Pitta. Build spaciousness into your day.",
         "daily": [
           { "time": "6:00 AM", "activity": "Wake up — before the sun gets hot", "detail": "Pitta time is 10 AM–2 PM. Morning is your window for cool, focused work.", "emoji": "🌄" },
-          { "time": "6:15 AM", "activity": "Coconut or sunflower oil massage", "detail": "Cooling oils calm Pitta's heat. Avoid heavy sesame oil.", "emoji": "🥥" },
+          { "time": "6:15 AM", "activity": "Coconut or sunflower oil massage, then shower", "detail": "Cooling oils calm Pitta's heat. Avoid heavy sesame oil. After 10–15 minutes, rinse with a warm-cool shower before exercise — oil should not go directly into physical activity.", "emoji": "🥥" },
           { "time": "6:45 AM", "activity": "Moderate exercise", "detail": "Avoid overheating — exercise in the cool of the morning. Swimming is ideal.", "emoji": "🏊" },
           { "time": "7:30 AM", "activity": "Meditation — focusing on compassion", "detail": "Cooling meditations (moon visualization, loving-kindness) balance Pitta's fire.", "emoji": "🧘‍♀️" },
-          { "time": "8:00 AM", "activity": "Cool, light breakfast", "detail": "Sweet fruits, cool milk, or light grains. Not too heavy.", "emoji": "🍎" },
+          { "time": "8:00 AM", "activity": "Light, cooling breakfast", "detail": "Sweet fruits, room-temperature milk with cardamom, or light grains. Not too heavy — save your appetite for the noon main meal.", "emoji": "🍎" },
           { "time": "12:00 PM", "activity": "Main meal — your biggest", "detail": "Pitta digestion is strongest at noon. Eat well but not to excess.", "emoji": "🍽️" },
           { "time": "3:00 PM", "activity": "Brief rest or nature walk", "detail": "Pitta peaks 10 AM–2 PM. By 3 PM the fire is releasing — step away from intense work. A walk in shade or brief rest prevents burnout.", "emoji": "🌳" },
           { "time": "6:30 PM", "activity": "Light dinner", "detail": "Sweet, easy to digest. Done by 7:30 PM.", "emoji": "🥗" },
@@ -249,7 +249,7 @@
           "focus": "Peak Pitta season — your highest-risk time. Prioritize cooling above all.",
           "tips": [
             "Eat cooling foods: coconut, cucumber, sweet fruits",
-            "Avoid the midday sun between 11 AM–3 PM",
+            "Avoid the midday sun between 10 AM–4 PM — especially in tropical and equatorial climates where solar intensity peaks earlier and lasts longer",
             "Swimming and moonlit walks are your best exercise",
             "Rose water, sandalwood, and coconut oil for skin",
             "Reduce alcohol, coffee, and spicy food completely"
@@ -261,7 +261,7 @@
           "pittaLevel": "Moderate",
           "focus": "A good season for Pitta — use it for gentle cleansing.",
           "tips": [
-            "Spring Panchakarma cleanse is ideal for Pitta",
+            "Spring Panchakarma cleanse is ideal for Pitta — Panchakarma is a classical Ayurvedic detox programme (consult a qualified Vaidya before undertaking it)",
             "Introduce bitter greens and cleansing foods",
             "Great time for new projects — harness Pitta's drive",
             "Keep exercising but choose cool morning hours"
@@ -276,7 +276,7 @@
             "Enjoy warming, nourishing foods as weather cools",
             "This is Pitta's most productive and balanced season",
             "Great time for ambitious projects and goals",
-            "Harvest and celebration foods are well-tolerated"
+            "Harvest and celebration foods are well-tolerated in moderation — avoid excess sweets and fried festive foods even in autumn; Pitta still reacts to oily and sugary excess"
           ]
         },
         "winter": {
