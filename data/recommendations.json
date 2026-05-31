@@ -44,8 +44,9 @@
           { "name": "Sesame oil", "emoji": "🫙", "reason": "Warming and lubricating for dry Vata tissues" },
           { "name": "Basmati rice", "emoji": "🍚", "reason": "Light yet nourishing, easy on digestion" },
           { "name": "Cooked vegetables", "emoji": "🥕", "reason": "Easy to digest when cooked with warming spices" },
-          { "name": "Dates and figs", "emoji": "🫐", "reason": "Sweet, moist, and deeply nourishing" },
+          { "name": "Dates and figs", "emoji": "🌴", "reason": "Sweet, moist, and deeply nourishing" },
           { "name": "Mung dal", "emoji": "🫘", "reason": "Easy to digest, warming, grounding protein" },
+          { "name": "Triphala (before bed)", "emoji": "🌿", "reason": "The classical Ayurvedic formula for Vata — regulates digestion, relieves constipation gently, and acts as a mild daily detoxifier. 1/2 tsp in warm water at bedtime." },
           { "name": "Warm herbal teas", "emoji": "🍵", "reason": "Ginger, cardamom, cinnamon teas calm and warm" },
           { "name": "Avocado", "emoji": "🥑", "reason": "Rich, oily, and grounding for Vata's dryness" },
           { "name": "Warm soups and stews", "emoji": "🍲", "reason": "The ideal Vata meal — warm, moist, nourishing" }
@@ -53,7 +54,7 @@
         "minimizeFoods": [
           { "name": "Cold drinks and ice", "emoji": "🧊", "reason": "Aggravates Vata's cold and dry quality" },
           { "name": "Raw salads", "emoji": "🥗", "reason": "Hard to digest, increases dryness and gas" },
-          { "name": "Caffeine", "emoji": "☕", "reason": "Over-stimulates already restless Vata mind" },
+          { "name": "Caffeine", "emoji": "☕", "reason": "Drying and stimulating — a double problem for Vata. Dryness worsens constipation and joint stiffness; stimulation aggravates the already restless Vata mind and disrupts sleep" },
           { "name": "Dried fruits", "emoji": "🍇", "reason": "Too dry — soak them first if you eat them" },
           { "name": "Crackers and dry snacks", "emoji": "🍘", "reason": "Increase dryness and are hard to digest" },
           { "name": "Carbonated drinks", "emoji": "🥤", "reason": "Gas and bloating are Vata's biggest weakness" }
@@ -76,6 +77,7 @@
         ],
         "weeklyPractices": [
           "Shirodhara or head oil massage once a week",
+          "Nasya daily — 2 drops of warm sesame or Anu taila oil in each nostril after morning shower. Lubricates dry nasal passages, grounds the mind, and calms Vata's nervous system",
           "Warm bath with essential oils (lavender, sandalwood)",
           "Digital detox for half a day",
           "Spend time in nature — forests and gardens"
@@ -120,7 +122,7 @@
           "tips": [
             "Favor warming spices: ginger, cinnamon, black pepper",
             "Sesame and almond oil for daily massage",
-            "More sleep is natural and healthy in winter",
+            "More sleep is natural and healthy in winter — but keep your wake-up time fixed. Erratic sleep schedules worsen Vata more than any food choice",
             "Hot herbal teas throughout the day"
           ]
         },
@@ -130,7 +132,7 @@
           "vataLevel": "Low",
           "focus": "Enjoy this balancing season. Gradually introduce lighter foods.",
           "tips": [
-            "A gentle spring cleanse is beneficial",
+            "A very gentle spring cleanse only — Vata cannot tolerate aggressive fasting or detox. Always maintain nourishment (warm soups, ghee, cooked foods) throughout any cleanse",
             "Begin introducing more fresh foods slowly",
             "Increase outdoor activity as weather warms",
             "This is a great time to start new habits"
@@ -142,7 +144,7 @@
           "vataLevel": "Low-Moderate",
           "focus": "Vata is most balanced in summer. Enjoy it but avoid overheating.",
           "tips": [
-            "Coconut oil is ideal for summer massage",
+            "Coconut oil on the head and scalp in summer — cooling and soothing. Continue warm sesame oil on the body year-round; Vata always needs sesame's warmth and lubrication",
             "Stay hydrated with room-temperature water",
             "Enjoy fresh, sweet fruits freely",
             "Morning exercise before 10 AM"
