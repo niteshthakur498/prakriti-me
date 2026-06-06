@@ -22,7 +22,7 @@ interface QuizProps {
 
 const QuizPage: NextPage<QuizProps> = ({ sectionsEn, sectionsHi }) => {
   const t = useTranslations('quiz')
-  const { locale } = useLocale()
+  const { locale, setLocale } = useLocale()
   const sections = locale === 'hi' ? sectionsHi : sectionsEn
 
   const quiz = useQuiz(sections)
@@ -52,6 +52,20 @@ const QuizPage: NextPage<QuizProps> = ({ sectionsEn, sectionsHi }) => {
           <Image src="/logo.png" alt="PrakritiMe logo" width={36} height={36} className="rounded-full" />
           <span className="font-display text-headline-md text-primary font-bold">PrakritiMe</span>
         </Link>
+        <div className="flex items-center gap-1 border border-outline-variant rounded-full px-1 py-1">
+          {(['en', 'hi'] as const).map((l) => (
+            <button
+              key={l}
+              type="button"
+              onClick={() => setLocale(l)}
+              className={`px-3 py-1 rounded-full text-label-md font-semibold transition-all ${
+                locale === l ? 'bg-primary text-on-primary' : 'text-on-surface-variant hover:text-primary'
+              }`}
+            >
+              {l === 'en' ? 'EN' : 'हि'}
+            </button>
+          ))}
+        </div>
       </header>
 
       <main className="flex-grow pt-28 pb-16 px-5 flex justify-center items-start min-h-screen">

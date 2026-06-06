@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+import { useLocale } from '@/contexts/LocaleContext'
 
 interface DoshaCard {
   name: string
@@ -14,7 +15,8 @@ interface DoshaCard {
 }
 
 interface DoshaPreviewProps {
-  doshaProfiles: DoshaCard[]
+  doshaProfilesEn: DoshaCard[]
+  doshaProfilesHi: DoshaCard[]
 }
 
 const DOSHA_STYLES: Record<string, { bg: string; ring: string; text: string; sub: string }> = {
@@ -23,8 +25,10 @@ const DOSHA_STYLES: Record<string, { bg: string; ring: string; text: string; sub
   Kapha: { bg: 'bg-[#dcfce7]', ring: 'ring-[#22c55e]', text: 'text-[#064e3b]', sub: 'text-[#166534]' },
 }
 
-export function DoshaPreview({ doshaProfiles }: DoshaPreviewProps): JSX.Element {
+export function DoshaPreview({ doshaProfilesEn, doshaProfilesHi }: DoshaPreviewProps): JSX.Element {
   const t = useTranslations('home')
+  const { locale } = useLocale()
+  const doshaProfiles = locale === 'hi' ? doshaProfilesHi : doshaProfilesEn
 
   return (
     <section className="py-16">
@@ -58,7 +62,7 @@ export function DoshaPreview({ doshaProfiles }: DoshaPreviewProps): JSX.Element 
                 </p>
                 <p className={`${styles.text} text-body-md mb-7`}>{dosha.heroDescription.slice(0, 120)}...</p>
                 <ul className="space-y-2">
-                  {dosha.keyTraits.slice(0, 3).map((trait) => (
+                  {dosha.keyTraits.slice(0, 3).map((trait: string) => (
                     <li key={trait} className={`flex items-center gap-2 ${styles.text} text-label-md font-semibold`}>
                       <span className="w-1.5 h-1.5 rounded-full bg-current flex-shrink-0" />
                       {trait}

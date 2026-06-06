@@ -7,6 +7,7 @@ import { HowItWorks } from '@/components/landing/HowItWorks'
 import { DoshaPreview } from '@/components/landing/DoshaPreview'
 import { Testimonials } from '@/components/landing/Testimonials'
 import recommendationsData from '../../data/recommendations.json'
+import { HI_CONTENT } from '@/lib/hiContent'
 
 interface DoshaCardData {
   name: string
@@ -21,10 +22,11 @@ interface DoshaCardData {
 }
 
 interface HomeProps {
-  doshaProfiles: DoshaCardData[]
+  doshaProfilesEn: DoshaCardData[]
+  doshaProfilesHi: DoshaCardData[]
 }
 
-const Home: NextPage<HomeProps> = ({ doshaProfiles }) => {
+const Home: NextPage<HomeProps> = ({ doshaProfilesEn, doshaProfilesHi }) => {
   return (
     <>
       <Head>
@@ -37,7 +39,7 @@ const Home: NextPage<HomeProps> = ({ doshaProfiles }) => {
       <main className="pt-20">
         <HeroSection />
         <HowItWorks />
-        <DoshaPreview doshaProfiles={doshaProfiles} />
+        <DoshaPreview doshaProfilesEn={doshaProfilesEn} doshaProfilesHi={doshaProfilesHi} />
         <Testimonials />
       </main>
       <Footer />
@@ -46,7 +48,7 @@ const Home: NextPage<HomeProps> = ({ doshaProfiles }) => {
 }
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  const doshaProfiles: DoshaCardData[] = Object.values(recommendationsData.doshas).map((d) => ({
+  const doshaProfilesEn: DoshaCardData[] = Object.values(recommendationsData.doshas).map((d) => ({
     name: d.name,
     sanskrit: d.sanskrit,
     tagline: d.tagline,
@@ -58,7 +60,14 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
     gradientTo: d.gradientTo,
   }))
 
-  return { props: { doshaProfiles } }
+  const doshaProfilesHi: DoshaCardData[] = doshaProfilesEn.map((d) => {
+    const hi = HI_CONTENT[d.name]
+    return hi
+      ? { ...d, tagline: hi.profile.tagline, heroDescription: hi.profile.heroDescription, keyTraits: hi.profile.keyTraits }
+      : d
+  })
+
+  return { props: { doshaProfilesEn, doshaProfilesHi } }
 }
 
 export default Home

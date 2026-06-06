@@ -49,7 +49,7 @@ export function RecommendationTabs({ recommendations, currentSeason }: Recommend
           >
             {tab.emoji} {TAB_LABELS[tab.key]}
             {tab.key === 'seasonal' && currentSeason && (
-              <span className="absolute -top-1.5 -right-1.5 bg-tertiary text-on-tertiary text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none">
+              <span aria-hidden className="absolute -top-1.5 -right-1.5 bg-tertiary text-on-tertiary text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none">
                 {t('tabNow')}
               </span>
             )}

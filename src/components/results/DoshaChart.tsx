@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import type { DoshaPercentages } from '@/types'
 import { useTranslations } from 'next-intl'
+import { useLocale } from '@/contexts/LocaleContext'
+import { HI_DOSHA_NAMES } from '@/lib/hiContent'
 
 interface DoshaChartProps {
   percentages: DoshaPercentages
@@ -8,6 +10,8 @@ interface DoshaChartProps {
 
 export const DoshaChart = React.memo(function DoshaChart({ percentages }: DoshaChartProps): JSX.Element {
   const t = useTranslations('results')
+  const { locale } = useLocale()
+  const n = (name: string) => (locale === 'hi' ? (HI_DOSHA_NAMES[name] ?? name) : name)
   const vataRef = useRef<HTMLDivElement>(null)
   const pittaRef = useRef<HTMLDivElement>(null)
   const kaphaRef = useRef<HTMLDivElement>(null)
@@ -39,36 +43,36 @@ export const DoshaChart = React.memo(function DoshaChart({ percentages }: DoshaC
           className="dosha-bar h-full bg-primary-container flex items-center justify-center text-[10px] font-bold text-on-primary-container"
           aria-hidden
         >
-          {percentages.vata > 10 && `Vata ${percentages.vata}%`}
+          {percentages.vata > 10 && `${n('Vata')} ${percentages.vata}%`}
         </div>
         <div
           ref={pittaRef}
           className="dosha-bar h-full bg-tertiary flex items-center justify-center text-[10px] font-bold text-on-tertiary"
           aria-hidden
         >
-          {percentages.pitta > 10 && `Pitta ${percentages.pitta}%`}
+          {percentages.pitta > 10 && `${n('Pitta')} ${percentages.pitta}%`}
         </div>
         <div
           ref={kaphaRef}
           className="dosha-bar h-full bg-secondary flex items-center justify-center text-[10px] font-bold text-on-secondary"
           aria-hidden
         >
-          {percentages.kapha > 10 && `Kapha ${percentages.kapha}%`}
+          {percentages.kapha > 10 && `${n('Kapha')} ${percentages.kapha}%`}
         </div>
       </div>
 
       <div className="grid grid-cols-3 gap-4 mt-4">
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-full bg-primary-container flex-shrink-0" />
-          <span className="text-label-md font-semibold text-on-surface">Vata {percentages.vata}%</span>
+          <span className="text-label-md font-semibold text-on-surface">{n('Vata')} {percentages.vata}%</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-full bg-tertiary flex-shrink-0" />
-          <span className="text-label-md font-semibold text-on-surface">Pitta {percentages.pitta}%</span>
+          <span className="text-label-md font-semibold text-on-surface">{n('Pitta')} {percentages.pitta}%</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-full bg-secondary flex-shrink-0" />
-          <span className="text-label-md font-semibold text-on-surface">Kapha {percentages.kapha}%</span>
+          <span className="text-label-md font-semibold text-on-surface">{n('Kapha')} {percentages.kapha}%</span>
         </div>
       </div>
     </article>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -7,6 +7,8 @@ import { useRouter } from 'next/router'
 import { useTranslations } from 'next-intl'
 import type { ScoreResponseData, VikritiResponseData, Season } from '@/types'
 import { getCurrentSeason } from '@/lib/season'
+import { useLocale } from '@/contexts/LocaleContext'
+import { HI_CONTENT } from '@/lib/hiContent'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { DoshaHero } from '@/components/results/DoshaHero'
@@ -18,9 +20,73 @@ const VIKRITI_EMOJI: Record<string, string> = { Vata: '🌬️', Pitta: '🔥', 
 const ResultsPage: NextPage = () => {
   const router = useRouter()
   const t = useTranslations('results')
+  const { locale } = useLocale()
   const [result, setResult] = useState<ScoreResponseData | null>(null)
   const [vikritiResult, setVikritiResult] = useState<VikritiResponseData | null>(null)
   const [currentSeason] = useState<Season>(() => getCurrentSeason())
+
+  // Build a locale-aware recommendations object so all child components
+  // receive translated strings without needing to know about locale themselves.
+  const localizedResult = useMemo<ScoreResponseData | null>(() => {
+    if (!result) return null
+    if (locale !== 'hi') return result
+    const hi = HI_CONTENT[result.dominant]
+    if (!hi) return result
+    return {
+      ...result,
+      recommendations: {
+        ...result.recommendations,
+        profile: {
+          ...result.recommendations.profile,
+          tagline: hi.profile.tagline,
+          heroDescription: hi.profile.heroDescription,
+          keyTraits: hi.profile.keyTraits,
+        },
+        diet: {
+          principles: hi.diet.principles,
+          tastes: hi.diet.tastes,
+          favorFoods: result.recommendations.diet.favorFoods.map((f, i) => ({
+            ...f,
+            name: hi.diet.favorFoods[i]?.name ?? f.name,
+            reason: hi.diet.favorFoods[i]?.reason ?? f.reason,
+          })),
+          minimizeFoods: result.recommendations.diet.minimizeFoods.map((f, i) => ({
+            ...f,
+            name: hi.diet.minimizeFoods[i]?.name ?? f.name,
+            reason: hi.diet.minimizeFoods[i]?.reason ?? f.reason,
+          })),
+        },
+        routine: {
+          principle: hi.routine.principle,
+          daily: result.recommendations.routine.daily.map((slot, i) => ({
+            ...slot,
+            activity: hi.routine.daily[i]?.activity ?? slot.activity,
+            detail: hi.routine.daily[i]?.detail ?? slot.detail,
+          })),
+          weeklyPractices: hi.routine.weeklyPractices,
+        },
+        yoga: {
+          ...result.recommendations.yoga,
+          principle: hi.yoga.principle,
+          style: hi.yoga.style,
+          intensity: hi.yoga.intensity,
+          poses: result.recommendations.yoga.poses.map((pose, i) => ({
+            ...pose,
+            name: hi.yoga.poses[i]?.name ?? pose.name,
+            benefit: hi.yoga.poses[i]?.benefit ?? pose.benefit,
+          })),
+          breathwork: hi.yoga.breathwork,
+          avoid: hi.yoga.avoid,
+        },
+        seasonal: {
+          spring: { ...result.recommendations.seasonal.spring, season: hi.seasonal.spring.season, focus: hi.seasonal.spring.focus, tips: hi.seasonal.spring.tips },
+          summer: { ...result.recommendations.seasonal.summer, season: hi.seasonal.summer.season, focus: hi.seasonal.summer.focus, tips: hi.seasonal.summer.tips },
+          autumn: { ...result.recommendations.seasonal.autumn, season: hi.seasonal.autumn.season, focus: hi.seasonal.autumn.focus, tips: hi.seasonal.autumn.tips },
+          winter: { ...result.recommendations.seasonal.winter, season: hi.seasonal.winter.season, focus: hi.seasonal.winter.focus, tips: hi.seasonal.winter.tips },
+        },
+      },
+    }
+  }, [result, locale])
 
   useEffect(() => {
     const stored = sessionStorage.getItem('prakriti_result')
@@ -36,7 +102,7 @@ const ResultsPage: NextPage = () => {
     }
   }, [router])
 
-  if (!result) {
+  if (!result || !localizedResult) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
@@ -50,14 +116,14 @@ const ResultsPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Your Prakriti: {result.resultType} — PrakritiMe</title>
+        <title>{locale === 'hi' ? `आपकी प्रकृति: ${result.resultType} — PrakritiMe` : `Your Prakriti: ${result.resultType} — PrakritiMe`}</title>
         <meta name="description" content={`Your Ayurvedic constitution is ${result.resultType}. View personalized diet, routine, and yoga recommendations.`} />
       </Head>
 
       <Navbar />
 
       <main className="pt-16 pb-16 max-w-[1200px] mx-auto px-5 md:px-10">
-        <DoshaHero result={result} />
+        <DoshaHero result={localizedResult} />
 
         <div className="mt-4 flex items-start gap-3 bg-primary-container/40 border border-primary/20 rounded-xl px-5 py-4 text-sm text-on-surface-variant">
           <span className="text-lg shrink-0" aria-hidden>🪷</span>
@@ -76,15 +142,15 @@ const ResultsPage: NextPage = () => {
 
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-8 space-y-8">
-            <DoshaChart percentages={result.percentages} />
-            <RecommendationTabs recommendations={result.recommendations} currentSeason={currentSeason} />
+            <DoshaChart percentages={localizedResult.percentages} />
+            <RecommendationTabs recommendations={localizedResult.recommendations} currentSeason={currentSeason} />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="md:col-span-2 bg-primary-container text-on-primary-container p-6 rounded-xl flex items-center gap-5 shadow-lg">
                 <span className="text-5xl opacity-40 flex-shrink-0" aria-hidden>🧘</span>
                 <div>
                   <h4 className="font-display text-headline-md font-semibold mb-2">{t('morningRitual')}</h4>
-                  <p className="text-sm opacity-90">{result.recommendations.routine.daily[0]?.detail ?? t('morningDefault')}</p>
+                  <p className="text-sm opacity-90">{localizedResult.recommendations.routine.daily[0]?.detail ?? t('morningDefault')}</p>
                 </div>
               </div>
               <div className="bg-tertiary-fixed text-on-tertiary-fixed p-6 rounded-xl flex flex-col justify-between shadow-lg">
@@ -153,7 +219,7 @@ const ResultsPage: NextPage = () => {
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="bg-surface-container border border-outline-variant rounded-xl p-5 text-center">
                   <p className="text-xs text-on-surface-variant uppercase tracking-widest mb-2">{t('prakritLabel')}</p>
-                  <p className="font-display text-3xl font-bold text-on-surface">{result.resultType}</p>
+                  <p className="font-display text-3xl font-bold text-on-surface">{localizedResult.resultType}</p>
                   <p className="text-xs text-on-surface-variant mt-2">{t('prakritSub')}</p>
                 </div>
                 <div className="bg-surface-container border border-outline-variant rounded-xl p-5 text-center">
@@ -164,12 +230,12 @@ const ResultsPage: NextPage = () => {
                   <p className="text-xs text-on-surface-variant mt-2">{t('vikritiSub')}</p>
                 </div>
               </div>
-              {result.resultType.includes(vikritiResult.vikritiType) ? (
+              {localizedResult.resultType.includes(vikritiResult.vikritiType) ? (
                 <div className="flex items-start gap-3 bg-primary-container/40 border border-primary/20 rounded-xl px-5 py-4 text-sm">
                   <span aria-hidden>✅</span>
                   <p className="text-on-surface">
                     <strong>{t('inBalance')}</strong>{' '}
-                    {t('inBalanceDetail', { type: result.resultType })}
+                    {t('inBalanceDetail', { type: localizedResult.resultType })}
                   </p>
                 </div>
               ) : (
