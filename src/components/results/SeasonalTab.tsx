@@ -1,7 +1,8 @@
-import type { SeasonalRecommendation, SeasonTips } from '@/types'
+import type { SeasonalRecommendation, SeasonTips, Season } from '@/types'
 
 interface SeasonalTabProps {
   seasonal: SeasonalRecommendation
+  currentSeason?: Season
 }
 
 interface SeasonEntry {
@@ -16,14 +17,27 @@ const SEASON_ORDER: SeasonEntry[] = [
   { key: 'winter', label: 'Winter' },
 ]
 
-export function SeasonalTab({ seasonal }: SeasonalTabProps): JSX.Element {
+export function SeasonalTab({ seasonal, currentSeason }: SeasonalTabProps): JSX.Element {
   return (
     <div className="space-y-6">
       <div className="grid md:grid-cols-2 gap-4">
         {SEASON_ORDER.map(({ key }) => {
           const season = seasonal[key] as SeasonTips
+          const isCurrent = currentSeason === key
           return (
-            <div key={key} className="bg-surface border border-outline-variant rounded-xl p-5 sun-shadow">
+            <div
+              key={key}
+              className={`relative bg-surface rounded-xl p-5 sun-shadow transition-all ${
+                isCurrent
+                  ? 'border-2 border-tertiary ring-1 ring-tertiary/30'
+                  : 'border border-outline-variant'
+              }`}
+            >
+              {isCurrent && (
+                <span className="absolute top-3 right-3 bg-tertiary text-on-tertiary text-[10px] font-bold px-2 py-0.5 rounded-full leading-none uppercase tracking-wide">
+                  Now
+                </span>
+              )}
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-3xl">{season.emoji}</span>
                 <div>

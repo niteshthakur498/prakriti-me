@@ -142,6 +142,8 @@ export interface YogaRecommendation {
   avoid: string
 }
 
+export type Season = 'spring' | 'summer' | 'autumn' | 'winter'
+
 export interface SeasonTips {
   season: string
   emoji: string

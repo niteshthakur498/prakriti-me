@@ -4,7 +4,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import type { ScoreResponseData, VikritiResponseData } from '@/types'
+import type { ScoreResponseData, VikritiResponseData, Season } from '@/types'
+import { getCurrentSeason } from '@/lib/season'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { DoshaHero } from '@/components/results/DoshaHero'
@@ -17,6 +18,7 @@ const ResultsPage: NextPage = () => {
   const router = useRouter()
   const [result, setResult] = useState<ScoreResponseData | null>(null)
   const [vikritiResult, setVikritiResult] = useState<VikritiResponseData | null>(null)
+  const [currentSeason] = useState<Season>(() => getCurrentSeason())
 
   useEffect(() => {
     const stored = sessionStorage.getItem('prakriti_result')
@@ -78,7 +80,7 @@ const ResultsPage: NextPage = () => {
           {/* Main content — 8 columns */}
           <div className="lg:col-span-8 space-y-8">
             <DoshaChart percentages={result.percentages} />
-            <RecommendationTabs recommendations={result.recommendations} />
+            <RecommendationTabs recommendations={result.recommendations} currentSeason={currentSeason} />
 
             {/* Morning ritual bento */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

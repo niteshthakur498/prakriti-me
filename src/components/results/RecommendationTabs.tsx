@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { ScoreResponseData } from '@/types'
+import type { ScoreResponseData, Season } from '@/types'
 import { DietTab } from './DietTab'
 import { RoutineTab } from './RoutineTab'
 import { YogaTab } from './YogaTab'
@@ -7,6 +7,7 @@ import { SeasonalTab } from './SeasonalTab'
 
 interface RecommendationTabsProps {
   recommendations: ScoreResponseData['recommendations']
+  currentSeason?: Season
 }
 
 type TabKey = 'diet' | 'routine' | 'yoga' | 'seasonal'
@@ -18,7 +19,7 @@ const TABS: Array<{ key: TabKey; label: string; emoji: string }> = [
   { key: 'seasonal', label: 'Seasonal', emoji: '🍂' },
 ]
 
-export function RecommendationTabs({ recommendations }: RecommendationTabsProps): JSX.Element {
+export function RecommendationTabs({ recommendations, currentSeason }: RecommendationTabsProps): JSX.Element {
   const [active, setActive] = useState<TabKey>('diet')
 
   return (
@@ -31,13 +32,18 @@ export function RecommendationTabs({ recommendations }: RecommendationTabsProps)
             aria-selected={active === tab.key}
             type="button"
             onClick={() => setActive(tab.key)}
-            className={`px-7 py-3 rounded-full text-label-md font-semibold whitespace-nowrap transition-all active:scale-95 ${
+            className={`relative px-7 py-3 rounded-full text-label-md font-semibold whitespace-nowrap transition-all active:scale-95 ${
               active === tab.key
                 ? 'bg-primary text-on-primary sun-shadow'
                 : 'bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container-high'
             }`}
           >
             {tab.emoji} {tab.label}
+            {tab.key === 'seasonal' && currentSeason && (
+              <span className="absolute -top-1.5 -right-1.5 bg-tertiary text-on-tertiary text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none">
+                Now
+              </span>
+            )}
           </button>
         ))}
       </div>
@@ -46,7 +52,7 @@ export function RecommendationTabs({ recommendations }: RecommendationTabsProps)
         {active === 'diet'     && <DietTab     diet={recommendations.diet} />}
         {active === 'routine'  && <RoutineTab  routine={recommendations.routine} />}
         {active === 'yoga'     && <YogaTab     yoga={recommendations.yoga} />}
-        {active === 'seasonal' && <SeasonalTab seasonal={recommendations.seasonal} />}
+        {active === 'seasonal' && <SeasonalTab seasonal={recommendations.seasonal} currentSeason={currentSeason} />}
       </div>
     </div>
   )
