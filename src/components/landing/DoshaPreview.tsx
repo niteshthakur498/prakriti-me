@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 interface DoshaCard {
   name: string
@@ -23,18 +24,18 @@ const DOSHA_STYLES: Record<string, { bg: string; ring: string; text: string; sub
 }
 
 export function DoshaPreview({ doshaProfiles }: DoshaPreviewProps): JSX.Element {
+  const t = useTranslations('home')
+
   return (
     <section className="py-16">
       <div className="max-w-[1200px] mx-auto px-5 md:px-10">
         <div className="flex justify-between items-end mb-12">
           <div className="max-w-xl">
-            <h2 className="font-display text-headline-lg font-bold text-on-surface mb-4">The Three Doshas</h2>
-            <p className="text-on-surface-variant text-body-md">
-              Everything in the universe is a unique combination of five elements, manifesting in us as three life forces.
-            </p>
+            <h2 className="font-display text-headline-lg font-bold text-on-surface mb-4">{t('doshaSectionHeading')}</h2>
+            <p className="text-on-surface-variant text-body-md">{t('doshaSectionDesc')}</p>
           </div>
           <Link href="/about#doshas" className="hidden md:block text-primary text-label-md font-semibold hover:underline">
-            Learn more →
+            {t('learnMoreLink')}
           </Link>
         </div>
 

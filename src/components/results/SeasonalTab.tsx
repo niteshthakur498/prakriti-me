@@ -1,4 +1,5 @@
 import type { SeasonalRecommendation, SeasonTips, Season } from '@/types'
+import { useTranslations } from 'next-intl'
 
 interface SeasonalTabProps {
   seasonal: SeasonalRecommendation
@@ -18,6 +19,7 @@ const SEASON_ORDER: SeasonEntry[] = [
 ]
 
 export function SeasonalTab({ seasonal, currentSeason }: SeasonalTabProps): JSX.Element {
+  const t = useTranslations('results')
   return (
     <div className="space-y-6">
       <div className="grid md:grid-cols-2 gap-4">
@@ -35,7 +37,7 @@ export function SeasonalTab({ seasonal, currentSeason }: SeasonalTabProps): JSX.
             >
               {isCurrent && (
                 <span className="absolute top-3 right-3 bg-tertiary text-on-tertiary text-[10px] font-bold px-2 py-0.5 rounded-full leading-none uppercase tracking-wide">
-                  Now
+                  {t('tabNow')}
                 </span>
               )}
               <div className="flex items-center gap-3 mb-3">

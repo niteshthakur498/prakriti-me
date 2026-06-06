@@ -1,4 +1,5 @@
 import type { QuizQuestion, QuizSection, QuizOption, DoshaSymbol } from '@/types'
+import { useTranslations } from 'next-intl'
 import { OptionButton } from './OptionButton'
 
 interface QuizCardProps {
@@ -9,6 +10,8 @@ interface QuizCardProps {
 }
 
 export function QuizCard({ question, section, selectedAnswer, onSelect }: QuizCardProps): JSX.Element {
+  const t = useTranslations('quiz')
+
   return (
     <div className="bg-surface-container-lowest p-6 md:p-10 rounded-xl sun-shadow border border-outline-variant/30 relative overflow-hidden">
       <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl select-none pointer-events-none" aria-hidden>
@@ -27,7 +30,7 @@ export function QuizCard({ question, section, selectedAnswer, onSelect }: QuizCa
         </h3>
       </div>
 
-      <div className="grid grid-cols-1 gap-4" role="radiogroup" aria-label="Answer options">
+      <div className="grid grid-cols-1 gap-4" role="radiogroup" aria-label={t('answerOptions')}>
         {question.options.map((option: QuizOption) => (
           <OptionButton
             key={option.id}

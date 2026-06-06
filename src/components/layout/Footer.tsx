@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 export function Footer(): JSX.Element {
+  const t = useTranslations('footer')
+
   return (
     <footer className="w-full py-16 px-5 md:px-10 mt-10 flex flex-col items-center text-center bg-surface-container">
       <div className="max-w-[1200px] w-full mx-auto">
@@ -10,27 +13,27 @@ export function Footer(): JSX.Element {
           <span className="font-display text-headline-md text-primary font-bold">PrakritiMe</span>
         </Link>
         <p className="text-on-surface-variant text-body-md max-w-sm mx-auto mb-8">
-          Aligning your modern lifestyle with ancient rhythmic wisdom.
+          {t('tagline')}
         </p>
         <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 mb-10">
           <Link href="/about" className="text-on-surface-variant text-label-md hover:text-primary transition-colors font-semibold">
-            About Ayurveda
+            {t('aboutAyurveda')}
           </Link>
           <Link href="/about#doshas" className="text-on-surface-variant text-label-md hover:text-primary transition-colors font-semibold">
-            Dosha Guide
+            {t('doshaGuide')}
           </Link>
           <Link href="/quiz" className="text-on-surface-variant text-label-md hover:text-primary transition-colors font-semibold">
-            Take the Quiz
+            {t('takeQuiz')}
           </Link>
           <a href="#" className="text-on-surface-variant text-label-md hover:text-primary transition-colors font-semibold">
-            Privacy Policy
+            {t('privacy')}
           </a>
           <a href="#" className="text-on-surface-variant text-label-md hover:text-primary transition-colors font-semibold">
-            Terms of Service
+            {t('terms')}
           </a>
         </div>
         <div className="w-full pt-6 border-t border-outline-variant/30 text-on-surface-variant text-label-md">
-          © 2024 PrakritiMe. Built with heart for Ayurveda lovers.
+          {t('copyright')}
         </div>
       </div>
     </footer>

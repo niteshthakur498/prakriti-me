@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from 'react'
 import type { DoshaPercentages } from '@/types'
+import { useTranslations } from 'next-intl'
 
 interface DoshaChartProps {
   percentages: DoshaPercentages
 }
 
 export const DoshaChart = React.memo(function DoshaChart({ percentages }: DoshaChartProps): JSX.Element {
+  const t = useTranslations('results')
   const vataRef = useRef<HTMLDivElement>(null)
   const pittaRef = useRef<HTMLDivElement>(null)
   const kaphaRef = useRef<HTMLDivElement>(null)
@@ -22,7 +24,7 @@ export const DoshaChart = React.memo(function DoshaChart({ percentages }: DoshaC
   return (
     <article className="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 sun-shadow">
       <div className="flex items-center justify-between mb-6">
-        <h2 className="font-display text-headline-md font-semibold text-on-surface">Dosha Breakdown</h2>
+        <h2 className="font-display text-headline-md font-semibold text-on-surface">{t('doshaBreakdown')}</h2>
         <span className="text-2xl" aria-hidden>📊</span>
       </div>
 
@@ -30,7 +32,7 @@ export const DoshaChart = React.memo(function DoshaChart({ percentages }: DoshaC
       <div
         className="relative w-full h-12 bg-surface-container rounded-full flex overflow-hidden mb-4 border border-outline-variant/30"
         role="img"
-        aria-label={`Dosha breakdown: Vata ${percentages.vata}%, Pitta ${percentages.pitta}%, Kapha ${percentages.kapha}%`}
+        aria-label={t('doshaAriaLabel', { vata: percentages.vata, pitta: percentages.pitta, kapha: percentages.kapha })}
       >
         <div
           ref={vataRef}

@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl'
+
 interface ProgressBarProps {
   percent: number
   sectionLabel: string
@@ -15,17 +17,19 @@ export function ProgressBar({
   questionNumber,
   totalQuestions,
 }: ProgressBarProps): JSX.Element {
+  const t = useTranslations('quiz')
+
   return (
     <div className="space-y-3">
       <div className="flex justify-between items-end">
         <div>
           <span className="text-label-md text-primary uppercase tracking-wider block mb-1 font-semibold">
-            Section {currentSection} of {sectionCount}
+            {t('sectionOf', { current: currentSection, total: sectionCount })}
           </span>
           <h2 className="font-display text-headline-md font-semibold text-on-surface">{sectionLabel}</h2>
         </div>
         <span className="text-label-md text-on-surface-variant font-semibold">
-          Question {questionNumber} of {totalQuestions}
+          {t('questionOf', { number: questionNumber, total: totalQuestions })}
         </span>
       </div>
       <div className="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
@@ -36,7 +40,7 @@ export function ProgressBar({
           aria-valuenow={percent}
           aria-valuemin={0}
           aria-valuemax={100}
-          aria-label={`Quiz progress: ${percent}%`}
+          aria-label={t('progressAriaLabel', { percent })}
         />
       </div>
     </div>

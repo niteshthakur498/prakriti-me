@@ -1,3 +1,5 @@
+import { useTranslations } from 'next-intl'
+
 const TESTIMONIALS = [
   {
     initials: 'AR',
@@ -20,21 +22,23 @@ const TESTIMONIALS = [
 ]
 
 export function Testimonials(): JSX.Element {
+  const t = useTranslations('home')
+
   return (
     <section className="py-16 bg-surface-container">
       <div className="max-w-[1200px] mx-auto px-5 md:px-10">
         <div className="text-center mb-14">
-          <h2 className="font-display text-headline-lg font-bold text-on-surface">Radiating Harmony</h2>
-          <p className="text-on-surface-variant text-body-md mt-2">Hear from those who&apos;ve rediscovered their balance.</p>
+          <h2 className="font-display text-headline-lg font-bold text-on-surface">{t('testimonialsHeading')}</h2>
+          <p className="text-on-surface-variant text-body-md mt-2">{t('testimonialsSubtitle')}</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
-          {TESTIMONIALS.map((t) => (
-            <div key={t.author} className="bg-surface p-10 rounded-3xl sun-shadow">
-              <div className={`w-12 h-12 rounded-full ${t.color} flex items-center justify-center font-bold mb-6`}>
-                {t.initials}
+          {TESTIMONIALS.map((item) => (
+            <div key={item.author} className="bg-surface p-10 rounded-3xl sun-shadow">
+              <div className={`w-12 h-12 rounded-full ${item.color} flex items-center justify-center font-bold mb-6`}>
+                {item.initials}
               </div>
-              <p className="text-body-md text-on-surface italic mb-6">{t.quote}</p>
-              <p className="text-label-md text-on-surface-variant font-semibold">{t.author}</p>
+              <p className="text-body-md text-on-surface italic mb-6">{item.quote}</p>
+              <p className="text-label-md text-on-surface-variant font-semibold">{item.author}</p>
             </div>
           ))}
         </div>

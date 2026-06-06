@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { ScoreResponseData, Season } from '@/types'
+import { useTranslations } from 'next-intl'
 import { DietTab } from './DietTab'
 import { RoutineTab } from './RoutineTab'
 import { YogaTab } from './YogaTab'
@@ -21,6 +22,14 @@ const TABS: Array<{ key: TabKey; label: string; emoji: string }> = [
 
 export function RecommendationTabs({ recommendations, currentSeason }: RecommendationTabsProps): JSX.Element {
   const [active, setActive] = useState<TabKey>('diet')
+  const t = useTranslations('results')
+
+  const TAB_LABELS: Record<TabKey, string> = {
+    diet:     t('tabDiet'),
+    routine:  t('tabRoutine'),
+    yoga:     t('tabYoga'),
+    seasonal: t('tabSeasonal'),
+  }
 
   return (
     <div className="space-y-6">
@@ -38,10 +47,10 @@ export function RecommendationTabs({ recommendations, currentSeason }: Recommend
                 : 'bg-surface-container-lowest border border-outline-variant text-on-surface-variant hover:bg-surface-container-high'
             }`}
           >
-            {tab.emoji} {tab.label}
+            {tab.emoji} {TAB_LABELS[tab.key]}
             {tab.key === 'seasonal' && currentSeason && (
               <span className="absolute -top-1.5 -right-1.5 bg-tertiary text-on-tertiary text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none">
-                Now
+                {t('tabNow')}
               </span>
             )}
           </button>

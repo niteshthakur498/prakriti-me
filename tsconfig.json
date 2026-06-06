@@ -25,7 +25,8 @@
       "@/backend/*": ["src/backend/*"],
       "@/types": ["src/types/index"],
       "@/types/*": ["src/types/*"],
-      "@/styles/*": ["src/styles/*"]
+      "@/styles/*": ["src/styles/*"],
+      "@/contexts/*": ["src/contexts/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
